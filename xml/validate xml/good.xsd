@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="schema" type="xs:schemaType"/>
+  <xs:complexType name="СвДовType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="КодНОДейст"/>
+      <xs:element type="xs:string" name="СведСист"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ВидДовер"/>
+    <xs:attribute type="xs:string" name="ВнНомДовер"/>
+    <xs:attribute type="xs:string" name="ДатаВнРегДовер"/>
+    <xs:attribute type="xs:string" name="ДатаВыдДовер"/>
+    <xs:attribute type="xs:string" name="НомДовер"/>
+    <xs:attribute type="xs:string" name="НомРНДДовер"/>
+    <xs:attribute type="xs:string" name="ПрПередов"/>
+    <xs:attribute type="xs:string" name="СрокДейст"/>
+  </xs:complexType>
+  <xs:complexType name="СвРосОргType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="ИННЮЛ"/>
+        <xs:attribute type="xs:string" name="КПП"/>
+        <xs:attribute type="xs:string" name="НаимОрг"/>
+        <xs:attribute type="xs:string" name="ОГРН"/>
+        <xs:attribute type="xs:string" name="СтУчНД"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="СвЮЛЕИОType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="ИННЮЛ"/>
+        <xs:attribute type="xs:string" name="КПП"/>
+        <xs:attribute type="xs:string" name="НаимОрг"/>
+        <xs:attribute type="xs:string" name="ОГРН"/>
+        <xs:attribute type="xs:string" name="СтУчНД"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ФИОType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Имя" use="optional"/>
+        <xs:attribute type="xs:string" name="Отчество" use="optional"/>
+        <xs:attribute type="xs:string" name="Фамилия" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="УдЛичнФЛType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="ВыдДок" use="optional"/>
+        <xs:attribute type="xs:string" name="ДатаДок" use="optional"/>
+        <xs:attribute type="xs:string" name="КодВидДок" use="optional"/>
+        <xs:attribute type="xs:string" name="КодВыдДок" use="optional"/>
+        <xs:attribute type="xs:string" name="СерНомДок" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="СведФЛType">
+    <xs:sequence>
+      <xs:element type="xs:ФИОType" name="ФИО"/>
+      <xs:element type="xs:УдЛичнФЛType" name="УдЛичнФЛ"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ДатаРожд"/>
+    <xs:attribute type="xs:string" name="ПрГражд"/>
+  </xs:complexType>
+  <xs:complexType name="СвФЛType">
+    <xs:sequence>
+      <xs:element type="xs:СведФЛType" name="СведФЛ"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Должность"/>
+    <xs:attribute type="xs:string" name="ИННФЛ"/>
+    <xs:attribute type="xs:string" name="СНИЛС"/>
+    <xs:attribute type="xs:string" name="СтУчНД"/>
+  </xs:complexType>
+  <xs:complexType name="СВЮЛType">
+    <xs:sequence>
+      <xs:element type="xs:СвЮЛЕИОType" name="СвЮЛЕИО"/>
+      <xs:element type="xs:СвФЛType" name="СвФЛ"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ЛицоБезДовType">
+    <xs:sequence>
+      <xs:element type="xs:СВЮЛType" name="СВЮЛ"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ПолнЮЛ"/>
+  </xs:complexType>
+  <xs:complexType name="РосОргДоверType">
+    <xs:sequence>
+      <xs:element type="xs:СвРосОргType" name="СвРосОрг"/>
+      <xs:element type="xs:ЛицоБезДовType" name="ЛицоБезДов"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ЕИОУК"/>
+    <xs:attribute type="xs:string" name="ЕИОФЛ"/>
+    <xs:attribute type="xs:string" name="ЕИОИП"/>
+  </xs:complexType>
+  <xs:complexType name="ДоверитType">
+    <xs:sequence>
+      <xs:element type="xs:РосОргДоверType" name="РосОргДовер"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СвДоверитType">
+    <xs:sequence>
+      <xs:element type="xs:ДоверитType" name="Доверит"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ТипДоверит"/>
+  </xs:complexType>
+  <xs:complexType name="СведФлType">
+    <xs:sequence>
+      <xs:element type="xs:ФИОType" name="ФИО"/>
+      <xs:element type="xs:УдЛичнФЛType" name="УдЛичнФЛ"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Гражданство"/>
+    <xs:attribute type="xs:string" name="ДатаРожд"/>
+    <xs:attribute type="xs:string" name="ПрГражд"/>
+  </xs:complexType>
+  <xs:complexType name="СведФизЛType">
+    <xs:sequence>
+      <xs:element type="xs:СведФлType" name="СведФл"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Должность"/>
+    <xs:attribute type="xs:string" name="ИННФЛ"/>
+    <xs:attribute type="xs:string" name="СНИЛС"/>
+    <xs:attribute type="xs:string" name="СтУчНД"/>
+  </xs:complexType>
+  <xs:complexType name="ПредType">
+    <xs:sequence>
+      <xs:element type="xs:СведФизЛType" name="СведФизЛ"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СвУпПредType">
+    <xs:sequence>
+      <xs:element type="xs:ПредType" name="Пред"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ТипПред"/>
+  </xs:complexType>
+  <xs:complexType name="МашПолнType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="КодПолн"/>
+        <xs:attribute type="xs:string" name="НаимПолн"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="СвПолнType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ТекстПолн"/>
+      <xs:element type="xs:МашПолнType" name="МашПолн"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ПрСовмПолн"/>
+    <xs:attribute type="xs:string" name="ТипПолн"/>
+  </xs:complexType>
+  <xs:complexType name="ДоверType">
+    <xs:sequence>
+      <xs:element type="xs:СвДовType" name="СвДов"/>
+      <xs:element type="xs:СвДоверитType" name="СвДоверит"/>
+      <xs:element type="xs:СвУпПредType" name="СвУпПред"/>
+      <xs:element type="xs:СвПолнType" name="СвПолн"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ДокументType">
+    <xs:sequence>
+      <xs:element type="xs:ДоверType" name="Довер"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="КНД"/>
+  </xs:complexType>
+  <xs:complexType name="ДоверенностьType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="ИнСвед"/>
+      <xs:element type="xs:ДокументType" name="Документ"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="OID"/>
+    <xs:attribute type="xs:string" name="ВерсФорм"/>
+    <xs:attribute type="xs:string" name="ИдФайл"/>
+    <xs:attribute type="xs:string" name="ИдФайлНО"/>
+    <xs:attribute type="xs:string" name="ПрЭлФорм"/>
+  </xs:complexType>
+  <xs:complexType name="schemaType">
+    <xs:sequence>
+      <xs:element type="xs:ДоверенностьType" name="Доверенность"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="targetNamespace"/>
+  </xs:complexType>
+</xs:schema>

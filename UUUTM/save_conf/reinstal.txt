@@ -1,0 +1,1 @@
+data /home/ivan/Загрузки/u-trans-4.3.0-SNAPSHOT-2658-i386-test.deb

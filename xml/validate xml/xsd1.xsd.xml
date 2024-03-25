@@ -1,0 +1,1073 @@
+<emc:Доверенность ВерсФорм="EMCHD_1" ПрЭлФорм="stringst" ИдФайл="string" ИдФайлНО="string" OID="string" xmlns:emc="urn://x-artefacts/EMCHD_1">
+  <!--Optional:-->
+  <emc:ИнСвед>string</emc:ИнСвед>
+  <emc:Документ КНД="strings">
+    <!--You have a CHOICE of the next 2 items at this level-->
+    <emc:Довер>
+      <emc:СвДов ВидДовер="1" ПрПередов="2" ВнНомДовер="string" НомДовер="stringstringstringstringstringstring" НомРНДДовер="string" ДопИдДовер="string" ДатаВнРегДовер="2014-09-19" ДатаВыдДовер="2006-08-19+04:00" СрокДейст="2009-05-16" КодНО="stri">
+        <!--Zero or more repetitions:-->
+        <emc:КодНОДейст>stri</emc:КодНОДейст>
+        <emc:СведСист>string</emc:СведСист>
+        <!--Optional:-->
+        <emc:Безотзыв ПрПерБезДов="2" УслОтзыва="1">
+          <!--Optional:-->
+          <emc:ОписУслОт>string</emc:ОписУслОт>
+        </emc:Безотзыв>
+      </emc:СвДов>
+      <!--1 or more repetitions:-->
+      <emc:СвДоверит ТипДоверит="4">
+        <emc:Доверит>
+          <!--Optional:-->
+          <emc:РосОргДовер ЕИОУК="1" ЕИОФЛ="1" ЕИОИП="1">
+            <emc:СвРосОрг СтУчНД="101" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2016-02-20+03:00" КемВыд="string" СвУдДок="string"/>
+              <!--Optional:-->
+              <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрРег>
+            </emc:СвРосОрг>
+            <!--1 or more repetitions:-->
+            <emc:ЛицоБезДов ПолнЮЛ="1">
+              <!--Optional:-->
+              <emc:СВЮЛ>
+                <emc:СвЮЛЕИО СтУчНД="399" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2018-12-28+03:00" КемВыд="string" СвУдДок="string"/>
+                  <!--Optional:-->
+                  <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрРег>
+                </emc:СвЮЛЕИО>
+                <!--1 or more repetitions:-->
+                <emc:СвФЛ СтУчНД="399" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2002-11-16+03:00" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2003-11-10+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2000-09-25" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2015-11-05</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвФЛ>
+              </emc:СВЮЛ>
+              <!--Optional:-->
+              <emc:СвФЛ СтУчНД="102" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2017-04-19+03:00" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2017-08-18" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2016-09-12" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2005-01-22+03:00</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвФЛ>
+              <!--Optional:-->
+              <emc:СвИП СтУчНД="102" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2004-12-06+03:00" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2018-01-21+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2014-12-08" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2019-03-02</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвИП>
+            </emc:ЛицоБезДов>
+          </emc:РосОргДовер>
+          <!--Optional:-->
+          <emc:ИнОргДовер>
+            <emc:СвИнОрг СтУчНД="102" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+              <!--Optional:-->
+              <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМНФакт>
+            </emc:СвИнОрг>
+            <!--1 or more repetitions:-->
+            <emc:СвРукОП СтУчНД="303" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2007-09-09" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2008-08-28+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2008-11-07+03:00" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2019-05-04</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:СвРукОП>
+          </emc:ИнОргДовер>
+          <!--Optional:-->
+          <emc:ИПДовер СтУчНД="102" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2017-08-26" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2005-05-29+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2016-06-29" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2012-06-26</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:ИПДовер>
+          <!--Optional:-->
+          <emc:ФЛДовер СтУчНД="102" ПрДеесп="0" ПрНалРук="0" ДокНедеесп="string" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <emc:СведФЛ Пол="1" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2007-04-22+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2011-05-05" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2006-11-30+03:00</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+            <!--Optional:-->
+            <emc:СвЗакПредРук ПолнЮЛ="1">
+              <!--Optional:-->
+              <emc:СВЮЛ>
+                <emc:СвЮЛЕИО СтУчНД="303" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2008-12-01" КемВыд="string" СвУдДок="string"/>
+                  <!--Optional:-->
+                  <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрРег>
+                </emc:СвЮЛЕИО>
+                <!--1 or more repetitions:-->
+                <emc:СвФЛ СтУчНД="299" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2016-02-27" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="2" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2019-03-27" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2010-06-26+04:00" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2016-10-17+03:00</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвФЛ>
+              </emc:СВЮЛ>
+              <!--Optional:-->
+              <emc:СвФЛ СтУчНД="301" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2016-09-16+03:00" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="1" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2003-02-11+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-12-11" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2014-08-11+04:00</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвФЛ>
+              <!--Optional:-->
+              <emc:СвИП СтУчНД="399" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2001-04-20" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="1" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2017-05-19" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2017-07-13" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2006-02-20+03:00</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвИП>
+            </emc:СвЗакПредРук>
+          </emc:ФЛДовер>
+        </emc:Доверит>
+      </emc:СвДоверит>
+      <!--1 or more repetitions:-->
+      <emc:СвУпПред ТипПред="2">
+        <emc:Пред>
+          <!--Optional:-->
+          <emc:СведОрг СтУчНД="299" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2017-01-03" КемВыд="string" СвУдДок="string"/>
+            <!--Optional:-->
+            <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрРег>
+          </emc:СведОрг>
+          <!--Optional:-->
+          <emc:СведИП СтУчНД="303" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2016-09-21" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="1" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2008-05-12+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-08-29+03:00" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2006-12-27</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:СведИП>
+          <!--Optional:-->
+          <emc:СведФизЛ СтУчНД="301" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2019-10-05+03:00" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2005-04-26+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-12-11" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2016-02-05+03:00</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:СведФизЛ>
+          <!--Optional:-->
+          <emc:СведФилиал СтУчНД="301" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2002-01-15" КемВыд="string" СвУдДок="string"/>
+            <!--Optional:-->
+            <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрРег>
+          </emc:СведФилиал>
+          <!--Optional:-->
+          <emc:СведИО СтУчНД="303" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+            <!--Optional:-->
+            <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрМНФакт>
+          </emc:СведИО>
+        </emc:Пред>
+      </emc:СвУпПред>
+      <emc:СвПолн ТипПолн="0" ПрСовмПолн="1" ПрУтрПолн="2">
+        <!--Optional:-->
+        <emc:ТекстПолн>string</emc:ТекстПолн>
+        <!--Zero or more repetitions:-->
+        <emc:МашПолн МнПолн="string" КодПолн="string" НаимПолн="string">
+          <!--Zero or more repetitions:-->
+          <emc:ОгрСвПолн ИдОгр="100" КодОгр="string" НаимОгр="string" НаимЗначОгр="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <emc:КодЗначОгр>string</emc:КодЗначОгр>
+            <emc:ТексЗначОгр>string</emc:ТексЗначОгр>
+          </emc:ОгрСвПолн>
+        </emc:МашПолн>
+      </emc:СвПолн>
+      <!--Optional:-->
+      <emc:СвНотУд МестоДовер="string" НапрДокДовЕПГУ="1" НапрДокПовЕПГУ="0" НапрДокЗвлФНП="0" НапрДокПовФНП="0" УплНотДейст="1000.000000" ЛьготаСум="1000.000000" ДрИнфСист="string" ДрСпосВыд="string" ДопСвНотДовер="string">
+        <!--Optional:-->
+        <emc:ИнСвУдНадпис>string</emc:ИнСвУдНадпис>
+        <emc:СвНотДейств Должность="string" РегНомНот="string">
+          <emc:ФИОНотДейств Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:СвНотДейств>
+        <!--1 or more repetitions:-->
+        <emc:ПодпРукопис>
+          <emc:ХешPDFДок>string</emc:ХешPDFДок>
+          <emc:ПодпИзобр>string</emc:ПодпИзобр>
+          <emc:ХешПодп>string</emc:ХешПодп>
+          <emc:ДатаВремПодп>100</emc:ДатаВремПодп>
+          <emc:ФИООтв Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ПодпРукопис>
+        <!--Optional:-->
+        <emc:ВриоНот Должность="string" РегНомНот="string">
+          <emc:ФИОВриоНот Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ВриоНот>
+      </emc:СвНотУд>
+    </emc:Довер>
+    <emc:Передов ПрНалПередов="1">
+      <emc:СвПервДовер ПрДовер="2" ФормДовер="2" ДатаВыдДовер="1900-01-01+03:00" СрокДейст="1900-01-01" ВнНомДоверПерв="string" ВнНомДоверN="string" НомДоверПерв="stringstringstringstringstringstring" НомДоверN="stringstringstringstringstringstring" НомРНДПерв="string" НомРНДN="string">
+        <!--Zero or more repetitions:-->
+        <emc:СвДоверПерв ТипДоверит="4">
+          <emc:ДоверитПерв>
+            <!--Optional:-->
+            <emc:РосОргДовер СтУчНД="303" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2010-10-29+04:00" КемВыд="string" СвУдДок="string"/>
+              <!--Optional:-->
+              <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрРег>
+            </emc:РосОргДовер>
+            <!--Optional:-->
+            <emc:ИнОргДовер СтУчНД="102" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+              <!--Optional:-->
+              <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМНФакт>
+            </emc:ИнОргДовер>
+            <!--Optional:-->
+            <emc:ИПДовер СтУчНД="303" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2015-02-20+03:00" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2019-09-15+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2005-12-27" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2018-08-07+03:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:ИПДовер>
+            <!--Optional:-->
+            <emc:ФЛДовер СтУчНД="102" ПрДеесп="1" ПрНалРук="1" ДокНедеесп="string" ИННФЛ="stringstring" СНИЛС="stringstringst">
+              <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2018-12-21" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2018-10-01" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2001-04-05+04:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+              <!--Optional:-->
+              <emc:СвЗакПредРук ПолнЮЛ="2">
+                <!--Optional:-->
+                <emc:СВЮЛ>
+                  <emc:СвЮЛЕИО СтУчНД="399" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+                    <!--Optional:-->
+                    <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2014-12-20+03:00" КемВыд="string" СвУдДок="string"/>
+                    <!--Optional:-->
+                    <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрРег>
+                  </emc:СвЮЛЕИО>
+                  <!--1 or more repetitions:-->
+                  <emc:СвФЛ СтУчНД="303" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                    <!--Optional:-->
+                    <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2015-06-14" КемВыд="string" СвУдДок="string"/>
+                    <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2003-01-06+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                      <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                      <!--Optional:-->
+                      <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <emc:АдрРФ>string</emc:АдрРФ>
+                        <!--Optional:-->
+                        <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                      </emc:АдрМЖ>
+                      <!--Optional:-->
+                      <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2011-07-23" ВыдДок="string" КодВыдДок="strings">
+                        <!--Optional:-->
+                        <emc:expDate>2005-11-03+03:00</emc:expDate>
+                      </emc:УдЛичнФЛ>
+                    </emc:СведФЛ>
+                  </emc:СвФЛ>
+                </emc:СВЮЛ>
+                <!--Optional:-->
+                <emc:СвФЛ СтУчНД="299" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2006-04-19+04:00" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="2" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2003-02-24+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2016-07-15+03:00" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2008-09-21</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвФЛ>
+                <!--Optional:-->
+                <emc:СвИП СтУчНД="303" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2011-12-09+04:00" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2014-10-03" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2004-05-14" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2001-11-13+03:00</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвИП>
+              </emc:СвЗакПредРук>
+            </emc:ФЛДовер>
+          </emc:ДоверитПерв>
+        </emc:СвДоверПерв>
+        <!--Optional:-->
+        <emc:СвНотДейств Должность="string" РегНомНот="string">
+          <emc:ФИОНотДейств Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:СвНотДейств>
+        <!--Optional:-->
+        <emc:ВриоНот Должность="string" РегНомНот="string">
+          <emc:ФИОВриоНот Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ВриоНот>
+      </emc:СвПервДовер>
+      <!--Optional:-->
+      <emc:СвПередов ПрДовер="1" ФормДовер="1" ДатаВыдДовер="1900-01-01+03:00" СрокДейст="1900-01-01+03:00" ВнНомДоверПерв="string" ВнНомДоверN="string" НомДоверПерв="stringstringstringstringstringstring" НомДоверN="stringstringstringstringstringstring" НомРНДПерв="string" НомРНДN="string">
+        <!--Zero or more repetitions:-->
+        <emc:СвДоверПерв ТипДоверит="4">
+          <emc:ДоверитПерв>
+            <!--Optional:-->
+            <emc:РосОргДовер СтУчНД="101" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2006-01-09" КемВыд="string" СвУдДок="string"/>
+              <!--Optional:-->
+              <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрРег>
+            </emc:РосОргДовер>
+            <!--Optional:-->
+            <emc:ИнОргДовер СтУчНД="101" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+              <!--Optional:-->
+              <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМНФакт>
+            </emc:ИнОргДовер>
+            <!--Optional:-->
+            <emc:ИПДовер СтУчНД="303" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2003-10-31" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="1" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2009-08-15" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2003-02-11+03:00" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2009-12-12+03:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:ИПДовер>
+            <!--Optional:-->
+            <emc:ФЛДовер СтУчНД="303" ПрДеесп="0" ПрНалРук="0" ДокНедеесп="string" ИННФЛ="stringstring" СНИЛС="stringstringst">
+              <emc:СведФЛ Пол="1" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2018-02-18" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2006-03-21+03:00" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2002-12-11+03:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+              <!--Optional:-->
+              <emc:СвЗакПредРук ПолнЮЛ="1">
+                <!--Optional:-->
+                <emc:СВЮЛ>
+                  <emc:СвЮЛЕИО СтУчНД="301" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+                    <!--Optional:-->
+                    <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2019-07-08+03:00" КемВыд="string" СвУдДок="string"/>
+                    <!--Optional:-->
+                    <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрРег>
+                  </emc:СвЮЛЕИО>
+                  <!--1 or more repetitions:-->
+                  <emc:СвФЛ СтУчНД="102" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                    <!--Optional:-->
+                    <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2009-09-28+04:00" КемВыд="string" СвУдДок="string"/>
+                    <emc:СведФЛ Пол="1" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2011-04-16" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                      <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                      <!--Optional:-->
+                      <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--Optional:-->
+                        <emc:АдрРФ>string</emc:АдрРФ>
+                        <!--Optional:-->
+                        <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                      </emc:АдрМЖ>
+                      <!--Optional:-->
+                      <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2008-09-11+04:00" ВыдДок="string" КодВыдДок="strings">
+                        <!--Optional:-->
+                        <emc:expDate>2009-08-26+04:00</emc:expDate>
+                      </emc:УдЛичнФЛ>
+                    </emc:СведФЛ>
+                  </emc:СвФЛ>
+                </emc:СВЮЛ>
+                <!--Optional:-->
+                <emc:СвФЛ СтУчНД="101" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2015-10-30" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2007-09-14" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2016-11-17" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2019-08-24+03:00</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвФЛ>
+                <!--Optional:-->
+                <emc:СвИП СтУчНД="399" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2007-11-24" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="2" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2007-06-02" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2010-04-12+04:00" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2003-11-08</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвИП>
+              </emc:СвЗакПредРук>
+            </emc:ФЛДовер>
+          </emc:ДоверитПерв>
+        </emc:СвДоверПерв>
+        <!--Optional:-->
+        <emc:СвНотДейств Должность="string" РегНомНот="string">
+          <emc:ФИОНотДейств Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:СвНотДейств>
+        <!--Optional:-->
+        <emc:ВриоНот Должность="string" РегНомНот="string">
+          <emc:ФИОВриоНот Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ВриоНот>
+      </emc:СвПередов>
+      <emc:СвПереДовер ВидДовер="2" ПрПередов="2" ВнНомДовер="string" НомДовер="stringstringstringstringstringstring" НомРНДДовер="string" ДопИдДовер="string" ДатаВнРегДовер="2009-06-24" ДатаВыдДовер="2013-04-19+04:00" СрокДейст="2008-05-13" КодНО="stri">
+        <!--Zero or more repetitions:-->
+        <emc:КодНОДейст>stri</emc:КодНОДейст>
+        <emc:СведСист>string</emc:СведСист>
+        <!--Optional:-->
+        <emc:Безотзыв ПрПерБезДов="1" УслОтзыва="1">
+          <!--Optional:-->
+          <emc:ОписУслОт>string</emc:ОписУслОт>
+        </emc:Безотзыв>
+      </emc:СвПереДовер>
+      <!--1 or more repetitions:-->
+      <emc:СвПередПолн ТипПерПолн="1">
+        <emc:ПередПолн>
+          <!--Optional:-->
+          <emc:РосОргПерПолн ЕИОУК="1" ЕИОФЛ="0" ЕИОИП="0">
+            <emc:СвРосОрг СтУчНД="102" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2011-08-12" КемВыд="string" СвУдДок="string"/>
+              <!--Optional:-->
+              <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрРег>
+            </emc:СвРосОрг>
+            <!--1 or more repetitions:-->
+            <emc:ЛицоБезДов ПолнЮЛ="2">
+              <!--Optional:-->
+              <emc:СВЮЛ>
+                <emc:СвЮЛЕИО СтУчНД="299" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2001-02-22" КемВыд="string" СвУдДок="string"/>
+                  <!--Optional:-->
+                  <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрРег>
+                </emc:СвЮЛЕИО>
+                <!--1 or more repetitions:-->
+                <emc:СвФЛ СтУчНД="303" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                  <!--Optional:-->
+                  <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2014-03-12" КемВыд="string" СвУдДок="string"/>
+                  <emc:СведФЛ Пол="1" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2014-06-20" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                    <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                    <!--Optional:-->
+                    <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                      <!--You have a CHOICE of the next 2 items at this level-->
+                      <!--Optional:-->
+                      <emc:АдрРФ>string</emc:АдрРФ>
+                      <!--Optional:-->
+                      <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                    </emc:АдрМЖ>
+                    <!--Optional:-->
+                    <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-09-26" ВыдДок="string" КодВыдДок="strings">
+                      <!--Optional:-->
+                      <emc:expDate>2003-11-09</emc:expDate>
+                    </emc:УдЛичнФЛ>
+                  </emc:СведФЛ>
+                </emc:СвФЛ>
+              </emc:СВЮЛ>
+              <!--Optional:-->
+              <emc:СвФЛ СтУчНД="101" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2013-10-01" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="2" ПрГражд="3" НомЕРН="stringstring" ДатаРожд="2017-09-25" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2016-11-15+03:00" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2000-05-22+04:00</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвФЛ>
+              <!--Optional:-->
+              <emc:СвИП СтУчНД="399" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+                <!--Optional:-->
+                <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2004-02-27+03:00" КемВыд="string" СвУдДок="string"/>
+                <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2017-10-30" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                  <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                  <!--Optional:-->
+                  <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                    <!--You have a CHOICE of the next 2 items at this level-->
+                    <!--Optional:-->
+                    <emc:АдрРФ>string</emc:АдрРФ>
+                    <!--Optional:-->
+                    <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                  </emc:АдрМЖ>
+                  <!--Optional:-->
+                  <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2005-04-02+04:00" ВыдДок="string" КодВыдДок="strings">
+                    <!--Optional:-->
+                    <emc:expDate>2009-03-10+03:00</emc:expDate>
+                  </emc:УдЛичнФЛ>
+                </emc:СведФЛ>
+              </emc:СвИП>
+            </emc:ЛицоБезДов>
+          </emc:РосОргПерПолн>
+          <!--Optional:-->
+          <emc:ИППерПолн СтУчНД="399" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2000-11-27+03:00" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2000-07-29" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2003-08-24+04:00" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2014-05-27+04:00</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:ИППерПолн>
+          <!--Optional:-->
+          <emc:ФЛПерПолн СтУчНД="102" ПрНалРук="0" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <!--Optional:-->
+            <emc:СведРукоп СтУчНД="301" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2008-05-18" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="2" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2003-11-30+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-07-30" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2004-09-04</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:СведРукоп>
+            <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2012-10-15+04:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2001-03-12+03:00" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2018-07-20</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:ФЛПерПолн>
+          <!--Optional:-->
+          <emc:ФилПерПолн>
+            <emc:СвФил СтУчНД="101" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2006-01-17" КемВыд="string" СвУдДок="string"/>
+              <!--Optional:-->
+              <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрРег>
+            </emc:СвФил>
+            <emc:СвРукФил СтУчНД="299" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2019-09-26+03:00" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2019-05-22" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2010-02-19" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2004-03-11+03:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:СвРукФил>
+          </emc:ФилПерПолн>
+          <!--Optional:-->
+          <emc:ИнПерПолн>
+            <emc:СвИнОрг СтУчНД="299" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+              <!--Optional:-->
+              <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМНФакт>
+            </emc:СвИнОрг>
+            <!--1 or more repetitions:-->
+            <emc:СвРукОП СтУчНД="301" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+              <!--Optional:-->
+              <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2005-11-03+03:00" КемВыд="string" СвУдДок="string"/>
+              <emc:СведФЛ Пол="2" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2003-07-22" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+                <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+                <!--Optional:-->
+                <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <!--Optional:-->
+                  <emc:АдрРФ>string</emc:АдрРФ>
+                  <!--Optional:-->
+                  <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+                </emc:АдрМЖ>
+                <!--Optional:-->
+                <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2009-04-29+04:00" ВыдДок="string" КодВыдДок="strings">
+                  <!--Optional:-->
+                  <emc:expDate>2016-08-09+03:00</emc:expDate>
+                </emc:УдЛичнФЛ>
+              </emc:СведФЛ>
+            </emc:СвРукОП>
+          </emc:ИнПерПолн>
+        </emc:ПередПолн>
+      </emc:СвПередПолн>
+      <!--1 or more repetitions:-->
+      <emc:СвПолучПолн ТипПред="5">
+        <emc:Пред>
+          <!--Optional:-->
+          <emc:СведОрг СтУчНД="399" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2001-05-24+04:00" КемВыд="string" СвУдДок="string"/>
+            <!--Optional:-->
+            <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрРег>
+          </emc:СведОрг>
+          <!--Optional:-->
+          <emc:СведИП СтУчНД="399" НаимИП="string" ОГРНИП="stringstringstr" ИННФЛ="stringstring" СНИЛС="stringstringst">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2003-10-08+04:00" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="1" ПрГражд="2" НомЕРН="stringstring" ДатаРожд="2017-10-08+03:00" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2017-09-26+03:00" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2015-08-01</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:СведИП>
+          <!--Optional:-->
+          <emc:СведФизЛ СтУчНД="299" ИННФЛ="stringstring" СНИЛС="stringstringst" Должность="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2010-08-02+04:00" КемВыд="string" СвУдДок="string"/>
+            <emc:СведФЛ Пол="2" ПрГражд="1" НомЕРН="stringstring" ДатаРожд="2007-11-25" МестоРожд="string" Гражданство="str" КонтактТлф="string" АдрЭлПочт="string">
+              <emc:ФИО Фамилия="string" Имя="string" Отчество="string"/>
+              <!--Optional:-->
+              <emc:АдрМЖ Регион="st" ИдФИАС="stringstringstringstringstringstring">
+                <!--You have a CHOICE of the next 2 items at this level-->
+                <!--Optional:-->
+                <emc:АдрРФ>string</emc:АдрРФ>
+                <!--Optional:-->
+                <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+              </emc:АдрМЖ>
+              <!--Optional:-->
+              <emc:УдЛичнФЛ КодВидДок="st" СерНомДок="string" ДатаДок="2015-08-07+03:00" ВыдДок="string" КодВыдДок="strings">
+                <!--Optional:-->
+                <emc:expDate>2011-08-02</emc:expDate>
+              </emc:УдЛичнФЛ>
+            </emc:СведФЛ>
+          </emc:СведФизЛ>
+          <!--Optional:-->
+          <emc:СведФилиал СтУчНД="299" НаимОрг="string" ИННЮЛ="stringstri" КПП="stringstr" ОГРН="stringstrings" РегНомер="string" НаимУчрДок="string" КонтактТлф="string" АдрЭлПочт="string">
+            <!--Optional:-->
+            <emc:ДокПдтв НаимДокПдтв="string" ДатаВыд="2009-12-05" КемВыд="string" СвУдДок="string"/>
+            <!--Optional:-->
+            <emc:АдрРег Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрРег>
+          </emc:СведФилиал>
+          <!--Optional:-->
+          <emc:СведИО СтУчНД="299" НаимИО="string" ИННЮЛ="stringstri" КПП="stringstr" НЗА="stringstrin" СтрРег="str" НаимРегОрг="string" РегНомер="string" КодНПРег="string" КонтактТлф="string" АдрЭлПочт="string" АдрСтрРег="string">
+            <!--Optional:-->
+            <emc:АдрМНФакт Регион="st" ИдФИАС="stringstringstringstringstringstring">
+              <!--You have a CHOICE of the next 2 items at this level-->
+              <!--Optional:-->
+              <emc:АдрРФ>string</emc:АдрРФ>
+              <!--Optional:-->
+              <emc:ФИАСАдрРФ>string</emc:ФИАСАдрРФ>
+            </emc:АдрМНФакт>
+          </emc:СведИО>
+        </emc:Пред>
+      </emc:СвПолучПолн>
+      <emc:СвПолн ТипПолн="1" ПрСовмПолн="1" ПрУтрПолн="2">
+        <!--Optional:-->
+        <emc:ТекстПолн>string</emc:ТекстПолн>
+        <!--Zero or more repetitions:-->
+        <emc:МашПолн МнПолн="string" КодПолн="string" НаимПолн="string">
+          <!--Zero or more repetitions:-->
+          <emc:ОгрСвПолн ИдОгр="100" КодОгр="string" НаимОгр="string" НаимЗначОгр="string">
+            <!--You have a CHOICE of the next 2 items at this level-->
+            <emc:КодЗначОгр>string</emc:КодЗначОгр>
+            <emc:ТексЗначОгр>string</emc:ТексЗначОгр>
+          </emc:ОгрСвПолн>
+        </emc:МашПолн>
+      </emc:СвПолн>
+      <!--Optional:-->
+      <emc:СвНотУд МестоДовер="string" НапрДокДовЕПГУ="0" НапрДокПовЕПГУ="1" НапрДокЗвлФНП="1" НапрДокПовФНП="0" УплНотДейст="1000.000000" ЛьготаСум="1000.000000" ДрИнфСист="string" ДрСпосВыд="string" ДопСвНотДовер="string">
+        <!--Optional:-->
+        <emc:ИнСвУдНадпис>string</emc:ИнСвУдНадпис>
+        <emc:СвНотДейств Должность="string" РегНомНот="string">
+          <emc:ФИОНотДейств Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:СвНотДейств>
+        <!--1 or more repetitions:-->
+        <emc:ПодпРукопис>
+          <emc:ХешPDFДок>string</emc:ХешPDFДок>
+          <emc:ПодпИзобр>string</emc:ПодпИзобр>
+          <emc:ХешПодп>string</emc:ХешПодп>
+          <emc:ДатаВремПодп>100</emc:ДатаВремПодп>
+          <emc:ФИООтв Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ПодпРукопис>
+        <!--Optional:-->
+        <emc:ВриоНот Должность="string" РегНомНот="string">
+          <emc:ФИОВриоНот Фамилия="string" Имя="string" Отчество="string"/>
+        </emc:ВриоНот>
+      </emc:СвНотУд>
+    </emc:Передов>
+  </emc:Документ>
+</emc:Доверенность>

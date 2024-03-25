@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-03-19T15:41:04.192Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="4YEquYgTti0xAEbmx_Oj" version="24.0.7" type="device">
+  <diagram id="-FO_y1RMNZfdumZSHgc4" name="Page-1">
+    <mxGraphModel dx="2261" dy="1858" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-1" value="УТМ организации-&#xa;отправителя акта" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="70" y="80" width="150" height="1750" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-2" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-1" vertex="1">
+          <mxGeometry x="70" y="70" width="10" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-121" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;align=left;" parent="_trdAR_tGCjuYgGlx_K1-1" vertex="1">
+          <mxGeometry x="70" y="795" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-149" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;align=left;" parent="_trdAR_tGCjuYgGlx_K1-1" vertex="1">
+          <mxGeometry x="70" y="1610" width="10" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="4229TvV5sY3JHiP3TjHw-8" value="12.Установка шифрованного соединения с использованием &lt;br style=&quot;font-size: 11px&quot;&gt;&lt;div style=&quot;font-size: 11px&quot;&gt;сертиф-ов от доверенного УЦ&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-1" vertex="1">
+          <mxGeometry x="-90" y="570" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-10" value="" style="verticalAlign=bottom;endArrow=block;entryX=-0.028;entryY=0.316;shadow=0;strokeWidth=1;exitX=1.143;exitY=0.223;exitDx=0;exitDy=0;exitPerimeter=0;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=11;" parent="1" source="_trdAR_tGCjuYgGlx_K1-2" target="_trdAR_tGCjuYgGlx_K1-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="275" y="160" as="sourcePoint" />
+            <mxPoint x="342" y="202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-11" value="&lt;div&gt;Акт на ТТН &lt;br&gt;&lt;/div&gt;&lt;div&gt;общая схема&lt;/div&gt;&lt;div&gt;Схема 1&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-120" y="-80" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-12" value="Предметная база&#xa;EGAIS_OR_NN2 хост: 10.10.4.123" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="390" y="-40" width="450" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-13" value="Транспортная&#xa;система&#xa;" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="290" y="80" width="100" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-14" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-13" vertex="1">
+          <mxGeometry x="45" y="70" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-3" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;align=left;" parent="_trdAR_tGCjuYgGlx_K1-13" vertex="1">
+          <mxGeometry x="45" y="555" width="10" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-93" value="10. Отправка акта в УТМ организации- отправителя накладной" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-13" vertex="1">
+          <mxGeometry x="-125" y="525" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-16" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;entryX=-0.2;entryY=0.022;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.4;exitY=0.402;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="_trdAR_tGCjuYgGlx_K1-14" target="_trdAR_tGCjuYgGlx_K1-38" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="214" as="sourcePoint" />
+            <mxPoint x="530" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-18" value="Сервис Bark" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="910" width="450" height="1930" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-20" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-18" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1300" as="sourcePoint" />
+            <mxPoint x="232" y="1313.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1300" />
+              <mxPoint x="345" y="1300" />
+              <mxPoint x="345" y="1314" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-21" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-18" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1340" as="sourcePoint" />
+            <mxPoint x="232" y="1353.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1340" />
+              <mxPoint x="345" y="1340" />
+              <mxPoint x="345" y="1354" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-22" value="25. Определение типа Акта&lt;br style=&quot;font-size: 11px&quot;&gt;&lt;div style=&quot;font-size: 11px&quot;&gt;&lt;div style=&quot;font-size: 11px&quot;&gt;(см. схему 3)&lt;/div&gt;&lt;/div&gt; " style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="230" y="1270" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-26" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-18" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1420" as="sourcePoint" />
+            <mxPoint x="232" y="1433.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1420" />
+              <mxPoint x="345" y="1420" />
+              <mxPoint x="345" y="1434" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-74" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="220" y="1280" width="10" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-134" value="26. Акт отказа/ Акт принятие" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="230" y="1320" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-135" value="&lt;div&gt;27. Вставка изменений по&lt;br&gt;складу отправител, проверки, &lt;br&gt;&lt;/div&gt;&lt;div&gt;обновление данных&lt;br&gt;&lt;/div&gt;&lt;div&gt;о работе сервиса см. схему 3.&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="230" y="1360" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-136" value="&lt;div&gt;28.1 Проверка акта расхождения, &lt;br&gt;&lt;/div&gt;&lt;div&gt;обновление данных (см. схему 3)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="230" y="1495" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-24" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-18" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1525" as="sourcePoint" />
+            <mxPoint x="232" y="1538.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1525" />
+              <mxPoint x="345" y="1525" />
+              <mxPoint x="345" y="1539" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-137" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-18" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1470" as="sourcePoint" />
+            <mxPoint x="232" y="1483.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1470" />
+              <mxPoint x="345" y="1470" />
+              <mxPoint x="345" y="1484" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-138" value="28. Акт расхождения" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-18" vertex="1">
+          <mxGeometry x="230" y="1450" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-141" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=11;entryX=1.043;entryY=0.055;entryDx=0;entryDy=0;entryPerimeter=0;" parent="_trdAR_tGCjuYgGlx_K1-18" target="_trdAR_tGCjuYgGlx_K1-140" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="220" y="1540" as="sourcePoint" />
+            <mxPoint x="-238" y="1540" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-37" value="Сервис предметной базы&#xa;с использованием процедур" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="390" width="450" height="1850" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-38" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="220" y="190" width="10" height="1110" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-39" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="230" as="sourcePoint" />
+            <mxPoint x="232" y="243.42000000000007" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="230" />
+              <mxPoint x="345" y="230" />
+              <mxPoint x="345" y="244" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-40" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="290" as="sourcePoint" />
+            <mxPoint x="232" y="303.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="290" />
+              <mxPoint x="345" y="290" />
+              <mxPoint x="345" y="304" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-41" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="330" as="sourcePoint" />
+            <mxPoint x="232" y="343.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="330" />
+              <mxPoint x="345" y="330" />
+              <mxPoint x="345" y="344" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-42" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="380" as="sourcePoint" />
+            <mxPoint x="232" y="393.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="380" />
+              <mxPoint x="345" y="380" />
+              <mxPoint x="345" y="394" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-54" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="420" as="sourcePoint" />
+            <mxPoint x="232" y="433.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="420" />
+              <mxPoint x="345" y="420" />
+              <mxPoint x="345" y="434" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-55" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="470" as="sourcePoint" />
+            <mxPoint x="232" y="483.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="470" />
+              <mxPoint x="345" y="470" />
+              <mxPoint x="345" y="484" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-59" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="510" as="sourcePoint" />
+            <mxPoint x="232" y="523.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="510" />
+              <mxPoint x="345" y="510" />
+              <mxPoint x="345" y="524" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-61" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="560" as="sourcePoint" />
+            <mxPoint x="232" y="573.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="560" />
+              <mxPoint x="345" y="560" />
+              <mxPoint x="345" y="574" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-62" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="595" as="sourcePoint" />
+            <mxPoint x="232" y="608.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="595" />
+              <mxPoint x="345" y="595" />
+              <mxPoint x="345" y="609" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-71" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=11;entryX=1.1;entryY=0.208;entryDx=0;entryDy=0;entryPerimeter=0;" parent="_trdAR_tGCjuYgGlx_K1-37" target="4229TvV5sY3JHiP3TjHw-5" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="220" y="622" as="sourcePoint" />
+            <mxPoint x="-238" y="619.96" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-75" value="&lt;div style=&quot;font-size: 11px&quot;&gt;3. Проводится ряд проверок и &lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px&quot;&gt;вставка шапки (см. схему 2)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="195" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-76" value="&lt;div&gt;4. Проводится ряд проверок и вставка&lt;/div&gt;&lt;div&gt;&amp;nbsp;диапазонов марок и вставка марок позиции &lt;br&gt;&lt;/div&gt;&lt;div&gt;(при наличии)( см. схему 2).&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="250" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-77" value="&lt;div style=&quot;font-size: 11px&quot;&gt;5. Проводится ряд проверок ( см. схему 2).&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="310" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-78" value="&lt;div style=&quot;font-size: 11px&quot; align=&quot;left&quot;&gt;6. В зависимости от результата проверки &lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px&quot; align=&quot;left&quot;&gt;сервис определяет тип акта.&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="350" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-84" value="7. Акт Отказа" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="400" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-85" value="7.1 Вызов процедуры&lt;br style=&quot;font-size: 11px&quot;&gt;распроводки накладной" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="440" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-87" value="&lt;div style=&quot;font-size: 11px&quot;&gt;8. Акт принятия&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="490" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-88" value="&lt;div style=&quot;font-size: 11px&quot;&gt;8.1 Задание на проведение акта. &lt;br style=&quot;font-size: 11px&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px&quot;&gt;Далее продолжение с п.20&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="530" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-89" value="9. Акт расхождения" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="575" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-90" value="11. Ожидание ответа на акт&lt;br style=&quot;font-size: 11px&quot;&gt;расхождения" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="625" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-63" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="653" as="sourcePoint" />
+            <mxPoint x="232" y="666.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="653" />
+              <mxPoint x="345" y="653" />
+              <mxPoint x="345" y="667" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-96" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;exitX=1.2;exitY=0.438;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.01;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-42.89999999999998" y="694.9999999999999" as="sourcePoint" />
+            <mxPoint x="220.0000000000001" y="695.9999999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-97" value="&lt;div style=&quot;font-size: 11px&quot;&gt;13. Передача документа&amp;nbsp; в обработку&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="-40" y="675" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-107" value="14. Поступает ответ на акт расхождений" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="695" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-109" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="715" as="sourcePoint" />
+            <mxPoint x="232" y="728.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="715" />
+              <mxPoint x="345" y="715" />
+              <mxPoint x="345" y="729" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-111" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="775" as="sourcePoint" />
+            <mxPoint x="232" y="788.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="775" />
+              <mxPoint x="345" y="775" />
+              <mxPoint x="345" y="789" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-112" value="&lt;div&gt;15.Проведение проверок &lt;br&gt;&lt;/div&gt;&lt;div&gt;(см. схему 2)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="740" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-110" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="810" as="sourcePoint" />
+            <mxPoint x="232" y="823.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="810" />
+              <mxPoint x="345" y="810" />
+              <mxPoint x="345" y="824" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-113" value="16. Вставка ответа" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="790" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-118" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="850" as="sourcePoint" />
+            <mxPoint x="232" y="863.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="850" />
+              <mxPoint x="345" y="850" />
+              <mxPoint x="345" y="864" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-119" value="17. Обработка ответа на акт расхождений" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="830" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-117" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="955" as="sourcePoint" />
+            <mxPoint x="232" y="968.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="955" />
+              <mxPoint x="345" y="955" />
+              <mxPoint x="345" y="969" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-122" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=11;entryX=1.2;entryY=0.208;entryDx=0;entryDy=0;entryPerimeter=0;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="220" y="924" as="sourcePoint" />
+            <mxPoint x="-238" y="924" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-123" value="&lt;div&gt;19. Повторный запуск процедуры &lt;br&gt;&lt;/div&gt;&lt;div&gt;обработки акта&amp;nbsp; с п.5.&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="920" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-116" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="990" as="sourcePoint" />
+            <mxPoint x="232" y="1003.4200000000001" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="990" />
+              <mxPoint x="345" y="990" />
+              <mxPoint x="345" y="1004" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-124" value="&lt;div&gt;20. Проведение проверок (см. схему 2)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="970" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-115" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1040" as="sourcePoint" />
+            <mxPoint x="232" y="1053.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1040" />
+              <mxPoint x="345" y="1040" />
+              <mxPoint x="345" y="1054" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-125" value="&lt;div&gt;21. Определение необходимости передачи &lt;br&gt;&lt;/div&gt;&lt;div&gt;акта в помарочную базу.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1010" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-114" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1090" as="sourcePoint" />
+            <mxPoint x="232" y="1103.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1090" />
+              <mxPoint x="345" y="1090" />
+              <mxPoint x="345" y="1104" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-126" value="&lt;div&gt;22. Передача не нужна или &lt;br&gt;&lt;/div&gt;&lt;div&gt;ответ уже был получен.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1060" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-129" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1140" as="sourcePoint" />
+            <mxPoint x="232" y="1153.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1140" />
+              <mxPoint x="345" y="1140" />
+              <mxPoint x="345" y="1154" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-128" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1190" as="sourcePoint" />
+            <mxPoint x="232" y="1203.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1190" />
+              <mxPoint x="345" y="1190" />
+              <mxPoint x="345" y="1204" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-130" value="22.1 Вставка изменений по&lt;br&gt;складу получателя" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1110" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-131" value="22.2 Вставка изменений по&lt;br&gt;складу отправителя" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1160" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-73" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;entryX=0.1;entryY=0.037;entryDx=0;entryDy=0;entryPerimeter=0;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="1285" as="sourcePoint" />
+            <mxPoint x="740.9999999999995" y="1288.3200000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-127" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1240" as="sourcePoint" />
+            <mxPoint x="232" y="1253.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1240" />
+              <mxPoint x="345" y="1240" />
+              <mxPoint x="345" y="1254" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-132" value="&lt;div&gt;23. Передача в помарочную&lt;/div&gt;&lt;div&gt; базу необходима.&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1210" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-133" value="24. Передача акта в помарочную базу" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="227" y="1270" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-140" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="220" y="1520" width="10" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-28" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1570" as="sourcePoint" />
+            <mxPoint x="232" y="1583.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1570" />
+              <mxPoint x="345" y="1570" />
+              <mxPoint x="345" y="1584" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-108" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1610" as="sourcePoint" />
+            <mxPoint x="232" y="1623.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1610" />
+              <mxPoint x="345" y="1610" />
+              <mxPoint x="345" y="1624" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-142" value="&lt;div&gt;30. Определение статуса &lt;br&gt;&lt;/div&gt;&lt;div&gt;прохождения проверок&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1540" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-143" value="31. Проверки пройдены успешно" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="225" y="1590" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-144" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1670" as="sourcePoint" />
+            <mxPoint x="232" y="1683.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1670" />
+              <mxPoint x="345" y="1670" />
+              <mxPoint x="345" y="1684" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-145" value="32. Вызов процедуры&lt;br&gt;проведения акта (Переход к п. 5)" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1640" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-146" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1710" as="sourcePoint" />
+            <mxPoint x="232" y="1723.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1710" />
+              <mxPoint x="345" y="1710" />
+              <mxPoint x="345" y="1724" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-147" value="33. Проверка не пройдена" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1690" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-148" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;fontSize=11;startArrow=none;entryX=1.2;entryY=0.754;entryDx=0;entryDy=0;entryPerimeter=0;align=left;fillColor=#f8cecc;strokeColor=#b85450;" parent="_trdAR_tGCjuYgGlx_K1-37" edge="1">
+          <mxGeometry y="36" relative="1" as="geometry">
+            <mxPoint x="230" y="1790" as="sourcePoint" />
+            <mxPoint x="232" y="1803.42" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="268" y="1790" />
+              <mxPoint x="345" y="1790" />
+              <mxPoint x="345" y="1804" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-153" value="35. Удаление акта&lt;br&gt;и позиций акта" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="230" y="1760" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-17" value="&lt;div style=&quot;font-size: 11px;&quot;&gt;2. Передача документа &lt;br style=&quot;font-size: 11px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;в обработку&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="-20" y="180" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-152" value="34. Отправление квитанции с отказом в УТМ организации-отправителя акта" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="_trdAR_tGCjuYgGlx_K1-37" vertex="1">
+          <mxGeometry x="-210" y="1730" width="410" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-72" value="Помарочная база&#xa;barkp, хост 10.10.5.153" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="910" y="-40" width="450" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-95" value="" style="verticalAlign=bottom;endArrow=block;shadow=0;strokeWidth=1;exitX=1.043;exitY=0.744;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=11;" parent="1" source="4229TvV5sY3JHiP3TjHw-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="151.71000000000006" y="685" as="sourcePoint" />
+            <mxPoint x="335" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-98" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;Справка:&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="1550" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-99" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-160" y="1680" as="sourcePoint" />
+            <mxPoint x="40" y="1680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-100" value="" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=12;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-160" y="1640" as="sourcePoint" />
+            <mxPoint x="40" y="1640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-101" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;Отображает обычную &lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;последовательность&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="1649" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-102" value="&lt;div style=&quot;font-size: 12px&quot;&gt;Отображает альтернативную&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;последовательность при наступлении &lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;случая возникновения возможного хода &lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;событий с негативным исходом&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="1580" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-103" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-160" y="1760" as="sourcePoint" />
+            <mxPoint x="40" y="1760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-104" value="&lt;div style=&quot;font-size: 12px&quot;&gt;Отображает альтернативную&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;последовательность при &lt;br style=&quot;font-size: 12px&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px&quot;&gt;наступлении случаев возникновения&lt;br style=&quot;font-size: 12px&quot;&gt;&lt;/div&gt;второго возможного исхода событий" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="1690" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-105" value="" style="html=1;verticalAlign=bottom;endArrow=block;rounded=0;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" edge="1">
+          <mxGeometry width="80" relative="1" as="geometry">
+            <mxPoint x="-160" y="1840" as="sourcePoint" />
+            <mxPoint x="40" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-106" value="&lt;div style=&quot;font-size: 12px;&quot;&gt;Отображает непосредственно&amp;nbsp; &lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;в альтернативной последовательности &lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;наступление случая возникновения &lt;br style=&quot;font-size: 12px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;альтернативного варианта хода событий&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="-160" y="1770" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-120" value="18.Отправка ответа получателю накладной (отправителю акта)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="205" y="900" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-139" value="29. Передача данных в сервис&amp;nbsp; от сервиса помарочного учета" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="715" y="1519" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_trdAR_tGCjuYgGlx_K1-150" value="" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;rounded=0;fontSize=11;entryX=0.9;entryY=0.508;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#f8cecc;strokeColor=#b85450;exitX=0.043;exitY=0.737;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="_trdAR_tGCjuYgGlx_K1-140" target="_trdAR_tGCjuYgGlx_K1-149" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="2030" as="sourcePoint" />
+            <mxPoint x="520" y="2030" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4229TvV5sY3JHiP3TjHw-1" value="1.Установка шифрованного&lt;br style=&quot;font-size: 11px&quot;&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;соединения с использованием &lt;br style=&quot;font-size: 11px;&quot;&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;сертиф-ов от доверенного УЦ&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="165" y="160" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4229TvV5sY3JHiP3TjHw-3" value="УТМ организации-&#xa;отправителяТТН" style="shape=umlLifeline;perimeter=lifelinePerimeter;container=1;collapsible=0;recursiveResize=0;rounded=0;shadow=0;strokeWidth=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-100" y="80" width="150" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="4229TvV5sY3JHiP3TjHw-5" value="" style="points=[];perimeter=orthogonalPerimeter;rounded=0;shadow=0;strokeWidth=1;fontSize=11;align=left;" parent="4229TvV5sY3JHiP3TjHw-3" vertex="1">
+          <mxGeometry x="70" y="515" width="10" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,5 +1,7 @@
 import zz.z11
 from datetime import datetime as dt
+import exrex
+
 
 
 def gen_150_mark(alk: str, serial: str, number: str):
@@ -23,7 +25,8 @@ def gen_150_mark(alk: str, serial: str, number: str):
     else:
         print('Lenght of number must be 8 or less')
 
-print(gen_150_mark('200','200','00456001'))
-print(gen_150_mark('200','200','00456002'))
-print(gen_150_mark('200','200','00456003'))
-print(gen_150_mark('200','200','00456004'))
+print(gen_150_mark('200','200','00456018'))
+print(gen_150_mark('200','200','00456019'))
+print(gen_150_mark('200','200','00456020'))
+print(gen_150_mark('200','200','00456021'))
+print(gen_150_mark('200','200','00456022'))

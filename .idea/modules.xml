@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../parser_sites/.idea/parser_sites.iml" filepath="$PROJECT_DIR$/../parser_sites/.idea/parser_sites.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../utm_helper/.idea/utm_helper.iml" filepath="$PROJECT_DIR$/../utm_helper/.idea/utm_helper.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/utmmeet.iml" filepath="$PROJECT_DIR$/.idea/utmmeet.iml" />
     </modules>
   </component>

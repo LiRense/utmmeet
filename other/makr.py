@@ -25,8 +25,10 @@ def gen_150_mark(alk: str, serial: str, number: str):
     else:
         print('Lenght of number must be 8 or less')
 
-print(gen_150_mark('200','200','00456018'))
-print(gen_150_mark('200','200','00456019'))
-print(gen_150_mark('200','200','00456020'))
-print(gen_150_mark('200','200','00456021'))
-print(gen_150_mark('200','200','00456022'))
+pref = '00'
+number = 456123
+col = 100
+for i in range(col):
+    print('<gz:NCode>'+gen_150_mark('200','200',pref+str(number))+'</gz:NCode>')
+    number += 1
+print(number)

@@ -1,0 +1,25 @@
+<ns:Documents xmlns:c="http://fsrar.ru/WEGAIS/Common" xmlns:ck="http://fsrar.ru/WEGAIS/ChequeV4" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ns:Owner>
+        <ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+    </ns:Owner>
+    <ns:Document>
+        <ns:ChequeV4>
+            <ck:Identity>1</ck:Identity>
+            <ck:Header>
+                <ck:Date>2024-04-04T15:01:00</ck:Date>
+                <ck:Kassa>1</ck:Kassa>
+                <ck:Shift>1</ck:Shift>
+                <ck:Number>1</ck:Number>
+                <ck:Type>Возврат</ck:Type>
+            </ck:Header>
+            <ck:Content>
+                <ck:Catering>
+                    <ck:Barcode>200200004560270424001JTMIAV6KHMFYLNB3P2IFDQ7RHLOURUAV1EOJUAVC8DFT1WXEIKZI3VOPGS2QHYRR06NFAKOQRNCVIGJFVKWOSLUYERUDIDT34AZLJGTHAW25Z4AGFBWSOROPMSQ3UPIY0</ck:Barcode>
+                    <ck:EAN>4015576078983</ck:EAN>
+                    <ck:Price>1330</ck:Price>
+                    <ck:Volume>500</ck:Volume>
+                </ck:Catering>
+            </ck:Content>
+        </ns:ChequeV4>
+    </ns:Document>
+</ns:Documents>

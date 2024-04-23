@@ -102,15 +102,20 @@ def get_data_old_lk():
     full_data = r.json()
     print(full_data)
 
+columns = ['declTaxBaseAnhydrousVolume',
+           '']
 
-inns = [9303019720,
+inns = [3128053185,
+        9303019720,
         9402003103,
         3124010381,
         3128053185]
 
-for inn in inns:
-    print(f'INN {inn}\n________________________________')
-    for month in range(1,13):
-        from_lk = get_data_lk(inn, "declTaxBaseAnhydrousVolume", month)
-        print(f'Месяц {month} - {from_lk}')
-    print('________________________________')
+
+for column in columns:
+    for inn in inns:
+        print(f'INN {inn}\n________________________________')
+        for month in range(1,13):
+            from_lk = get_data_lk(inn, column, month)
+            print(f'Месяц {month} - {from_lk}')
+        print('________________________________')

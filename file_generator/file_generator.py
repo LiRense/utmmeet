@@ -1,1 +1,4 @@
-open('large39.txt', "w").truncate((4*10**9-10**8))
+open('kolya.zip', "w").truncate((2**20))
+
+# 2**10 - 1024 B - 1 KB
+# 2**20 - 1024*1024 - 1 MB

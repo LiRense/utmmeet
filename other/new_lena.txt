@@ -1,180 +1,1982 @@
-h4. Тестирование
+h4. Тестирование решений выездной оценки
 
-h6. Среда тестирования
+h6. Среда
 
 <pre>
-lk-license-permits: bf191f14 dev
-front lk: 9287196b dev
+lk-brewers-assessment: 8d130ee4 develop
 </pre>
 
 ---
 
 h6. Кейсы
 
----
-
-h6. Первый блок проверок
-
-# Временные разрешения
-## Проверить, в столбце "Тип заявления" на вкладке «На рассмотрении» отображается при фильтрации следующее:
-Ожидаемый результат: Выдача разрешения, Исправление опечаток
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-06-40.png!
-}}
-## Проверить, в столбце "Тип заявления" на вкладке «Рассмотренные» отображается при фильтрации следующее:
-Ожидаемый результат: Выдача разрешения, Исправление опечаток
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-06-50.png!
-}}
-# Государственная регистрация ОТО
-## Проверить, в столбце "Тип заявления" на вкладке «На рассмотрении» отображается при фильтрации следующее:
-Ожидаемый результат: Принятие решений, Внесение изменений в сведения об оборудовании, Исправление ошибок(опечаток)
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-07-29.png!
-}}
-## Проверить, в столбце "Тип заявления" на вкладке «Рассмотренные» отображается при фильтрации следующее:
-Ожидаемый результат: Принятие решений, Внесение изменений в сведения об оборудовании, Исправление ошибок(опечаток)
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-08-08.png!
-}}
-# Допустимость использования ОТО
-## Проверить, в столбце "Тип заявления" на вкладке «На рассмотрении» отображается при фильтрации следующее:
-Ожидаемый результат: Отсутствует столбец "Тип заявления", есть столбец "Выдача заключений"
-*Полученный результат: Нет столбца*{{collapse(Скрин)
-!18-09-28.png!
-}}
-## Проверить, в столбце "Тип заявления" на вкладке «Рассмотренные» отображается при фильтрации следующее:
-Ожидаемый результат: Отсутствует столбец "Тип заявления", есть столбец "Выдача заключений"
-*Полученный результат: Нет столбца*{{collapse(Скрин)
-!18-09-50.png!
-}}
-# Заключения НМПТ
-## Проверить, в столбце "Тип заявления" на вкладке «На рассмотрении» отображается при фильтрации следующее:
-Ожидаемый результат: Отсутствует столбец "Тип заявления", есть столбец "Выдача заключений"
-*Полученный результат: Нет столбца*{{collapse(Скрин)
-!18-10-24.png!
-}}
-## Проверить, в столбце "Тип заявления" на вкладке «Рассмотренные» отображается при фильтрации следующее:
-Ожидаемый результат: Отсутствует столбец "Тип заявления", есть столбец "Выдача заключений"
-*Полученный результат: Нет столбца*{{collapse(Скрин)
-!18-10-38.png!
-}}
+# GET /dashboard/assessment/decision/{assessmentAndDecisionId}
+## Запрос информации о решении для записей с id блоков провеок в диапазоне 1-37(Записи в БД отличные от других)
+## Запрос информации о решении для записей с processed != NULL
+## Запрос информации о решении для записей с processed == NULL
+## Запрос информации о решении для записей с несуществующими id блоками проверок
+# POST /dashboard/assessment/decision/{assessmentAndDecisionId}
+## Положительные кейсы
+### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_reject_reason и decision) у блока проверок статус от 1-7                   P.S. удали перед отправкой: в эндпоинте в decision в reason ставим решения по отказу, можно примеры брять из справочника decision_spr, SPRID в json берем из decision_spr
+### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_exclusion_reason и decision) у блока проверок статус от 10,11,14           P.S. удали перед отправкой: в эндпоинте в decision в reason ставим решения по отказу, можно примеры брять из справочника decision_spr, SPRID в json берем из decision_spr
+### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверок статус от 8,9,12,13                      P.S. удали перед отправкой: в эндпоинте в decision в sprid - делает апдейт в таблицу, для того, чтобы апдейтить - нужно в json в procAddressesID поставить id записи из таблицы(заблаговременно нужно поставить будет запись туда), dopInfo в json ставим, что обновим ну и по мелочам там заполнить в json для записи
+### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверки без обработанного решения(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей)
+## Отрицательные кейсы
+### Несуществующий идентификатор этапа проверки
+### Ошибки при отказе(несуществующие причины)
+### Ошибки при исключении(несуществующий причины)
+### Попробовать положительное решение, но с несуществующей записью в proc_addresses
+# GET /dashboard/assessment/decision/reasons
+## Проверяем все идентификаторы типа решения(от 1 до 14)
 
 ---
 
-h6. Второй блок проверок
+h6. Тесты
 
-# Вкладка "На рассмотрении", проверить, что отсутствуют показатели «Запросов в СМЭВ» и «ЕПГУ»
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-11-14.png!
+# GET /dashboard/assessment/decision/{assessmentAndDecisionId}
+## Запрос информации о решении для записей с id блоков проверок в диапазоне 1-37(Записи в БД отличные от других)
+У записи 15 в БД имеется *assessment_spr_id*
+%{color:red;font-weight:bold}Полученный результат: 400 	Error: Bad Request%{{collapse(Запрос)
+<pre>
+curl -X GET "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/15" -H "accept: */*"
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-11-43.png!
+{{collapse(Лог)
+<pre>
+2024-04-25 16:13:00.239 TRACE 1 --- [nio-8008-exec-2] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:13:00.239 TRACE 1 --- [nio-8008-exec-2] r.c.l.controller.DecisionController      : [GET] getDecisionByAssessmentAndDecisionId()
+2024-04-25 16:13:00.242 TRACE 1 --- [nio-8008-exec-2] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=15, assessmentSprId=3, decisionSprId=null, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-12-01.png!
+## Запрос информации о решении для записей с processed != NULL
+У записи 1 в БД имеется *decision_spr_id* и *processed*
+%{color:red;font-weight:bold}Полученный результат: Ошибка БД%{{collapse(Запрос)
+<pre>
+curl -X GET "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/1" -H "accept: */*"
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-12-22.png!
+<pre>
+2024-04-25 16:08:54.632 ERROR 1 --- [nio-8008-exec-4] r.c.l.c.exceptions.ApplicationException  : Ошибка БД
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select ass.*, null as processed  from assessment_and_decision as ass where ass.id = ? order by id desc limit 1]; nested exception is org.postgresql.util.PSQLException: Cannot cast to boolean: "2023-10-05 00:00:00"
+</pre>
+{{collapse(Логи с ошибкой)
+<pre>
+2024-04-25 16:08:54.625 TRACE 1 --- [nio-8008-exec-4] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:08:54.626 TRACE 1 --- [nio-8008-exec-4] r.c.l.controller.DecisionController      : [GET] getDecisionByAssessmentAndDecisionId()
+2024-04-25 16:08:54.632 ERROR 1 --- [nio-8008-exec-4] r.c.l.c.exceptions.ApplicationException  : Ошибка БД
+
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [select ass.*, null as processed  from assessment_and_decision as ass where ass.id = ? order by id desc limit 1]; nested exception is org.postgresql.util.PSQLException: Cannot cast to boolean: "2023-10-05 00:00:00"
+	at org.springframework.jdbc.support.SQLStateSQLExceptionTranslator.doTranslate(SQLStateSQLExceptionTranslator.java:101) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1443) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:633) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:790) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at ru.centerinform.lkassessment.repository.AssessmentAndDecisionRepository.getAnyLastAssessmentOrDecisionByAssDecId(AssessmentAndDecisionRepository.java:110) ~[classes!/:na]
+	at ru.centerinform.lkassessment.repository.AssessmentAndDecisionRepository$$FastClassBySpringCGLIB$$c0ef7b7f.invoke(<generated>) ~[classes!/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at ru.centerinform.lkassessment.repository.AssessmentAndDecisionRepository$$EnhancerBySpringCGLIB$$2c9195ab.getAnyLastAssessmentOrDecisionByAssDecId(<generated>) ~[classes!/:na]
+	at ru.centerinform.lkassessment.service.DecisionService.getDecision(DecisionService.java:57) ~[classes!/:na]
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>) ~[classes!/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:687) ~[spring-aop-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$f7c3c8ff.getDecision(<generated>) ~[classes!/:na]
+	at ru.centerinform.lkassessment.controller.DecisionController.getDecisionByAssessmentAndDecisionId(DecisionController.java:83) ~[classes!/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626) ~[tomcat-embed-core-9.0.37.jar!/:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) ~[tomcat-embed-core-9.0.37.jar!/:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39) ~[classes!/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178) ~[spring-security-web-5.3.3.RELEASE.jar!/:5.3.3.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93) ~[spring-boot-actuator-2.3.2.RELEASE.jar!/:2.3.2.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.37.jar!/:9.0.37]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: org.postgresql.util.PSQLException: Cannot cast to boolean: "2023-10-05 00:00:00"
+	at org.postgresql.jdbc.BooleanTypeUtil.cannotCoerceException(BooleanTypeUtil.java:99) ~[postgresql-42.2.14.jar!/:42.2.14]
+	at org.postgresql.jdbc.BooleanTypeUtil.fromString(BooleanTypeUtil.java:67) ~[postgresql-42.2.14.jar!/:42.2.14]
+	at org.postgresql.jdbc.BooleanTypeUtil.castToBoolean(BooleanTypeUtil.java:43) ~[postgresql-42.2.14.jar!/:42.2.14]
+	at org.postgresql.jdbc.PgResultSet.getBoolean(PgResultSet.java:1975) ~[postgresql-42.2.14.jar!/:42.2.14]
+	at org.postgresql.jdbc.PgResultSet.getBoolean(PgResultSet.java:2492) ~[postgresql-42.2.14.jar!/:42.2.14]
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getBoolean(HikariProxyResultSet.java) ~[HikariCP-3.4.5.jar!/:na]
+	at ru.centerinform.lkassessment.repository.mapper.AssessmentAndDecisionMapper.mapRow(AssessmentAndDecisionMapper.java:20) ~[classes!/:na]
+	at ru.centerinform.lkassessment.repository.mapper.AssessmentAndDecisionAdditionalMapper.mapRow(AssessmentAndDecisionAdditionalMapper.java:12) ~[classes!/:na]
+	at ru.centerinform.lkassessment.repository.mapper.AssessmentAndDecisionAdditionalMapper.mapRow(AssessmentAndDecisionAdditionalMapper.java:9) ~[classes!/:na]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:679) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617) ~[spring-jdbc-5.2.8.RELEASE.jar!/:5.2.8.RELEASE]
+	... 116 common frames omitted
+</pre>
 }}
-# Вкладка "Рассмотренные", проверить, что отсутствует показатель «ЕПГУ»
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-13-00.png!
+## Запрос информации о решении для записей с processed == NULL
+%{color:green;font-weight:bold}Полученный результат: Ошибка БД%{{collapse(Запрос)
+<pre>
+curl -X GET "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/147906" -H "accept: */*"
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-13-25.png!
+{{collapse(Ответ)
+<pre>
+{
+  "sprId": 3,
+  "tabName": "Решение об отказе во включении",
+  "isProcessed": false,
+  "assAndDecId": 147906,
+  "isSent": false,
+  "subdivisions": [
+    {
+      "id": 110328,
+      "address": "12",
+      "kpp": "123123123",
+      "inn": "7841051711"
+    }
+  ],
+  "reasons": []
+}
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-14-24.png!
+{{collapse(Лог)
+<pre>
+2024-04-25 16:18:06.667 TRACE 1 --- [nio-8008-exec-1] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:18:06.669 TRACE 1 --- [nio-8008-exec-1] r.c.l.controller.DecisionController      : [GET] getDecisionByAssessmentAndDecisionId()
+2024-04-25 16:18:06.671 TRACE 1 --- [nio-8008-exec-1] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=147906, assessmentSprId=null, decisionSprId=3, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-14-34.png!
+## Запрос информации о решении для записей с несуществующими id блоками проверок
+%{color:green;font-weight:bold}Полученный результат: 400	Error: Bad Request%{{collapse(Запрос)
+<pre>
+curl -X GET "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/50" -H "accept: */*"
+</pre>
 }}
-# Вкладки «На рассмотрении» и «Рассмотренные», проверить, что в столбце «Способ подачи» стоит ЕПГУ
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-15-10.png!
-!18-15-14.png!
+{{collapse(лог)
+<pre>
+2024-04-25 16:21:30.366 TRACE 1 --- [nio-8008-exec-6] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:21:30.367 TRACE 1 --- [nio-8008-exec-6] r.c.l.controller.DecisionController      : [GET] getDecisionByAssessmentAndDecisionId()
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-15-25.png!
-!18-15-32.png!
+# POST /dashboard/assessment/decision/{assessmentAndDecisionId}
+## Положительные кейсы
+### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_reject_reason и decision) у блока проверок статус от 1-7
+В БД в таблице *assessment_and_decision* выбрал блок проверки с id 392266
+В поле decision_spr_id поочередно вставляю id от 1 до 7 и дергаю запрос с {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 0,
+      "reason": "0"
+    }
+  ],
+  "sprId": 0,
+  "subdivisions": [
+    {
+      "address": "string",
+      "dopInfo": "string",
+      "id": 0,
+      "inn": "string",
+      "kpp": "string",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 0
+    }
+  ]
+}
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-15-43.png!
-!18-15-47.png!
+#### {{collapse(лог decision_spr_id = 1)
+<pre>
+2024-04-25 16:31:36.275 TRACE 1 --- [nio-8008-exec-9] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:31:36.277 TRACE 1 --- [nio-8008-exec-9] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-25 16:31:36.281 TRACE 1 --- [nio-8008-exec-9] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=1, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-25 16:31:36.281 TRACE 1 --- [nio-8008-exec-9] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=0)])
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-15-58.png!
-!18-16-18.png!
+#### {{collapse(лог decision_spr_id = 2)
+<pre>
+2024-04-25 16:31:53.513 TRACE 1 --- [nio-8008-exec-6] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-25 16:31:53.515 TRACE 1 --- [nio-8008-exec-6] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-25 16:31:53.518 TRACE 1 --- [nio-8008-exec-6] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=2, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-25 16:31:53.518 TRACE 1 --- [nio-8008-exec-6] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=0)])
+</pre>
 }}
-# Вкладка «Рассмотренные», проверить, что добавлен столбец «Номер ЕРУЛ»
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-17-35.png!
+#### {{collapse(лог decision_spr_id = 3)
+<pre>
+2024-04-26 10:21:19.638 TRACE 1 --- [nio-8008-exec-9] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:21:19.703 TRACE 1 --- [nio-8008-exec-9] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:21:19.747 TRACE 1 --- [nio-8008-exec-9] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=3, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:21:19.766 TRACE 1 --- [nio-8008-exec-9] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=string)])
+2024-04-26 10:21:19.851 TRACE 1 --- [nio-8008-exec-8] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-17-55.png!
+#### {{collapse(лог decision_spr_id = 4)
+<pre>
+2024-04-26 10:22:13.213 TRACE 1 --- [nio-8008-exec-7] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:22:13.216 TRACE 1 --- [nio-8008-exec-7] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:22:13.219 TRACE 1 --- [nio-8008-exec-7] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=4, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:22:13.220 TRACE 1 --- [nio-8008-exec-7] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=string)])
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-18-10.png!
+#### {{collapse(лог decision_spr_id = 5)
+<pre>
+2024-04-26 10:22:36.261 TRACE 1 --- [nio-8008-exec-2] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:22:36.264 TRACE 1 --- [nio-8008-exec-2] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:22:36.267 TRACE 1 --- [nio-8008-exec-2] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=5, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:22:36.267 TRACE 1 --- [nio-8008-exec-2] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=string)])
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-18-31.png!
+#### {{collapse(лог decision_spr_id = 6)
+<pre>
+2024-04-26 10:23:09.745 TRACE 1 --- [io-8008-exec-10] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:23:09.748 TRACE 1 --- [io-8008-exec-10] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:23:09.750 TRACE 1 --- [io-8008-exec-10] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=6, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:23:09.751 TRACE 1 --- [io-8008-exec-10] r.c.l.h.a.DecWithoutAssRejectHandler     : сохраняем 'решение об отказе во включении в реестр', отправленное решение PostDecision(sprId=0, isDraft=true, subdivisions=[Subdivision(id=0, procAddressesId=0, address=string, kpp=string, inn=string, dopInfo=string, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=0, reason=string)])
+</pre>
 }}
-# Вкладка «На рассмотрении», проверить, что добавлены 2 столбца "Дата регистрации в СЭД" и "Номер регистрации в СЭД"
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-19-57.png!
+#### {{collapse(лог decision_spr_id = 7)
+<pre>
+2024-04-26 10:23:29.196 TRACE 1 --- [nio-8008-exec-3] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:23:29.199 TRACE 1 --- [nio-8008-exec-3] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:23:29.201 TRACE 1 --- [nio-8008-exec-3] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=7, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:23:29.212 TRACE 1 --- [nio-8008-exec-3] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$6e69105d.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-20-13.png!
+%{color:red;font-weight:bold}Полученный результат: с 1 по 6 нормально обработался отказ, произошли вставки в decision и decision_reject_reason, но на 7 статусе мы получили ошибку "400 не найден обработчик для данного решения". Хотя в БД в decison_spr есть запись про отрицательное решение с id = 7%
+### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_exclusion_reason и decision) у блока проверок статус от 10,11,14
+В БД в таблице *assessment_and_decision* выбрал блок проверки с id 392266
+В поле decision_spr_id поочередно вставляю id 10,11,14 и дергаю запрос
+#### id = 10 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 10,
+      "reason": "Решение об исключении"
+    }
+  ],
+  "sprId": 10,
+  "subdivisions": [
+    {
+      "address": "string",
+      "dopInfo": "string",
+      "id": 0,
+      "inn": "string",
+      "kpp": "string",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 0
+    }
+  ]
+}
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-20-26.png!
+{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/392266" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 10, \"reason\": \"Решение об исключении\" } ], \"sprId\": 10, \"subdivisions\": [ { \"address\": \"string\", \"dopInfo\": \"string\", \"id\": 0, \"inn\": \"string\", \"kpp\": \"string\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 0 } ]}"
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-20-34.png!
+{{collapse(Логи)
+<pre>
+2024-04-26 10:38:04.149 TRACE 1 --- [nio-8008-exec-1] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:38:04.152 TRACE 1 --- [nio-8008-exec-1] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:38:04.154 TRACE 1 --- [nio-8008-exec-1] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=10, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:38:04.156 TRACE 1 --- [nio-8008-exec-1] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$6e69105d.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
 }}
-# Вкладка «Рассмотренные» , проверить, что добавлен столбец "Дата отправки на ЕПГУ"
-## Временные разрешения
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-21-16.png!
+#### id = 11 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 11,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 11,
+  "subdivisions": [
+    {
+      "address": "string",
+      "dopInfo": "string",
+      "id": 0,
+      "inn": "string",
+      "kpp": "string",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 0
+    }
+  ]
+}
+</pre>
 }}
-## Государственная регистрация ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-21-27.png!
+{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/392266" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 11, \"reason\": \"Решение об исключении 11\" } ], \"sprId\": 11, \"subdivisions\": [ { \"address\": \"string\", \"dopInfo\": \"string\", \"id\": 0, \"inn\": \"string\", \"kpp\": \"string\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 0 } ]}"
+</pre>
 }}
-## Допустимость использования ОТО
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-21-36.png!
+{{collapse(Логи)
+<pre>
+2024-04-26 10:45:42.617 TRACE 1 --- [nio-8008-exec-2] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:45:42.621 TRACE 1 --- [nio-8008-exec-2] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:45:42.623 TRACE 1 --- [nio-8008-exec-2] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=11, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:45:42.625 TRACE 1 --- [nio-8008-exec-2] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$6e69105d.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+</pre>
 }}
-## Заключения НМПТ
-*Полученный результат: Успех*{{collapse(Скрин)
-!18-21-42.png!
+#### id = 14 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "string",
+      "dopInfo": "string",
+      "id": 0,
+      "inn": "string",
+      "kpp": "string",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 0
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/392266" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 11, \"reason\": \"Решение об исключении 11\" } ], \"sprId\": 11, \"subdivisions\": [ { \"address\": \"string\", \"dopInfo\": \"string\", \"id\": 0, \"inn\": \"string\", \"kpp\": \"string\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 0 } ]}"
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+24-04-26 10:46:50.849 TRACE 1 --- [nio-8008-exec-5] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:46:50.851 TRACE 1 --- [nio-8008-exec-5] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:46:50.853 TRACE 1 --- [nio-8008-exec-5] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=14, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:46:50.855 TRACE 1 --- [nio-8008-exec-5] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$6e69105d.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+%{color:red;font-weight:bold}Полученный результат: 500	Error: Internal Server Error, 400 не найден обработчик для данного решения. Ошибка возникает на запросах у которых decision_spr_id = 10, 11, 14%
+### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверок статус от 8,9,12,13
+#### decision_spr_id = 8 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "ААААААААААААААА",
+      "dopInfo": "ААА",
+      "id": 0,
+      "inn": "7841051711",
+      "kpp": "111111111",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 0
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 10:55:08.995 TRACE 1 --- [nio-8008-exec-4] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 10:55:09.000 TRACE 1 --- [nio-8008-exec-4] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 10:55:09.002 TRACE 1 --- [nio-8008-exec-4] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=8, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 10:55:09.004 TRACE 1 --- [nio-8008-exec-4] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$6e69105d.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+#### decision_spr_id = 9 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "ААААААААААААААА",
+      "dopInfo": "ААА",
+      "id": 0,
+      "inn": "7841051711",
+      "kpp": "111111111",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 42
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 12:34:11.759 TRACE 1 --- [io-8008-exec-10] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 12:34:11.762 TRACE 1 --- [io-8008-exec-10] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 12:34:11.765 TRACE 1 --- [io-8008-exec-10] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=9, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 12:34:11.765 TRACE 1 --- [io-8008-exec-10] r.c.l.h.a.DecWithoutAssIncludeHandler    : сохраняем 'решение о включении/включение до акта' до выездной оценки отправленное решение PostDecision(sprId=14, isDraft=true, subdivisions=[Subdivision(id=5, procAddressesId=42, address=ААААААААААААААА, kpp=111111111, inn=7841051711, dopInfo=ААА, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=14, reason=Решение об исключении 11)])
+</pre>
+}}
+В decision происходят вставки записей, в proc_addresses не происходит update dop_info, но должен из-за селекта
+#### decision_spr_id = 12 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "ААААААААААААААА",
+      "dopInfo": "ААА",
+      "id": 5,
+      "inn": "7841051711",
+      "kpp": "111111111",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 44
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 12:39:31.767 TRACE 1 --- [nio-8008-exec-5] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 12:39:31.770 TRACE 1 --- [nio-8008-exec-5] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 12:39:31.773 TRACE 1 --- [nio-8008-exec-5] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=12, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 12:39:31.774 TRACE 1 --- [nio-8008-exec-5] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$4ee0f436.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at jdk.internal.reflect.GeneratedMethodAccessor176.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+#### decision_spr_id = 13 {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "ААААААААААААААА",
+      "dopInfo": "ААА",
+      "id": 150113,
+      "inn": "7841051711",
+      "kpp": "111111111",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 44
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 12:44:15.542 TRACE 1 --- [nio-8008-exec-6] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 12:44:15.544 TRACE 1 --- [nio-8008-exec-6] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 12:44:15.550 TRACE 1 --- [nio-8008-exec-6] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392266, assessmentSprId=null, decisionSprId=13, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 12:44:15.552 TRACE 1 --- [nio-8008-exec-6] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 не найден обработчик для данного решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:45)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$4ee0f436.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at jdk.internal.reflect.GeneratedMethodAccessor176.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+%{color:red;font-weight:bold}Полученный результат: 500	Error: Internal Server Error, 400 не найден обработчик для данного решения. Ошибка возникает на запросах у которых decision_spr_id = 8, 12, 13. У decision_spr_id= 9 происходит обработка, но не полноценно,В decision происходят вставки записей, в proc_addresses не происходит update dop_info, но должен из-за селекта%
+### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверки без обработанного решения(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей)
+Использую запись с id 392272 в assassment_and_decision
+%{color:red;font-weight:bold}Полученный результат: 400 выполнить запрос невозможно, заявление не в статусе решения% {{collapse(json)
+<pre>
+{
+  "isDraft": true,
+  "reasons": [
+    {
+      "id": 14,
+      "reason": "Решение об исключении 11"
+    }
+  ],
+  "sprId": 14,
+  "subdivisions": [
+    {
+      "address": "ААААААААААААААА",
+      "dopInfo": "ААА",
+      "id": 150113,
+      "inn": "7841051711",
+      "kpp": "111111111",
+      "powerList": [
+        {
+          "actPower": 0,
+          "id": 0,
+          "power": 0,
+          "product": "string"
+        }
+      ],
+      "procAddressesId": 44
+    }
+  ]
+}
+</pre>
+}}
+{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/392272" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 14, \"reason\": \"Решение об исключении 11\" } ], \"sprId\": 14, \"subdivisions\": [ { \"address\": \"ААААААААААААААА\", \"dopInfo\": \"ААА\", \"id\": 150113, \"inn\": \"7841051711\", \"kpp\": \"111111111\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 44 } ]}"
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 13:04:06.573 TRACE 1 --- [nio-8008-exec-4] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 13:04:06.575 TRACE 1 --- [nio-8008-exec-4] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 13:04:06.578 TRACE 1 --- [nio-8008-exec-4] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392272, assessmentSprId=null, decisionSprId=null, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 13:04:06.579 TRACE 1 --- [nio-8008-exec-4] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 выполнить запрос невозможно, заявление не в статусе решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:42)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$4ee0f436.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at jdk.internal.reflect.GeneratedMethodAccessor176.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+## Отрицательные кейсы
+### Несуществующий идентификатор этапа проверки
+%{color:green;font-weight:bold}Полученный результат: получили ошибкуб как и ожидалось%{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/11111111111111111" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 14, \"reason\": \"Решение об исключении 11\" } ], \"sprId\": 14, \"subdivisions\": [ { \"address\": \"ААААААААААААААА\", \"dopInfo\": \"ААА\", \"id\": 150113, \"inn\": \"7841051711\", \"kpp\": \"111111111\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 44 } ]}"
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 13:08:55.001 TRACE 1 --- [io-8008-exec-10] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 13:08:55.002 TRACE 1 --- [io-8008-exec-10] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 13:08:55.006 TRACE 1 --- [io-8008-exec-10] r.c.l.controller.CustomExceptionHandler  : handleThrowable()
+org.springframework.web.client.HttpClientErrorException: 400 выполнить запрос невозможно, заявление не в статусе решения
+	at ru.centerinform.lkassessment.service.DecisionService.saveDecision(DecisionService.java:42)
+	at ru.centerinform.lkassessment.service.DecisionService$$FastClassBySpringCGLIB$$401dd78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at ru.centerinform.lkassessment.service.DecisionService$$EnhancerBySpringCGLIB$$4ee0f436.saveDecision(<generated>)
+	at ru.centerinform.lkassessment.controller.DecisionController.saveDecision(DecisionController.java:59)
+	at jdk.internal.reflect.GeneratedMethodAccessor176.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at ru.centerinform.lkassessment.auth.FilterChainExceptionHandler.doFilterInternal(FilterChainExceptionHandler.java:39)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.valves.RemoteIpValve.invoke(RemoteIpValve.java:747)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+</pre>
+}}
+### Ошибки, несуществующие причины
+%{color:green;font-weight:bold}Полученный результат: физически в БД не может поставится несуществующий decision_spr_id из-за ограничений FK ключа%
+### Попробовать положительное решение, но с несуществующей записью в proc_addresses
+%{color:red;font-weight:bold}Полученный результат: Ожидалась ошибка, а неуспешная обработка%{{collapse(Запрос)
+<pre>
+curl -X POST "https://lk-test.egais.ru/lk-brewers-assessment/dashboard/assessment/decision/392272" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"isDraft\": true, \"reasons\": [ { \"id\": 14, \"reason\": \"Решение об исключении 11\" } ], \"sprId\": 14, \"subdivisions\": [ { \"address\": \"ААААААААААААААА\", \"dopInfo\": \"ААА\", \"id\": 150113, \"inn\": \"7841051711\", \"kpp\": \"111111111\", \"powerList\": [ { \"actPower\": 0, \"id\": 0, \"power\": 0, \"product\": \"string\" } ], \"procAddressesId\": 100 } ]}"
+</pre>
+}}
+{{collapse(Логи)
+<pre>
+2024-04-26 13:12:57.249 TRACE 1 --- [nio-8008-exec-3] r.c.l.auth.FilterChainExceptionHandler   : doFilterInternal()
+2024-04-26 13:12:57.252 TRACE 1 --- [nio-8008-exec-3] r.c.l.controller.DecisionController      : [POST] saveDecision()
+2024-04-26 13:12:57.259 TRACE 1 --- [nio-8008-exec-3] r.c.l.r.m.AssessmentAndDecisionMapper    : DocAttribute(): entity = [AssessmentAndDecisionModel(assessmentId=392272, assessmentSprId=null, decisionSprId=9, isProcessed=false, isEmpty=false, procsProcessed=null, ordersProcessed=null, actsProcessed=null)]
+2024-04-26 13:12:57.259 TRACE 1 --- [nio-8008-exec-3] r.c.l.h.a.DecWithoutAssIncludeHandler    : сохраняем 'решение о включении/включение до акта' до выездной оценки отправленное решение PostDecision(sprId=14, isDraft=true, subdivisions=[Subdivision(id=150113, procAddressesId=100, address=ААААААААААААААА, kpp=111111111, inn=7841051711, dopInfo=ААА, powerList=[Power(id=0, power=0, actPower=0, product=string)])], reasons=[Reason(id=14, reason=Решение об исключении 11)])
+</pre>
+}}
+# GET /dashboard/assessment/decision/reasons
+## Проверяем все идентификаторы типа решения(от 1 до 14)
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+{
+  "message": "400 это не решение отказа или исключения",
+  "httpStatus": "INTERNAL_SERVER_ERROR",
+  "status": 500
+}
+</pre>
+}}
+Ожидаемая ошибка
+### {{collapse(полученный результат)
+<pre>
+{
+  "message": "400 это не решение отказа или исключения",
+  "httpStatus": "INTERNAL_SERVER_ERROR",
+  "status": 500
+}
+</pre>
+}}
+Ожидаемая ошибка
+### {{collapse(полученный результат)
+<pre>
+[
+  {
+    "id": 1,
+    "reason": "Неустранение в установленный срок нарушения, указанного в решении о приостановлении"
+  },
+  {
+    "id": 2,
+    "reason": "Производство пива на оборудовании без тех. средств (при использовании оборудования мощностью не более 100 тыс. дал в год)"
+  },
+  {
+    "id": 3,
+    "reason": "Производство пива без АСИиУ (при использовании оборудования мощностью более 100 тыс. дал в год)"
+  },
+  {
+    "id": 4,
+    "reason": "Невыполнение решения суда о приостановлении права на осуществление деятельности по производству пива"
+  },
+  {
+    "id": 5,
+    "reason": "Выявление оборота пива, незафиксированного в ЕГАИС"
+  },
+  {
+    "id": 6,
+    "reason": "Уклонение от проведения контрольного (надзорного) мероприятия"
+  },
+  {
+    "id": 7,
+    "reason": "Воспрепятствование проведению контроля за эксплуатацией технических средств"
+  },
+  {
+    "id": 8,
+    "reason": "Поступление заявления (на бумаге, эл. документе, подписанного УКЭП, ЕПГУ, ЕГАИС) организации об исключении из Реестра организации (обособленного подразделения)"
+  },
+  {
+    "id": 9,
+    "reason": "Исключение организации, обособленного подразделения из ЕГРЮЛ"
+  },
+  {
+    "id": 10,
+    "reason": "Выявление по результатам выездной оценки: отсутствия технических средств, технологических инструкций, основного технологического оборудования, принадлежащего на праве собственности хозяйственном ведении, оперативном управлении, склада или производственных помещений в собственности, хозяйственном ведении, оперативном управлении или в аренде > 1 года"
+  },
+  {
+    "id": 11,
+    "reason": "Непредоставление возможности провести выездную оценку"
+  },
+  {
+    "id": 12,
+    "reason": "Превышения фактической мощности основного технологического оборудования (с учетом особенностей, установленных законом)"
+  },
+  {
+    "id": 13,
+    "reason": "Непредставление в Службу сообщения об устранении выявленных нарушений"
+  },
+  {
+    "id": 14,
+    "reason": "Неустранение выявленных нарушений по результатам выездной оценки (представление документов, содержащих недостоверную, искаженную или неполную информацию)"
+  }
+]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+[
+  {
+    "id": 1,
+    "reason": "Неустранение в установленный срок нарушения, указанного в решении о приостановлении"
+  },
+  {
+    "id": 2,
+    "reason": "Производство пива на оборудовании без тех. средств (при использовании оборудования мощностью не более 100 тыс. дал в год)"
+  },
+  {
+    "id": 3,
+    "reason": "Производство пива без АСИиУ (при использовании оборудования мощностью более 100 тыс. дал в год)"
+  },
+  {
+    "id": 4,
+    "reason": "Невыполнение решения суда о приостановлении права на осуществление деятельности по производству пива"
+  },
+  {
+    "id": 5,
+    "reason": "Выявление оборота пива, незафиксированного в ЕГАИС"
+  },
+  {
+    "id": 6,
+    "reason": "Уклонение от проведения контрольного (надзорного) мероприятия"
+  },
+  {
+    "id": 7,
+    "reason": "Воспрепятствование проведению контроля за эксплуатацией технических средств"
+  },
+  {
+    "id": 8,
+    "reason": "Поступление заявления (на бумаге, эл. документе, подписанного УКЭП, ЕПГУ, ЕГАИС) организации об исключении из Реестра организации (обособленного подразделения)"
+  },
+  {
+    "id": 9,
+    "reason": "Исключение организации, обособленного подразделения из ЕГРЮЛ"
+  },
+  {
+    "id": 10,
+    "reason": "Выявление по результатам выездной оценки: отсутствия технических средств, технологических инструкций, основного технологического оборудования, принадлежащего на праве собственности хозяйственном ведении, оперативном управлении, склада или производственных помещений в собственности, хозяйственном ведении, оперативном управлении или в аренде > 1 года"
+  },
+  {
+    "id": 11,
+    "reason": "Непредоставление возможности провести выездную оценку"
+  },
+  {
+    "id": 12,
+    "reason": "Превышения фактической мощности основного технологического оборудования (с учетом особенностей, установленных законом)"
+  },
+  {
+    "id": 13,
+    "reason": "Непредставление в Службу сообщения об устранении выявленных нарушений"
+  },
+  {
+    "id": 14,
+    "reason": "Неустранение выявленных нарушений по результатам выездной оценки (представление документов, содержащих недостоверную, искаженную или неполную информацию)"
+  }
+]
+</pre>
+}}
+### {{collapse(полученный результат)
+<pre>
+{
+  "message": "400 это не решение отказа или исключения",
+  "httpStatus": "INTERNAL_SERVER_ERROR",
+  "status": 500
+}
+</pre>
+}}
+Ожидаемая ошибка
+### {{collapse(полученный результат)
+<pre>
+{
+  "message": "400 это не решение отказа или исключения",
+  "httpStatus": "INTERNAL_SERVER_ERROR",
+  "status": 500
+}
+</pre>
+}}
+Ожидаемая ошибка
+### {{collapse(полученный результат)
+<pre>
+[
+  {
+    "id": 1,
+    "reason": "Неустранение в установленный срок нарушения, указанного в решении о приостановлении"
+  },
+  {
+    "id": 2,
+    "reason": "Производство пива на оборудовании без тех. средств (при использовании оборудования мощностью не более 100 тыс. дал в год)"
+  },
+  {
+    "id": 3,
+    "reason": "Производство пива без АСИиУ (при использовании оборудования мощностью более 100 тыс. дал в год)"
+  },
+  {
+    "id": 4,
+    "reason": "Невыполнение решения суда о приостановлении права на осуществление деятельности по производству пива"
+  },
+  {
+    "id": 5,
+    "reason": "Выявление оборота пива, незафиксированного в ЕГАИС"
+  },
+  {
+    "id": 6,
+    "reason": "Уклонение от проведения контрольного (надзорного) мероприятия"
+  },
+  {
+    "id": 7,
+    "reason": "Воспрепятствование проведению контроля за эксплуатацией технических средств"
+  },
+  {
+    "id": 8,
+    "reason": "Поступление заявления (на бумаге, эл. документе, подписанного УКЭП, ЕПГУ, ЕГАИС) организации об исключении из Реестра организации (обособленного подразделения)"
+  },
+  {
+    "id": 9,
+    "reason": "Исключение организации, обособленного подразделения из ЕГРЮЛ"
+  },
+  {
+    "id": 10,
+    "reason": "Выявление по результатам выездной оценки: отсутствия технических средств, технологических инструкций, основного технологического оборудования, принадлежащего на праве собственности хозяйственном ведении, оперативном управлении, склада или производственных помещений в собственности, хозяйственном ведении, оперативном управлении или в аренде > 1 года"
+  },
+  {
+    "id": 11,
+    "reason": "Непредоставление возможности провести выездную оценку"
+  },
+  {
+    "id": 12,
+    "reason": "Превышения фактической мощности основного технологического оборудования (с учетом особенностей, установленных законом)"
+  },
+  {
+    "id": 13,
+    "reason": "Непредставление в Службу сообщения об устранении выявленных нарушений"
+  },
+  {
+    "id": 14,
+    "reason": "Неустранение выявленных нарушений по результатам выездной оценки (представление документов, содержащих недостоверную, искаженную или неполную информацию)"
+  }
+]
+</pre>
 }}
 
 ---
 
 h4. Итог
 
+* По эндпоинту GET /dashboard/assessment/decision/{assessmentAndDecisionId}
+** Если assessment_spr_id != NULL - получаем ошибку (П. 1.1)
+** Если processed != NULL получаем ошибку БД (П. 1.2)
 
-В первом блоке 3.1, 3.2, 4.1, 4.2 - Столбец "Выдача заключений" отсутствует на фронте
-Все остальные изменения проверены и соответствуют ТЗ
+* По эндпоинту POST /dashboard/assessment/decision/{assessmentAndDecisionId}
+** Если decision_spr_id в assessment_and_decision = 1-6, то отказ нормально обрабатывается, если ставим статус 7 - получаем ошибку "400 не найден обработчик для данного решения"
+** Если decision_spr_id в assessment_and_decision = 10,11,14 - получаем ошибку "400 не найден обработчик для данного решения"
+** Если decision_spr_id в assessment_and_decision = 8,12,13 - получаем ошибку "400 не найден обработчик для данного решения"
+** Если decision_spr_id в assessment_and_decision = 9, то судя по селектам, у нас должны добавляться записи в decison и должен произойти update в proc_addresses, но update не происходит
+** Если decision_spr_id в assessment_and_decision = 9(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей) - получаем ошибку, что заявление не в статусе решения, хотя по ТЗ должно все обрабатываться успешно
+** Если в запросе передается для записи в статусе положителного решения несуществующая запись в proc_addresses - запрос успешно обрабатывается, но ожидается ошибка

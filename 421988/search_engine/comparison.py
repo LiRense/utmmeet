@@ -21,10 +21,10 @@ def get_data_lk(inn, column_name, month):
     full_data = response.json()
     for i in full_data:
         if str(i['month']['periodMonth']) == str(month):
-            if i['month']['declTaxBaseAnhydrousVolume'] == None:
+            if i['month'][column_name] == None:
                 return 'null'
             else:
-                return int(i['month']['declTaxBaseAnhydrousVolume'])
+                return int(i['month'][column_name])
 
 
 def get_data_old_lk():
@@ -102,8 +102,11 @@ def get_data_old_lk():
     full_data = r.json()
     print(full_data)
 
-columns = ['declTaxBaseAnhydrousVolume',
-           '']
+columns = ['declTaxBaseVolume',
+           'declTaxBaseAnhydrousVolume',
+           'declSumForTaxDeductGrape',
+           'declSumTaxDeductNonGrape',
+           'declSumOnGrape']
 
 inns = [3128053185,
         9303019720,

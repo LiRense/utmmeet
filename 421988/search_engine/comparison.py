@@ -30,7 +30,7 @@ def get_data_lk(inn, column_name, month):
 def get_data_old_lk():
     headers = {
         'accept': '*/*',
-        'Authorization': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJsYXN0TmFtZSI6IkF1dG8iLCJmaXJzdE5hbWUiOiJBdXRvIiwicmVnaW9uQ29kZSI6Ijc3Iiwicm9sZSI6ImRldmVsb3BlciIsInJvbGVpZCI6IjAiLCJwZXJtaXNzaW9ucyI6IlJldGFpbCIsImxvY2FsaXR5IjoiQXV0byIsInJlZ2lvbiI6IkF1dG8iLCJ1c2VyaWQiOiIxMjMifQ.6_p87gJOz4GombT13glAKqk-iTYoTpkBIc9S3qT56TNJEAIZgK_QOZTTp1TTLZXoaZ6GrTgGUUWN9tglX8cqKQ',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiZGV2ZWxvcGVyIiwiZmlyc3ROYW1lIjoiUGV0ZXIgUGV0cm92aWNoIiwibGFzdE5hbWUiOiJQZXRyb3YiLCJsb2NhbGl0eSI6ItCc0L7RgdC60LLQsCIsInJlZ2lvbiI6Ijc3IiwicmVnaW9uQ29kZSI6Ijc3IiwidXNlcmlkIjoiMzgzIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiIzODMiLCJyb2xlaWQiOiIxMiIsInBlcm1pc3Npb25zIjoiVXNlcnMsUm9sZXMsTmV3cyxTdGF0aXN0aWNhbEluZixDb25zdW1wdGlvbixSZXRhaWwsTWFya2V0UGFydGljaXBhbnRzLE1hcmtldFBhcnRpY2lwYW50c1YyLFJlcG9ydHMsT3JnYW5pemF0aW9ucyxSZXBvcnRUZW1wbGF0ZXMsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsUmV0YWlsLFJldGFpbCxTdGF0aXN0aWNhbEluZixTdGF0aXN0aWNhbEluZixSZXRhaWwsUmV0YWlsLFJldGFpbCxSZXRhaWwsU3RhdGlzdGljYWxJbmYiLCJsaXN0UmVnaW9uQ29kZXMiOiI3NyIsImV4cCI6MTcxNTAwMDcyOSwiaXNzIjoiQ0FFZ2FpcyIsImF1ZCI6IlVzZXJzIn0.U6Z5t6Epd-QGZWScEVNZFVmvX_ZsSQzXxossV7F4hj8',
     }
     data = {'sEcho': 3,
             'iColumns': 13,
@@ -108,17 +108,25 @@ columns = ['declTaxBaseVolume',
            'declSumTaxDeductNonGrape',
            'declSumOnGrape']
 
-inns = [3128053185,
-        9303019720,
-        9402003103,
-        3124010381,
-        3128053185]
+# inns = [3128053185,
+#         9303019720,
+#         9402003103,
+#         3124010381,
+#         3128053185]
+
+with open('inn.txt','r') as innns:
+    inns = innns.readlines()
 
 
 for column in columns:
-    for inn in inns:
-        print(f'INN {inn}\n________________________________')
-        for month in range(1,13):
-            from_lk = get_data_lk(inn, column, month)
-            print(f'Месяц {month} - {from_lk}')
-        print('________________________________')
+    pass
+file_new_lk = open('new_lk','w')
+for inn in inns:
+    file_new_lk.write(f'INN {int(inn)}\n________________________________\n')
+    print(f'INN {inn}\n________________________________')
+    for month in range(1,13):
+        from_lk = get_data_lk(int(inn), 'declTaxBaseVolume', month)
+        file_new_lk.write(f'Месяц {month} - {from_lk}\n')
+        print(f'Месяц {month} - {from_lk}')
+    file_new_lk.write('________________________________\n')
+    print('________________________________')

@@ -77,7 +77,7 @@ def install_utm():
     prg = QtWidgets.QApplication(sys.argv)
     dialog = QtWidgets.QFileDialog
     global data2
-    data = dialog.getOpenFileUrl(None,caption="select file")[0].path()
+    data = dialog.getOpenFileUrl(None,caption="Выберите пакет для установки",filter=("u-trans*.deb"))[0].path()
     data2 = data
     file = open('save_conf/reinstal.txt', 'w')
     file.write('data '+data)
@@ -95,6 +95,12 @@ def install_utm():
 def jacarta_chage(id):
     file = open('save_conf/last_prop.txt', 'w')
     if id == 1:
+        os.system(f'echo {passw} | sudo -S cp {datas["project_path"]}save_conf/transport_fiz_new.properties '
+                  f'/opt/utm/transport/conf/transport.properties')
+        print("Обрабатываю для физика")
+        file.write('fiz')
+        file.close()
+    if id == 3:
         os.system(f'echo {passw} | sudo -S cp {datas["project_path"]}save_conf/transport_fiz.properties '
                   f'/opt/utm/transport/conf/transport.properties')
         print("Обрабатываю для физика")
@@ -113,7 +119,7 @@ def jacarta_chage(id):
 def jacarta_user():
     os.system(f'echo {passw} | sudo -S supervisorctl stop utm')
     time.sleep(2)
-    id = int(input("Выберите лицо:\n1)Физ.лицо\n2)Юр.лицо\n>>> "))
+    id = int(input("Выберите лицо:\n1)Физ.лицо NEW\n2)Юр.лицо OLD\n3)Физ. лицо OLD\n>>> "))
 
     os.system(f'mkdir {datas["project_path"]}save_conf')
     jacarta_chage(id)

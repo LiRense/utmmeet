@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
+
 def find_data(inn,column_name, month):
 
     try:
@@ -19,23 +20,44 @@ def find_data(inn,column_name, month):
         input_password.send_keys('developer')
         button_1 = browser.find_element(By.XPATH, " //input[@value='Войти']")
         button_1.click()
-        time.sleep(0.1)
+        browser.implicitly_wait(5)
 
         second_link = 'https://lk.fsrar.ru/Goverment/ExciseDeclarations'
         browser.get(second_link)
-        time.sleep(2)
+        browser.implicitly_wait(5)
 
 
         inn_input = browser.find_element(By.XPATH,"//input[@placeholder='ИНН']")
         inn_input.send_keys(inn)
-        time.sleep(2)
-
+        browser.implicitly_wait(2)
+        try:
+            no_element = browser.find_element(By.XPATH,"//td[@class='dataTables_empty']")
+            return 'No element'
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
         year_input = browser.find_element(By.XPATH, "//input[@placeholder='Год']")
         year_input.send_keys('2023')
-        time.sleep(2)
+        browser.implicitly_wait(2)
+        try:
+            no_element = browser.find_element(By.XPATH,"//td[@class='dataTables_empty']")
+            return 'No element'
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
 
         month_input = browser.find_element(By.XPATH, "//input[@placeholder='Месяц']")
         month_input.send_keys(month)
+        browser.implicitly_wait(2)
+        try:
+            no_element = browser.find_element(By.XPATH,"//td[@class='dataTables_empty']")
+            return None
+        except selenium.common.exceptions.NoSuchElementException:
+            pass
+
+        browser.implicitly_wait(5)
+        act = browser.find_element(By.CSS_SELECTOR,"th[aria-label='Актуальность: activate to sort column ascending']")
+        act.click()
+        time.sleep(2)
+        act.click()
         time.sleep(2)
 
         all_rows = browser.find_elements(By.XPATH,"//table[@id='DeclarationsListTable']//tr[@role='row']")
@@ -47,11 +69,11 @@ def find_data(inn,column_name, month):
                 if actual == 'Да':
                     button_next = i.find_element(By.XPATH,"//tr[@class='odd']//span[@class='fa fa-arrow-right']")
                     button_next.click()
-                    time.sleep(5)
+                    browser.implicitly_wait(5)
                     if column_name == 'declTaxBaseAnhydrousVolume':
                         button_next_1 = browser.find_element(By.XPATH, "//a[contains(text(),'Расчет сум. акц.')]")
                         button_next_1.click()
-                        time.sleep(2)
+                        browser.implicitly_wait(10)
 
                         codes_vid = browser.find_elements(By.XPATH,'//div[@id="tab2"]//table[@class="table table-bordered dataTable excise_declar_app"]/tbody/tr[not(@class="declaration-item")]')
                         for id, j in enumerate(codes_vid):
@@ -59,7 +81,7 @@ def find_data(inn,column_name, month):
                             if int(code_vid.text) in [231, 224, 225, 226, 227, 290]:
                                 button_next_2 = j.find_element(By.CSS_SELECTOR,"td:nth-child(4) button:nth-child(1) span:nth-child(1)")
                                 button_next_2.click()
-                                time.sleep(2)
+                                browser.implicitly_wait(5)
 
                                 con_str = browser.find_element(By.XPATH,f'(//div[@id="tab2"]//table[@class="table table-bordered dataTable excise_declar_app"]/tbody/tr[not(@class="declaration-item")])[{id+1}]/following::tr[1]//td/span[@data-toggle="tooltip"][normalize-space()="10001"]/following::td[2]').text
                                 con_str = con_str.replace(',', '.')
@@ -72,25 +94,28 @@ def find_data(inn,column_name, month):
                     elif column_name == 'declTaxBaseVolume':
                         button_next_1 = browser.find_element(By.XPATH, "//a[contains(text(),'Расчет сум. акц.')]")
                         button_next_1.click()
-                        time.sleep(2)
+                        time.sleep(5)
 
-                        code_vid_poakciz = browser.find_element(By.XPATH, "(//td[contains(text(),'225')])[1]")
+                        codes_vid = browser.find_elements(By.XPATH,
+                                                          '//div[@id="tab2"]//table[@class="table table-bordered dataTable excise_declar_app"]/tbody/tr[not(@class="declaration-item")]')
+                        for id, j in enumerate(codes_vid):
+                            code_vid = j.find_element(By.CSS_SELECTOR, "td:nth-child(1)").text
+                            # print(code_vid)
+                            if int(code_vid) in [232, 251, 252, 253, 254, 274, 275, 276, 277, 287, 288, 297, 310, 320, 330 ]:
+                                button_next_2 = j.find_element(By.XPATH,
+                                                                     "//body[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/table[1]/tbody[1]/tr[1]/td[4]/button[1]")
+                                button_next_2.click()
+                                browser.implicitly_wait(5)
 
-                        if int(code_vid_poakciz.text) in [232, 251, 252, 253, 254, 274, 275, 276, 277, 287, 288, 297, 310, 320, 330 ]:
-                            button_next_2 = browser.find_element(By.XPATH,
-                                                                 "//body[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/table[1]/tbody[1]/tr[1]/td[4]/button[1]")
-                            button_next_2.click()
-                            time.sleep(2)
-
-                            con_str = browser.find_element(By.CSS_SELECTOR,"body > div:nth-child(5) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(1) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3)").text
-                            con_str = con_str.replace(',', '.')
-                            counter += float(con_str)
-                            return counter
+                                con_str = browser.find_element(By.CSS_SELECTOR,"body > div:nth-child(5) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > table:nth-child(2) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(1) > div:nth-child(3) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(3)").text
+                                con_str = con_str.replace(',', '.')
+                                counter += float(con_str)
+                                return counter
                     elif column_name == 'declSumForTaxDeductGrape':
                         try:
                             button_next_1 = browser.find_element(By.XPATH, "//a[contains(text(),'Сумма акциза на виноград')]")
                             button_next_1.click()
-                            time.sleep(2)
+                            browser.implicitly_wait(5)
 
                             all_grapes = browser.find_elements(By.XPATH, "//div[@id='tab_vino']/table/tbody/tr[not(@class='declaration-item')]")
                             for id, j in enumerate(all_grapes):
@@ -101,7 +126,7 @@ def find_data(inn,column_name, month):
                                     time.sleep(1)
                                     summa_akciz = browser.find_element(By.XPATH, f"(//td[contains(text(),'Сумма акциза, подлежащая налоговому вычету')])[{id+1}]/following::td[1]").text
                                     counter += int(summa_akciz.replace(' ',''))
-                                time.sleep(1)
+                                browser.implicitly_wait(5)
                             return counter
                         except:
                             return None
@@ -110,14 +135,14 @@ def find_data(inn,column_name, month):
                         try:
                             button_next_1 = browser.find_element(By.XPATH, "//a[contains(text(),'Расчет сум. акц.')]")
                             button_next_1.click()
-                            time.sleep(2)
+                            browser.implicitly_wait(5)
 
                             codes_vid = browser.find_elements(By.XPATH,'//div[@id="tab2"]//table[@class="table table-bordered dataTable excise_declar_app"]/tbody/tr[not(@class="declaration-item")]')
                             for id, j in enumerate(codes_vid):
 
                                 button_next_2 = j.find_element(By.CSS_SELECTOR,"td:nth-child(4) button:nth-child(1) span:nth-child(1)")
                                 button_next_2.click()
-                                time.sleep(2)
+                                browser.implicitly_wait(5)
 
                                 con_str = browser.find_elements(By.XPATH,f"(//h4[contains(text(),'2.3. Сумма акциза (авансового платежа акциза), подлежащая налоговому вычету')])[{id+1}]/following::table[1]/tbody/tr")
                                 for id2, k in enumerate(con_str):
@@ -132,17 +157,17 @@ def find_data(inn,column_name, month):
                                             new_str = new_str.replace(',', '.')
                                             new_str = new_str.replace(' ', '')
                                             counter += float(new_str)
-                                        time.sleep(1) #(//h4[contains(text(),'2.3. Сумма акциза (авансового платежа акциза), под')])[4]/following::table[1]/tbody/tr//span[@class='init-tooltip']/following::td[2]
+                                        browser.implicitly_wait(5) #(//h4[contains(text(),'2.3. Сумма акциза (авансового платежа акциза), под')])[4]/following::table[1]/tbody/tr//span[@class='init-tooltip']/following::td[2]
                             return counter
                         except:
                             return None
 
             except selenium.common.exceptions.NoSuchElementException:
-                return None
-
-
-
-
+                return find_data(inn,column_name, month)
+    except selenium.common.exceptions.ElementClickInterceptedException:
+        return find_data(inn,column_name, month)
+    except selenium.common.exceptions.NoSuchElementException:
+        return find_data(inn, column_name, month)
 
     finally:
         browser.quit()
@@ -153,15 +178,22 @@ columns = ['declTaxBaseVolume',
            'declSumTaxDeductNonGrape',
            'declSumOnGrape']
 
-inns = [2352002170,
-        9303019720,
-        9402003103,
-        3124010381,
-        3128053185]
+with open('inn.txt','r') as innns:
+    inns = innns.readlines()
+
+file_old_lk = open('old_lk2','w')
 
 for inn in inns:
-    print(f'INN {inn}\n________________________________')
+    file_old_lk.write(f'INN {int(inn)}\n________________________________\n')
+    print(f'INN {inn}________________________________')
     for month in range(1,13):
-        from_lk = find_data(inn, "declSumTaxDeductNonGrape", month)
+        from_lk = find_data(inn, "declTaxBaseVolume", month)
+        if from_lk == 'No element':
+            for month1 in range(1,13):
+                file_old_lk.write(f'Месяц {month1} - None\n')
+                print(f'Месяц {month1} - None')
+            break
+        file_old_lk.write(f'Месяц {month} - {from_lk}\n')
         print(f'Месяц {month} - {from_lk}')
+    file_old_lk.write('________________________________\n')
     print('________________________________')

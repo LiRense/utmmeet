@@ -1,1 +1,1 @@
-data /mnt/Martikhin/Downloads/u-trans-4.2.0-2605-i386-test.deb
+data /home/ivan/Загрузки/u-trans-4.2.0-2613-i386-test.deb

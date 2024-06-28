@@ -1,4 +1,4 @@
-h4. Тестирование решений выездной оценки
+h4. Проверка логики обработки заявлений о внесении изменений. Кейс 2.1 и 2.3
 
 h6. Среда
 
@@ -7,298 +7,66 @@ h6. Среда
 
 ---
 
-h6. Кейсы
+h6. тестирование
 
-# GET /dashboard/assessment/decision/{assessmentAndDecisionId}
-## Запрос информации о решении для записей с id блоков провеок в диапазоне 1-37(Записи в БД отличные от других)
-## Запрос информации о решении для записей с processed != NULL
-## Запрос информации о решении для записей с processed == NULL
-## Запрос информации о решении для записей с несуществующими id блоками проверок
-# POST /dashboard/assessment/decision/{assessmentAndDecisionId}
-## Положительные кейсы
-### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_reject_reason и decision) у блока проверок статус от 1-7                   P.S. удали перед отправкой: в эндпоинте в decision в reason ставим решения по отказу, можно примеры брять из справочника decision_spr, SPRID в json берем из decision_spr
-### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_exclusion_reason и decision) у блока проверок статус от 10,11,14           P.S. удали перед отправкой: в эндпоинте в decision в reason ставим решения по отказу, можно примеры брять из справочника decision_spr, SPRID в json берем из decision_spr
-### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверок статус от 8,9,12,13                      P.S. удали перед отправкой: в эндпоинте в decision в sprid - делает апдейт в таблицу, для того, чтобы апдейтить - нужно в json в procAddressesID поставить id записи из таблицы(заблаговременно нужно поставить будет запись туда), dopInfo в json ставим, что обновим ну и по мелочам там заполнить в json для записи
-### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверки без обработанного решения(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей)
-## Отрицательные кейсы
-### Несуществующий идентификатор этапа проверки
-### Ошибки при отказе(несуществующие причины)
-### Ошибки при исключении(несуществующий причины)
-### Попробовать положительное решение, но с несуществующей записью в proc_addresses
-# GET /dashboard/assessment/decision/reasons
-## Проверяем все идентификаторы типа решения(от 1 до 14)
-
----
-
-h6. Тесты
-
-# GET /dashboard/assessment/decision/{assessmentAndDecisionId}
-## Запрос информации о решении для записей с id блоков проверок в диапазоне 1-37(Записи в БД отличные от других)
-У записи 15 в БД имеется *assessment_spr_id*
-%{color:red;font-weight:bold}Полученный результат: 400 	Error: Bad Request%{{collapse(Запрос)
+# Кейс 2.1
+Отправляю Json с изменениями по голове {{collapse()
 <pre>
 </pre>
 }}
-{{collapse(Лог)
+Изменения передаются в блоке orgInfo
+## Проверка внесения изменений: {{collapse(логи принтия)
 <pre>
 </pre>
 }}
-## Запрос информации о решении для записей с processed != NULL
-У записи 1 в БД имеется *decision_spr_id* и *processed*
-%{color:red;font-weight:bold}Полученный результат: Ошибка БД%{{collapse(Запрос)
+fullname - замена full_name и short_name у записи-родителя - *ИЗМЕНЕНИЯ ОТСУТСТВУЮТ*
+kpp - замена parent_fsrar_id на новый + замена в таблице activity_permit_org старый fsrar_id на новый по связке ИНН+КПП - *ИЗМЕНЕНИЯ ОТСУТСТВУЮТ*
+email, address - замена у fsrar_id, который проставлен у пула обособок как parent_fsrar_id - *ИЗМЕНЕНИЯ ОТСУТСТВУЮТ*
+## Проверка отображения на фронте {{collapse(Скрин лк)
+!clipboard-202406201722-kcttd.png!
+}}
+fullName - отображать в карточке в поле Организация - *Ожидался ХДАС2, но у нас ХДАС - НЕКОРРЕКТНО*
+address - отображать в карточке в поле Юридический адрес - *Ожидалось "Россия", но имеем полный адрес - НЕКОРРЕКТНО*
+email - отображать в карточке в поле Адрес электронной почты - *ожидалось "smallDojd@yandex.com", но имеем почту из БД - НЕКОРРЕКТНО*
+kpp - отображать в карточке в поле КПП - *Ожидался 272045001, получили 272001001, подтянулся из БД - НЕКОРРЕКТНО*
+{{collapse(Скрины до и после принятия)
+!clipboard-202406201810-nykfp.png!
+!clipboard-202406201810-cysxt.png!
+}}
+# КЕЙС 2.3 Изменения в ключе добавления новой обособки
+Отправляю Json внесения изменений с влючением обособки {{collapse()
+<pre>
+</pre>
+}}{{collapse(Логи обробатки входящего)
 <pre>
 </pre>
 }}
-<pre>
-</pre>
-{{collapse(Логи с ошибкой)
-<pre>
-</pre>
-}}
-## Запрос информации о решении для записей с processed == NULL
-%{color:green;font-weight:bold}Полученный результат: Ошибка БД%{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Ответ)
+Изменения передаются в changesInRegister
+## Проверка отображения на фронте данных из json
+Вид продукции - "kindOfProduct" из json. Приходит в блоке "productProductionCapacities". - *Корректно отображается на фронте*
+КПП - "kpp" из json. Приходит после блока "productProductionCapacities" - *Корректно отображается на фронте*
+Адрес - "address" из json. Приходит после блока "productProductionCapacities" - *Корректно отображается на фронте*
+Производственная мощность предприятия - "productionCapacity" из json. Приходит в блоке "productProductionCapacities" в соответствии с видами продукции - *Корректно отображается*
+Производственная мощность организации - необходимо в карточку подгрузить данные. - подгружаем в мощность по организации для новой обособки эту мощность из столбца dept_power из таблицы power - *Корректно отображается*
+## Проверка бэка {{collapse(Логи принятия)
 <pre>
 </pre>
 }}
-{{collapse(Лог)
-<pre>
-</pre>
-}}
-## Запрос информации о решении для записей с несуществующими id блоками проверок
-%{color:green;font-weight:bold}Полученный результат: 400	Error: Bad Request%{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(лог)
-<pre>
-</pre>
-}}
-# POST /dashboard/assessment/decision/{assessmentAndDecisionId}
-## Положительные кейсы
-### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_reject_reason и decision) у блока проверок статус от 1-7
-В БД в таблице *assessment_and_decision* выбрал блок проверки с id 392266
-В поле decision_spr_id поочередно вставляю id от 1 до 7 и дергаю запрос с {{collapse(json)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 1)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 2)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 3)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 4)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 5)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 6)
-<pre>
-</pre>
-}}
-#### {{collapse(лог decision_spr_id = 7)
-<pre>
-</pre>
-}}
-%{color:red;font-weight:bold}Полученный результат: с 1 по 6 нормально обработался отказ, произошли вставки в decision и decision_reject_reason, но на 7 статусе мы получили ошибку "400 не найден обработчик для данного решения". Хотя в БД в decison_spr есть запись про отрицательное решение с id = 7%
-### Простой смоук тест на работу эндпоинта(Проверить, что производится вставка в decision_exclusion_reason и decision) у блока проверок статус от 10,11,14
-В БД в таблице *assessment_and_decision* выбрал блок проверки с id 392266
-В поле decision_spr_id поочередно вставляю id 10,11,14 и дергаю запрос
-#### id = 10 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-#### id = 11 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-#### id = 14 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-%{color:red;font-weight:bold}Полученный результат: 500	Error: Internal Server Error, 400 не найден обработчик для данного решения. Ошибка возникает на запросах у которых decision_spr_id = 10, 11, 14%
-### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверок статус от 8,9,12,13
-#### decision_spr_id = 8 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-#### decision_spr_id = 9 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-В decision происходят вставки записей, в proc_addresses не происходит update dop_info, но должен из-за селекта
-#### decision_spr_id = 12 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-#### decision_spr_id = 13 {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-%{color:red;font-weight:bold}Полученный результат: 500	Error: Internal Server Error, 400 не найден обработчик для данного решения. Ошибка возникает на запросах у которых decision_spr_id = 8, 12, 13. У decision_spr_id= 9 происходит обработка, но не полноценно,В decision происходят вставки записей, в proc_addresses не происходит update dop_info, но должен из-за селекта%
-### Простой смоук тест на работу эндпоинта(Проверить, что производится update в proc_addresses и decision) у блока проверки без обработанного решения(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей)
-Использую запись с id 392272 в assassment_and_decision
-%{color:red;font-weight:bold}Полученный результат: 400 выполнить запрос невозможно, заявление не в статусе решения% {{collapse(json)
-<pre>
-</pre>
-}}
-{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-## Отрицательные кейсы
-### Несуществующий идентификатор этапа проверки
-%{color:green;font-weight:bold}Полученный результат: получили ошибкуб как и ожидалось%{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-### Ошибки, несуществующие причины
-%{color:green;font-weight:bold}Полученный результат: физически в БД не может поставится несуществующий decision_spr_id из-за ограничений FK ключа%
-### Попробовать положительное решение, но с несуществующей записью в proc_addresses
-%{color:red;font-weight:bold}Полученный результат: Ожидалась ошибка, а неуспешная обработка%{{collapse(Запрос)
-<pre>
-</pre>
-}}
-{{collapse(Логи)
-<pre>
-</pre>
-}}
-# GET /dashboard/assessment/decision/reasons
-## Проверяем все идентификаторы типа решения(от 1 до 14)
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-Ожидаемая ошибка
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-Ожидаемая ошибка
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-Ожидаемая ошибка
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
-Ожидаемая ошибка
-### {{collapse(полученный результат)
-<pre>
-</pre>
-}}
+записываем для новой обособки по fsrar_id в столбец all_power мощность по существующему виду продукции, по fsrar_id в столбец all_power - *При обработке сообщения из ЕПГУ не произошло вставки в таблицу brewer*
+при добавлении новой записи в таблицу org, помимо сохранения фактического адреса в столбце fact_adress - НУЖНО сохранить адрес в столбце place_adress в таблице brewer - *При обработке сообщения из ЕПГУ не произошло вставки в таблицу brewer*
 
 ---
 
 h4. Итог
 
-* По эндпоинту GET /dashboard/assessment/decision/{assessmentAndDecisionId}
-** Если assessment_spr_id != NULL - получаем ошибку (П. 1.1)
-** Если processed != NULL получаем ошибку БД (П. 1.2)
-
-* По эндпоинту POST /dashboard/assessment/decision/{assessmentAndDecisionId}
-** Если decision_spr_id в assessment_and_decision = 1-6, то отказ нормально обрабатывается, если ставим статус 7 - получаем ошибку "400 не найден обработчик для данного решения"
-** Если decision_spr_id в assessment_and_decision = 10,11,14 - получаем ошибку "400 не найден обработчик для данного решения"
-** Если decision_spr_id в assessment_and_decision = 8,12,13 - получаем ошибку "400 не найден обработчик для данного решения"
-** Если decision_spr_id в assessment_and_decision = 9, то судя по селектам, у нас должны добавляться записи в decison и должен произойти update в proc_addresses, но update не происходит
-** Если decision_spr_id в assessment_and_decision = 9(в assassment_and_decision есть только id, application_id, inserted, а в decision нет по данному блоку записей) - получаем ошибку, что заявление не в статусе решения, хотя по ТЗ должно все обрабатываться успешно
-** Если в запросе передается для записи в статусе положителного решения несуществующая запись в proc_addresses - запрос успешно обрабатывается, но ожидается ошибка
+* Для Фронта:
+** в карточке в поле Организация отображается не fullname из JSON.orginfo
+** в карточке в поле Юридический адрес отображается не address из JSON.orginfo
+** в карточке в поле Адрес электронной почты отображается не email из JSON.orginfo
+** в карточке в поле КПП отображается не kpp из JSON.orginfo
+* Для Бэка
+** изменения по orgInfo: full_name и short_name у записи-родителя не заменяется на fullname из JSON.orginfo
+** изменения по orgInfo: замена parent_fsrar_id на новый + замена в таблице activity_permit_org старый fsrar_id на новый по связке ИНН+КПП из JSON.orginfo kpp не работает
+** изменения по orgInfo: не заменяются email, address у fsrar_id, который проставлен у пула обособок как parent_fsrar_id(таблица Egais_nsi.org)
+** внесение изменений, добавление новой обособки: При обработке сообщения из ЕПГУ не произошло вставки в таблицу brewer, запись в brewers.org существует
+egais_nsi.brewer записей по данной обособке нет

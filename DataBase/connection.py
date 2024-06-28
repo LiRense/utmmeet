@@ -115,6 +115,5 @@ class Connecting():
             conn.commit()
             curs.close()
             conn.close()
-            return text
         except Exception as e:
             print(e, "Fail, check settings for user, password or database")

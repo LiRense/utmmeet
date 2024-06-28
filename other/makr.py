@@ -26,9 +26,10 @@ def gen_150_mark(alk: str, serial: str, number: str):
         print('Lenght of number must be 8 or less')
 
 pref = '00'
-number = 456123
-col = 100
+number = 457853
+col = 1000
 for i in range(col):
-    print('<gz:NCode>'+gen_150_mark('200','200',pref+str(number))+'</gz:NCode>')
+    a = gen_150_mark('200','200',pref+str(number))
+    print('<gz:NCode>'+ a +'</gz:NCode>')
     number += 1
 print(number)

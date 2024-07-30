@@ -10,5 +10,6 @@
     <orderEntry type="module" module-name="parser_sites" />
     <orderEntry type="module" module-name="utm_helper" />
     <orderEntry type="module" module-name="autotest" />
+    <orderEntry type="module" module-name="xtr-6bd79a05a6fd9cbbfb50746fc56ecae48b51602b" />
   </component>
 </module>

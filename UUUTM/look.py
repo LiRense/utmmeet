@@ -366,11 +366,36 @@ def fast_reinstall():
                 os.system(f'echo {passw} | sudo -S  supervisorctl start utm')
                 print("\nШаблон установлен")
 
+def new_serial():
+    os.system(f'echo {passw} | sudo -S supervisorctl stop utm')
+    os.system(f'echo {passw} | sudo -S  chown -R ivan:root /opt/')
+    serial= input('Введите серийный номер >>> ')
+    if serial[0]=='0':
+        serial = serial[1:]
+        print('formated serial',serial)
+    serial = serial.replace(' ','')
+    time.sleep(2)
+    with open('save_conf/save_properties_2', 'w') as writed:
+        with open('/opt/utm/transport/conf/transport.properties','r') as properties:
+            lines = properties.readlines()
+            for line in lines:
+                writed.write(line)
+                if 'crypto.lib.gost.keyPassword=' in line:
+                    writed.write(f'crypto.lib.gost.serialNumber={serial}\n')
+        print(writed)
+    with open('/opt/utm/transport/conf/transport.properties', 'w') as writed2:
+        with open('save_conf/save_properties_2', 'r') as properties2:
+            lines = properties2.readlines()
+            for line in lines:
+                writed2.write(line)
+        print(writed2)
+    time.sleep(2)
+    os.system(f'echo {passw} | sudo -S supervisorctl start utm')
 
 
 update_settings()
 data = input("\n1) Clear UTM\n2) Install UTM\n3) Change Properties\n4) UTM status\n5) Use changed propertiesn\n"
-             "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11 reinstall\n(exit)\n")
+             "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11) set serial\n(exit)\n")
 while data != "exit":
     update_settings()
     if data == "1":
@@ -385,7 +410,7 @@ while data != "exit":
             print("Кажется вы забыли установить УТМ")
             data = input(
                 "\n1) Clear UTM\n2) Install UTM\n3) Change Properties\n4) UTM status\n5) Use changed propertiesn\n"
-                "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11 reinstall\n(exit)\n")
+                "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11) set serial\n(exit)\n")
             continue
         deshifr()
     elif data == "4":
@@ -398,7 +423,7 @@ while data != "exit":
             print("Кажется вы забыли установить УТМ")
             data = input(
                 "\n1) Clear UTM\n2) Install UTM\n3) Change Properties\n4) UTM status\n5) Use changed propertiesn\n"
-                "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11 reinstall\n(exit)\n")
+                "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11) set serial\n(exit)\n")
             continue
         if "sp-1.99.jar":
             new_properties()
@@ -421,10 +446,11 @@ while data != "exit":
         debugg()
         clear_buffer()
     elif data == '11':
-        fast_reinstall()
+        # new_serial()
+        # fast_reinstall()
     update_settings()
 
     data = input("\n1) Clear UTM\n2) Install UTM\n3) Change Properties\n4) UTM status\n5) Use changed propertiesn\n"
-                 "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11 reinstall\n(exit)\n")
+                 "6) use template sp\n7) USER changer\n8) DELETE DB\n9) restart utm\n10) Debug\n11) set serial\n(exit)\n")
 
 

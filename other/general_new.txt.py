@@ -6,7 +6,7 @@ end_list = []
 las_dic = {}
 final = []
 with open('new.txt','r') as file1:
-    with open('new_lena.txt','r') as file2:
+    with open('pre_clear/new_lena.txt', 'r') as file2:
         lines1 = file1.readlines()
         lines2 = file2.readlines()
         for i in range(len(lines1)):

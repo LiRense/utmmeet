@@ -1,4 +1,6 @@
-with open('new_lena.txt','r') as fiiles:
+import re
+
+with open('new_lena.txt', 'r') as fiiles:
     lots_lines = fiiles.readlines()
 new_lines = []
 flag = 0
@@ -10,6 +12,7 @@ for i in lots_lines:
     elif '</pre>' in i:
         flag = 0
     if flag==0:
+        i = re.sub("!.*.png!","",i)
         new_lines.append(i)
 
 with open('without_pre.txt', 'w') as fp:

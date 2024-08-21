@@ -446,7 +446,7 @@ while data != "exit":
         debugg()
         clear_buffer()
     elif data == '11':
-        # new_serial()
+        new_serial()
         # fast_reinstall()
     update_settings()
 

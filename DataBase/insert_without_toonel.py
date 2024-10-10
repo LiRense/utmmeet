@@ -105,10 +105,10 @@ def without_toonel_ms_sql(host_db: str, port: int, db_name: str, db_user: str, d
         print(e, "Fail, check settings for user, password or database")
 
 pov = 10000
-col = 100
-alk = '200'
+col = 200
+alk = '187'
 serial = '200'
-number = '00084000'
+number = '10000000'
 for j in range(pov):
     marks = []
     for i in range(col):
@@ -120,8 +120,6 @@ for j in range(pov):
         number = '0' * (8 - len(number)) + number
         print(i+1,' || appended || ', mark)
     print(marks)
-
     select_templates = ("INSERT INTO StampArchive.dbo.mark_list_FSM_MSK_FAB (type_mark, series, number, hash, ranges_processing_id) "
                         "VALUES(%s, %s, %s, %s, %d)")
-
     without_toonel_ms_sql('10.0.50.208',20010,'StampArchive','invoiceissueam','jDn(4SkE', select_templates, marks)

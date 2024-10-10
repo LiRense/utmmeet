@@ -5,14 +5,15 @@ from io import StringIO
 import numpy as np
 from numpy.distutils.conv_template import header
 from pandas import DataFrame
-
+import os.path
 
 def log_in():
     # URL для страницы авторизации
     login_url = 'https://redmine.r77.center-inform.ru/login'
-
     # Создаем сессию
     with requests.Session() as session:
+        os.environ.pop('HTTP_PROXY', None)
+        os.environ.pop('HTTPS_PROXY', None)
         # Получаем страницу с формой авторизации
         response = session.get(login_url)
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -61,6 +62,10 @@ def log_in():
                 table_data = pd.read_html(StringIO(table_html))[0]
                 table_data.pop('Unnamed: 0')
                 table_data.pop('Unnamed: 11')
+                table_data.pop('Трекер')
+                table_data.pop('Статус')
+                table_data.pop('Дата начала')
+                table_data.pop('Создано')
                 # print(table_data.keys())
                 # Выводим массив
                 return table_data
@@ -70,7 +75,7 @@ def log_in():
             return 3
 
 def converter(data:list):
-    header=['#','Проект','Трекер','Статус','Приоритет','Тема','Обновлено','Дата начала','Создано','Срок завершения']
+    header=['#','Проект','Приоритет','Тема','Обновлено','Срок завершения']
     data.append(header)
     sp_sizes=[]
     for i in data:
@@ -103,14 +108,40 @@ def converter(data:list):
             header_str += str(j) + ' ' * (max_sizes[id] - len(str(j))) + '|'
     return header_str
 
+
 def send(data_formated):
-    pass
+    file_path='last_data'
+    if os.path.exists(file_path):
+        file = open('last_data','r')
+        lines_in_file = file.read()
+        if lines_in_file != data_formated:
+            message = '```\n' + data_formated + '\n```'
+            token = "7026945021:AAGJPgkLXGsLF4emnvgtbLEIdcylQxQF3cQ"
+            chat_id = '-1002242999028'
+            params = {'chat_id': chat_id, 'text': message,'parse_mode': 'MarkdownV2'}
+            response = requests.get('https://api.telegram.org/bot' + token + '/sendMessage', params=params)
+            writed_file = open('last_data', 'w')
+            writed_file.write(data_formated)
+        else:
+            pass
+    else:
+        writed_file = open('last_data','w')
+        writed_file.write('')
+        send(data_formated)
+
+def save_jobs(text):
+    with open('last_data','w') as saved:
+        saved.write(text)
+
+
 
 resurl = log_in()
 if type(resurl) is DataFrame:
     new_res = resurl.values.tolist()
     # print(new_res)
     conv_res = converter(new_res)
+    # print(conv_res)
+    send(conv_res)
 elif resurl==3:
     #"Авторизация не удалась"
     pass

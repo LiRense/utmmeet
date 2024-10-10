@@ -7,10 +7,10 @@ tunnel = connection_db.tooneling(jump_host='10.0.50.208', jump_port=20010, remot
                                  ssh_pkey='/home/ivan/.ssh/id_rsa')
 
 pov = 10000
-col = 200
-alk = '187'
+col = 100
+alk = '200'
 serial = '200'
-number = '10000000'
+number = '00084000'
 for j in range(pov):
     marks = []
     for i in range(col):
@@ -25,4 +25,4 @@ for j in range(pov):
 
     select_templates = ("INSERT INTO StampArchive.dbo.mark_list_FSM_MSK_FAB (type_mark, series, number, hash, ranges_processing_id) "
                         "VALUES(%s, %s, %s, %s, %d)")
-    connection_db.insert_multi_ms_sql(tunnel,'StampArchive','invoiceissueam','jDn(4SkE', select_templates, marks)
+

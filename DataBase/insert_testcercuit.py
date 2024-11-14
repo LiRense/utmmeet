@@ -6,11 +6,11 @@ connection_db = Connecting()
 tunnel = connection_db.tooneling(jump_host='10.0.50.208', jump_port=20010, remote_host='10.10.4.7', remote_port=57350, username='martikhin',
                                  ssh_pkey='/home/ivan/.ssh/id_rsa')
 
-pov = 10000
-col = 200
+pov = 20
+col = 1000
 alk = '187'
 serial = '200'
-number = '10000000'
+number = '13614300'
 for j in range(pov):
     marks = []
     for i in range(col):

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Documents Version="1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01"
+   xmlns:ck="http://fsrar.ru/WEGAIS/ChequeV3"
+    xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+    xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2">
+<ns:Owner>
+  <ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+</ns:Owner>
+<ns:Document>
+  <ns:ChequeV3>
+    <ck:Identity>1</ck:Identity>
+    <ck:Header>
+      <ck:Date>2024-11-05T11:25:17</ck:Date>
+      <ck:Kassa>1</ck:Kassa>
+      <ck:Shift>1</ck:Shift>
+      <ck:Number>1</ck:Number>
+      <ck:Type>Возврат</ck:Type>
+    </ck:Header>
+    <ck:Content>
+    <ck:Bottle>
+      <ck:Barcode>2002003031017509230012SATACGDBENZGMHXPX7Q8UKRZYB5KI4FFLQ0SVERVOFNLBDAUSNMHBJKILGIWKHYTQXGRJTUI3KMUGIZ8R7XHSBPVD5LOXAFKYVB4TZ2N0GDASIKANG7UCNEFDUIWKBW3</ck:Barcode>
+      <ck:EAN>5010196091008</ck:EAN>
+      <ck:Price>523.45</ck:Price>
+    </ck:Bottle>
+    </ck:Content>
+  </ns:ChequeV3>
+</ns:Document>
+</ns:Documents>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cheque
+inn="7841051711"
+kpp="770101008"
+address="Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8"
+name="АКЦИОНЕРНОЕ ОБЩЕСТВО ЦЕНТРИНФОРМ"
+kassa="1"
+shift="1"
+number="1"
+datetime="0511241624">
+<Bottle price="-1000.00" barcode="310200303101420923001URVSVC0PKO5MSY9LPFAGQBXEYMO4KD16INHUO4YSGJARBVQKCLZNITFFK0C3E2YPNLAW7RGZZ30CPSTBZI2GVWTPVJE57HHUKJRC6FGIM4NFITUVXAKXRJGQSLDIF5Y8L" ean="00000000"  volume="0.5" />
+</Cheque>

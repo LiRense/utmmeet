@@ -104,11 +104,11 @@ def without_toonel_ms_sql(host_db: str, port: int, db_name: str, db_user: str, d
     except Exception as e:
         print(e, "Fail, check settings for user, password or database")
 
-pov = 10000
-col = 100
-alk = '200'
+pov = 1000
+col = 750
+alk = '187'
 serial = '200'
-number = '00084000'
+number = '12086739'
 for j in range(pov):
     marks = []
     for i in range(col):

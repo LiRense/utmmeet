@@ -380,7 +380,9 @@ def new_serial():
             lines = properties.readlines()
             for line in lines:
                 writed.write(line)
-                if 'crypto.lib.gost.keyPassword=' in line:
+                if 'crypto.lib.gost.serialNumber=' in line:
+                    writed.write(f'crypto.lib.gost.serialNumber={serial}\n')
+                elif 'crypto.lib.gost.keyPassword=' in line:
                     writed.write(f'crypto.lib.gost.serialNumber={serial}\n')
         print(writed)
     with open('/opt/utm/transport/conf/transport.properties', 'w') as writed2:

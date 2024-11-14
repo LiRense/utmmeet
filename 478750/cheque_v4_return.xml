@@ -1,0 +1,50 @@
+<ns:Documents xmlns:c="http://fsrar.ru/WEGAIS/Common" xmlns:ck="http://fsrar.ru/WEGAIS/ChequeV4" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2">
+    <ns:Owner>
+        <ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+    </ns:Owner>
+    <ns:Document>
+        <ns:ChequeV4>
+            <ck:Identity>1</ck:Identity>
+            <ck:Header>
+                <ck:Date>2024-11-05T16:01:00</ck:Date>
+                <ck:Kassa>1</ck:Kassa>
+                <ck:Shift>1</ck:Shift>
+                <ck:Number>1</ck:Number>
+                <ck:Type>Возврат</ck:Type>
+            </ck:Header>
+            <ck:Content>
+                <ck:Bottle>
+                    <ck:Barcode></ck:Barcode>
+                    <ck:EAN>4015576052083</ck:EAN>
+                    <ck:Price>1000.0</ck:Price>
+                </ck:Bottle>
+                <ck:Nomark>
+                    <ck:PosIdentity>1</ck:PosIdentity>
+                    <ck:Product>
+                        <pref:FullName>"Водка СИБИРСКИЙ ВОЛК"</pref:FullName>
+                        <pref:AlcCode>0300004343080000001</pref:AlcCode>
+                        <pref:ProductVCode>200</pref:ProductVCode>
+                        <pref:UnitType>Packed</pref:UnitType>
+                        <pref:Producer>
+                        <oref:UL>
+                             <oref:ClientRegId>030000434308</oref:ClientRegId>
+                            <oref:INN>7841051711</oref:INN>
+                            <oref:KPP>770101008</oref:KPP>
+                            <oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+                            <oref:ShortName>АО "ЦЕНТРИНФОРМ"</oref:ShortName>
+                            <oref:address>
+                                <oref:Country>643</oref:Country>
+                                <oref:RegionCode>77</oref:RegionCode>
+                                <oref:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</oref:description>
+                            </oref:address>
+                        </oref:UL>
+                        </pref:Producer>
+                    </ck:Product>
+                    <ck:Quantity>1</ck:Quantity>
+                    <ck:EAN>4015544452083</ck:EAN>
+                    <ck:Price>1980.0</ck:Price>
+                </ck:Nomark>
+            </ck:Content>
+        </ns:ChequeV4>
+    </ns:Document>
+</ns:Documents>

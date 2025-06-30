@@ -1095,6 +1095,7 @@ def handle_callback(call):
         bot.answer_callback_query(call.id, "Произошла ошибка, попробуйте снова")
 
 
+
 if __name__ == '__main__':
     logger.info("Бот запущен")
     try:

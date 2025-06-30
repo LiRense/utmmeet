@@ -60,5 +60,6 @@ alcode_base_36 = base36encode(alcode_base_10)
 jobcode = '084U'+str(today.year)[-1:]+month(today.month)+month(today.day)+'001'
 num_mark = '000001' #номер марки в заявке
 
-for i in range(6):
+for i in range(39):
+    # print(alcode_base_36)
     print('<ce:amc>'+version+alcode_base_36+jobcode+num_mark+str(random.randint(0,1))+str(random.randint(100,999))+gen_vers(31)+'</ce:amc>')

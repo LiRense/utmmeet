@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents Version="1" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:rpp="http://fsrar.ru/WEGAIS/ClaimIssueFSM" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2">
+  <ns:Owner>
+    <ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:ClaimIssueFSM>
+      <rpp:Identity>UTM</rpp:Identity>
+      <rpp:Header>
+        <rpp:NUMBER>4</rpp:NUMBER>
+        <rpp:Date>2025-05-26</rpp:Date>
+        <rpp:ReportUseAutoProcess>Отчет об использовании ФСМ прошу автоматически сформировать на основе данных, зафиксированных заявителем в ЕГАИС расчетным путем.</rpp:ReportUseAutoProcess>
+        <rpp:TerrOrganRAR>
+          <oref:UL>
+            <oref:ClientRegId>090000000001</oref:ClientRegId>
+            <oref:INN>7710757158</oref:INN>
+            <oref:KPP>771001001</oref:KPP>
+            <oref:FullName>МЕЖРЕГИОНАЛЬНОЕ УПРАВЛЕНИЕ ФЕДЕРАЛЬНОЙ СЛУЖБЫ ПО КОНТРОЛЮ ЗА АЛКОГОЛЬНЫМ И ТАБАЧНЫМ РЫНКАМИ ПО ЦЕНТРАЛЬНОМУ ФЕДЕРАЛЬНОМУ ОКРУГУ</oref:FullName>
+            <oref:address_ur>
+              <oref:Country>643</oref:Country>
+              <oref:RegionCode>77</oref:RegionCode>
+              <oref:description>123022, г.Москва, ул. Б.Декабрьская, д.7 стр.3</oref:description>
+            </oref:address_ur>
+            <oref:address>
+              <oref:Country>643</oref:Country>
+              <oref:RegionCode>77</oref:RegionCode>
+              <oref:description>125412, г. Москва, Коровинское шоссе, 43, стр. 1</oref:description>
+            </oref:address>
+          </oref:UL>
+        </rpp:TerrOrganRAR>
+        <rpp:Declarer>
+          <oref:UL>
+            <oref:ClientRegId>030000434308</oref:ClientRegId>
+            <oref:INN>7841051711</oref:INN>
+            <oref:KPP>770101008</oref:KPP>
+            <oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+            <oref:address_ur>
+              <oref:Country>643</oref:Country>
+              <oref:RegionCode>77</oref:RegionCode>
+              <oref:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</oref:description>
+            </oref:address_ur>
+            <oref:address>
+              <oref:Country>643</oref:Country>
+              <oref:RegionCode>77</oref:RegionCode>
+              <oref:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</oref:description>
+            </oref:address>
+          </oref:UL>
+        </rpp:Declarer>
+        <rpp:TypeClaimM>
+          <rpp:TypeClaim1>
+            <rpp:TypeClaim>1</rpp:TypeClaim>
+          </rpp:TypeClaim1>
+        </rpp:TypeClaimM>
+      </rpp:Header>
+      <rpp:Content>
+        <rpp:Position>
+          <rpp:alcPercent>40</rpp:alcPercent>
+          <rpp:alcPercentMin>40</rpp:alcPercentMin>
+          <rpp:alcPercentMax>40</rpp:alcPercentMax>
+          <rpp:QuantityDal>0.0500</rpp:QuantityDal>
+          <rpp:Capacity>0.5</rpp:Capacity>
+          <rpp:Quantity>1</rpp:Quantity>
+          <rpp:VidAP171fz>Бренди</rpp:VidAP171fz>
+          <rpp:SampleFSM>ФСМ. Алкогольная продукция свыше 9%. До 0,5 л</rpp:SampleFSM>
+          <rpp:MarkType>187</rpp:MarkType>
+          <rpp:Identity>0</rpp:Identity>
+        </rpp:Position>
+      </rpp:Content>
+    </ns:ClaimIssueFSM>
+  </ns:Document>
+</ns:Documents>

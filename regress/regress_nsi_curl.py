@@ -29,9 +29,9 @@ with open("curl_list.txt", 'r') as curl_list_txt:
 for i in curl_list:
     clear_curl_list.append((i.replace("\n","")))
 
-file_w = open('curl_log_json.txt', "w")
-file_w.seek(0)
-for num_curl in range(len(clear_curl_list)):
-    get_curl_response(num_curl,clear_curl_list[num_curl])
-file_w.close()
+# file_w = open('curl_log_json.txt', "w")
+# file_w.seek(0)
+# for num_curl in range(len(clear_curl_list)):
+#     get_curl_response(num_curl,clear_curl_list[num_curl])
+# file_w.close()
 

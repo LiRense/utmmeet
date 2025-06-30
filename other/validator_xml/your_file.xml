@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ns:RequestAddProducts_v1 xmlns:ns="http://fsrar.ru/WEGAIS/RequestAddProducts_v1"
+                          xmlns:c="http://fsrar.ru/WEGAIS/Common"
+                          xmlns:cn="http://fsrar.ru/WEGAIS/CommonEnum"
+                          xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2">
+    <ns:ClientId>1234567890</ns:ClientId>
+    <ns:RequestNumber>REQ123456789</ns:RequestNumber>
+    <ns:RequestDate>2023-10-01</ns:RequestDate>
+    <ns:Content>
+        <ns:Producer>PROD123456789</ns:Producer>
+        <pref:Type>ССПП</pref:Type>
+        <ns:VidCode>12345</ns:VidCode>
+        <ns:CountryCode>643</ns:CountryCode>
+        <ns:FullName>Полное наименование продукции</ns:FullName>
+        <ns:ShortName>Краткое наименование продукции</ns:ShortName>
+        <ns:Unpacked_Flag>0</ns:Unpacked_Flag>
+        <ns:CAPACITYLIST>
+            <ns:CAPACITY>1.5</ns:CAPACITY>
+            <ns:PACKAGETYPE>Бутылка</ns:PACKAGETYPE>
+            <ns:CONTCOMPOSITION>Стекло</ns:CONTCOMPOSITION>
+        </ns:CAPACITYLIST>
+        <ns:PERCENT_ALC_min>40.0</ns:PERCENT_ALC_min>
+        <ns:PERCENT_ALC_max>45.0</ns:PERCENT_ALC_max>
+        <pref:ProductVCode>12345</pref:ProductVCode>
+        <pref:UnitType>Packed</pref:UnitType>
+        <pref:AlcVolume>42.5</pref:AlcVolume>
+        <pref:ProductVCodeDescription>Описание кода вида продукции</pref:ProductVCodeDescription>
+        <pref:Package_Type_Code>001</pref:Package_Type_Code>
+        <pref:Package_Type_Description>Описание вида тары</pref:Package_Type_Description>
+        <pref:Brend>Бренд продукции</pref:Brend>
+        <pref:ShelfLife>365</pref:ShelfLife>
+    </ns:Content>
+</ns:RequestAddProducts_v1>

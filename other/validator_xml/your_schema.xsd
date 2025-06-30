@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema version="1.0"
+           xmlns:ns="http://fsrar.ru/WEGAIS/RequestAddProducts_v1"
+           targetNamespace="http://fsrar.ru/WEGAIS/RequestAddProducts_v1"
+           xmlns:c="http://fsrar.ru/WEGAIS/Common"
+           xmlns:cn="http://fsrar.ru/WEGAIS/CommonEnum"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified"
+>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/Common" schemaLocation="EGCommon.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/CommonEnum" schemaLocation="EGCommonEnum.xsd"/>
+  <xs:import namespace="http://fsrar.ru/WEGAIS/ProductRef_v2" schemaLocation="ProductRef_v2.xsd"/>
+
+  <xs:complexType name="RequestAddProducts_v1">
+    <xs:annotation>
+      <xs:documentation>Запрос на добавление в справочник продукции</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="ClientId" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код клиента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestNumber" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Номер запроса на добавление в справочник продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="RequestDate" type="xs:date" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Дата/время запроса на добавление в справочник продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Content" type="ns:RequestAddSSPPositionType" minOccurs="1" maxOccurs="1">
+              <xs:annotation>
+                <xs:documentation>Содержимое запроса должно содержать 1 позицию</xs:documentation>
+              </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+
+  <xs:complexType name="RequestAddSSPPositionType">
+    <xs:annotation>
+      <xs:documentation>Позиция</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="Producer" type="c:NoEmptyString50" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Регистрационный код производителя продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="pref:ProductType1" name="Type" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Тип продукции (Может принимать значения: ССПП, ССНП, ФАРМ, СЛС)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="cn:Digits5" name="VidCode" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код вида продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element type="cn:Digits3" name="CountryCode" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Код страны присхождения продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="FullName" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование продукции полное</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ShortName" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Наименование продукции краткое</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="64"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Unpacked_Flag" type="ns:UnpackedType" nillable="false" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Признак нефасованной продукции (0 - фасованная, 1 - нефасованная)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="CAPACITYLIST" type="ns:CapacityListType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Описание емкости и тары</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="PERCENT_ALC_min" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PERCENT_ALC_max" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Количество</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+  <xs:simpleType name="UnpackedType">
+    <xs:annotation>
+      <xs:documentation>Типы продукции: упакованная, неупакованная</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:integer">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="CapacityListType">
+    <xs:annotation>
+      <xs:documentation>Емкость, вид и описание тары </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="CAPACITY" type="c:PositiveDecimalType" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Емкость тары продукции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="PACKAGETYPE" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид тары</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+      <xs:element name="CONTCOMPOSITION" type="c:NoEmptyString50" nillable="false" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Вид тары</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+
+    </xs:all>
+  </xs:complexType>
+
+
+</xs:schema>

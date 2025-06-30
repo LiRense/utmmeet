@@ -167,9 +167,9 @@ def cheque_v4_changer(name,sell_type, barc_type, barcode):
 def create_xmls():
     mssql_tables.add_tables()
     directory_path = Path('buffer/')
-    directory_path.mkdir(parents=True, exist_ok=True)
     if directory_path.exists() and directory_path.is_dir():
         shutil.rmtree(directory_path)
+    directory_path.mkdir(parents=True, exist_ok=True)
 
     cases = get_cases()
     for i in cases:
@@ -187,10 +187,23 @@ def curl_cheq():
     current_working_directory = Path.cwd()
     directory_path = Path(str(current_working_directory) + '/buffer/')
 
-    files = [f for f in directory_path.iterdir() if f.is_file()]
+    all_files = [f for f in directory_path.iterdir() if f.is_file()]
+
+    files_v4_sell = [f for f in all_files if 'v4_e' in f.name or 'v4_f' in f.name]
+    files_v4_return = [f for f in all_files if 'v4_r' in f.name]
+    files_v3_sell = [f for f in all_files if 'v3_e' in f.name or 'v3_f' in f.name]
+    files_v3_return = [f for f in all_files if 'v3_r' in f.name]
+    files_sell = [f for f in all_files if 'e_e' in f.name or 'e_f' in f.name]
+    files_return = [f for f in all_files if 'e_r' in f.name]
+
+    files = files_v4_sell + files_v4_return + files_v3_sell + files_v3_return + files_sell + files_return
+
+    counter = 0
 
     with open('results.txt', 'w') as result_file:
         for file in tqdm(files, desc="Processing files"):
+            if counter in (7, 15,):
+                mssql_tables.add_tables()
             if 'v3' in str(file):
                 curl_command = f'curl -s -F "xml_file=@{file}" http://localhost:8080/xml?type=ChequeV3'
             elif 'v4' in str(file):
@@ -199,6 +212,8 @@ def curl_cheq():
                 curl_command = f'curl -s -F "xml_file=@{file}" http://localhost:8080/xml'
             else:
                 continue
+            if counter != 0:
+                counter += 1
 
             start_time = datetime.now()
             time.sleep(5)
@@ -217,7 +232,7 @@ def curl_cheq():
             docker_logs = docker_logs_result.stdout.decode()
 
             result_file.write(f'# {file.name}\n')
-            result_file.write(f'*result: {stdout}*\n')
+            result_file.write(f'*result: {stdout.replace("<url>","")}*\n')
             if stderr and 'error' not in stderr.lower():
                 result_file.write(f'error: {stderr}\n')
             result_file.write('{{collapse(Логи)\n')
@@ -227,14 +242,14 @@ def curl_cheq():
             result_file.write('}}\n')
 
             if "ERROR" in docker_logs:
-                result_file.write('<pre>\n')
+                result_file.write('{{collapse(Ошибка)\n<pre>\n')
                 log_lines = docker_logs.splitlines()
                 for i, line in enumerate(log_lines):
                     if "ERROR" in line:
                         result_file.write(line + '\n')
                         if i + 1 < len(log_lines):
                             result_file.write(log_lines[i + 1] + '\n')
-                result_file.write('</pre>\n')
+                result_file.write('</pre>\n}}\n')
 
     print('All files have been processed.')
 

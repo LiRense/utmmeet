@@ -9,16 +9,15 @@ elif num == 2:
 
 topic = input('Топик:\n>>> ')
 
-message = json.loads(input('Сообщение для отправки:\n>>> '))
-
-# message_json = json.dumps(message, ensure_ascii=False)
-
-producer = KafkaProducer(
-    bootstrap_servers=bootstrap_server,
-    value_serializer=lambda v: json.dumps(v).encode('utf-8')
-)
-
-producer.send(topic, message)
-
-print('Сообщение отправдено')
+with open('kafka_message','r') as message_full:
+    raw_messages = message_full.readlines()
+    for raw_message in raw_messages:
+        message = json.loads(raw_message.replace('\n',''))
+        print(f'Sended message >>>>    {message}')
+        producer = KafkaProducer(
+            bootstrap_servers=bootstrap_server,
+            value_serializer=lambda v: json.dumps(v).encode('utf-8')
+        )
+        producer.send(topic, message)
+        print('Сообщение отправлено')
 producer.close()

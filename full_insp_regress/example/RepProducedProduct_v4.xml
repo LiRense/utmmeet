@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:Documents Version="1.0"
+				xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+				xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+				xmlns:rpp="http://fsrar.ru/WEGAIS/RepProducedProduct_v4"
+				xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3">
+	<ns:Owner>
+		<ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+	</ns:Owner>
+	<ns:Document>
+		<ns:RepProducedProduct_v4>
+			<rpp:Identity>03</rpp:Identity>
+			<rpp:Header>
+				<rpp:Type>OperProduction</rpp:Type>
+				<rpp:NUMBER>03</rpp:NUMBER>
+				<rpp:Date>2025-02-06</rpp:Date>
+				<rpp:ProducedDate>2025-02-06</rpp:ProducedDate>
+				<rpp:Producer>
+				<oref:UL>
+						<oref:ClientRegId>030000434308</oref:ClientRegId>
+						<oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+						<oref:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:ShortName>
+						<oref:INN>7841051711</oref:INN>
+						<oref:KPP>770101008</oref:KPP>
+						<oref:address>
+						<oref:Country>643</oref:Country>
+						<oref:RegionCode>77</oref:RegionCode>
+						<oref:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</oref:description>
+					</oref:address>
+					</oref:UL>
+				</rpp:Producer>
+				<rpp:Note>for testing only</rpp:Note>
+			</rpp:Header>
+			<rpp:Content>
+				<rpp:Position>
+					<rpp:ProductCode>0300004343080000007</rpp:ProductCode>
+					<rpp:Quantity>9</rpp:Quantity>
+					<rpp:alcPercent>40</rpp:alcPercent>
+					<rpp:Party>20160208</rpp:Party>
+					<rpp:Identity>1</rpp:Identity>
+					<rpp:MarkInfo>
+						<ce:amc>201201001052740225001TU6WWOG9YBRDMJAOCSLHVZPX8JHI45UXFNNAU7SYPTJVQX1HMUYVKN9LAMCO8E2RDFGWICR3HRNATIQQ62PMLHLFSJNW8BKBVCSRDGTGWCDX14HVWAS3TBNCSF7OBLEXF</ce:amc>
+					</rpp:MarkInfo>
+				</rpp:Position>
+			</rpp:Content>
+		</ns:RepProducedProduct_v4>
+	</ns:Document>
+</ns:Documents>

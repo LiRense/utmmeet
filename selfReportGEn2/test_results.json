@@ -1,0 +1,791 @@
+[
+  {
+    "configurationId": "05d8db9f-cdfb-4c08-a8af-a4ea1a442a18",
+    "links": [],
+    "failureReasonNames": [],
+    "autoTestExternalId": "TEST_001",
+    "outcome": "Failed",
+    "message": "Ошибки в тестах: Ошибка+skip во вложенных шагах, skip+Ошибка во вложенных шагах, Короткий Ошибочный, Неудачный с вложенными шагами(false+true), Неудачный с вложенными шагами(true+false), Успешный с глубокой вложенностью",
+    "traces": "\n                                                  \n\nОшибка+skip во вложенных шагах:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 166, in test_user_api5\n    create_user()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 157, in create_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n\n\n                                                  \n\n\n\n                                                  \n\nskip+Ошибка во вложенных шагах:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 189, in test_user_api6\n    get_user()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 185, in get_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n\n\n                                                  \n\n\n\n                                                  \n\nКороткий Ошибочный:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 196, in test_user_api7\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n\n\n                                                  \n\n\n\n                                                  \n\nНеудачный с вложенными шагами(false+true):\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 238, in test_shopping_cart\n    add_to_cart()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 222, in add_to_cart\n    assert False, \"Не удалось добавить товар в корзину\"\n           ^^^^^\nAssertionError: Не удалось добавить товар в корзину\n\n\n                                                  \n\n\n\n                                                  \n\nНеудачный с вложенными шагами(true+false):\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 268, in test_shopping_cart2\n    checkout()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 264, in checkout\n    validation()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 261, in validation\n    assert False, \"Ошибка валидации данных\"\n           ^^^^^\nAssertionError: Ошибка валидации данных\n\n\n                                                  \n\n\n\n                                                  \n\nУспешный с глубокой вложенностью:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 335, in test_complex_system2\n    module_b()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 332, in module_b\n    submodule_b1()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 330, in submodule_b1\n    component_b11()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 328, in component_b11\n    assert False, \"Ошибка в компоненте B1.1\"\n           ^^^^^\nAssertionError: Ошибка в компоненте B1.1\n\n\n                                                  \n\n",
+    "startedOn": "2025-07-08T10:36:42.243622Z",
+    "completedOn": "2025-07-08T10:36:43.148300Z",
+    "duration": 904,
+    "attachments": [],
+    "parameters": {
+      "environment": "production"
+    },
+    "properties": {
+      "version": "1.0.0"
+    },
+    "stepResults": [
+      {
+        "title": "Успешный с вложенными шагами",
+        "description": "Проверка наличия обязательных полей",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.243701Z",
+        "outcome": "Passed",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.243706Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.443818Z",
+            "duration": 200
+          },
+          {
+            "title": "Получение пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.443845Z",
+            "outcome": "Passed",
+            "stepResults": [
+              {
+                "title": "Проверка полей ответа",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:42.593920Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:42.593937Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.593947Z",
+            "duration": 150
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "GET /users/{id}",
+          "required_fields": "id,name,email"
+        },
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.593957Z",
+        "duration": 350
+      },
+      {
+        "title": "skip с вложенными skip шагами",
+        "description": "Проверка наличия обязательных полей",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.593961Z",
+        "outcome": "Skipped",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.593967Z",
+            "outcome": "Skipped",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Тест временно отключен - платежный шлюз в разработке",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.794225Z",
+            "duration": 200
+          },
+          {
+            "title": "Получение пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.794230Z",
+            "outcome": "Skipped",
+            "stepResults": [
+              {
+                "title": "Проверка полей ответа",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:42.944413Z",
+                "outcome": "Skipped",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "Тест временно отключен - платежный шлюз в разработке",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:42.944442Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "Все шаги пропущены",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.944447Z",
+            "duration": 150
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "GET /users/{id}",
+          "required_fields": "id,name,email"
+        },
+        "message": "Все шаги пропущены",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.944454Z",
+        "duration": 350
+      },
+      {
+        "title": "skip+успешный во вложенных шагах",
+        "description": "Проверка метода получения данных пользователя",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.944464Z",
+        "outcome": "Passed",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.944470Z",
+            "outcome": "Skipped",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Тест временно отключен - платежный шлюз в разработке",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.944474Z",
+            "duration": 0
+          },
+          {
+            "title": "Получение пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.944478Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.944481Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "GET /users/{id}"
+        },
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.944484Z",
+        "duration": 0
+      },
+      {
+        "title": "Успешный+skip во вложенных шагах",
+        "description": "Проверка метода получения данных пользователя",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.944488Z",
+        "outcome": "Passed",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.944491Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.944492Z",
+            "duration": 0
+          },
+          {
+            "title": "Получение пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.944494Z",
+            "outcome": "Skipped",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Тест временно отключен - платежный шлюз в разработке",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.944498Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "GET /users/{id}"
+        },
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.944499Z",
+        "duration": 0
+      },
+      {
+        "title": "Ошибка+skip во вложенных шагах",
+        "description": "Проверка метода создания пользователя",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.944501Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.944504Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Не удалось получить данные пользователя",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 157, in create_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n",
+            "completedOn": "2025-07-08T10:36:42.946206Z",
+            "duration": 1
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "POST /users"
+        },
+        "message": "Ошибки в шагах: Создание пользователя",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 166, in test_user_api5\n    create_user()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 157, in create_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n",
+        "completedOn": "2025-07-08T10:36:42.946368Z",
+        "duration": 1
+      },
+      {
+        "title": "skip+Ошибка во вложенных шагах",
+        "description": "Проверка метода получения данных пользователя",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.946376Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Создание пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.946381Z",
+            "outcome": "Skipped",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Тест временно отключен - платежный шлюз в разработке",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:42.946385Z",
+            "duration": 0
+          },
+          {
+            "title": "Получение пользователя",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.946387Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Не удалось получить данные пользователя",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 185, in get_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n",
+            "completedOn": "2025-07-08T10:36:42.946492Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1",
+          "method": "GET /users/{id}"
+        },
+        "message": "Ошибки в шагах: Получение пользователя",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 189, in test_user_api6\n    get_user()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 185, in get_user\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n",
+        "completedOn": "2025-07-08T10:36:42.946605Z",
+        "duration": 0
+      },
+      {
+        "title": "Короткий Ошибочный",
+        "description": "Тест проверяет основные методы API для работы с пользователями",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.946610Z",
+        "outcome": "Failed",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1"
+        },
+        "message": "Не удалось получить данные пользователя",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 196, in test_user_api7\n    assert False, \"Не удалось получить данные пользователя\"\n           ^^^^^\nAssertionError: Не удалось получить данные пользователя\n",
+        "completedOn": "2025-07-08T10:36:42.946667Z",
+        "duration": 0
+      },
+      {
+        "title": "Короткий Положительный",
+        "description": "Тест проверяет основные методы API для работы с пользователями",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.946674Z",
+        "outcome": "Passed",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {
+          "api_version": "v1"
+        },
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.946676Z",
+        "duration": 0
+      },
+      {
+        "title": "Короткий skip",
+        "description": "Тест проверяет методы обработки платежей",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.946679Z",
+        "outcome": "Skipped",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {},
+        "message": "Тест временно отключен - платежный шлюз в разработке",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:42.946682Z",
+        "duration": 0
+      },
+      {
+        "title": "Неудачный с вложенными шагами(false+true)",
+        "description": "Проверка добавления товара",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.946684Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Добавление товара в корзину",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:42.946687Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "Не удалось добавить товар в корзину",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 222, in add_to_cart\n    assert False, \"Не удалось добавить товар в корзину\"\n           ^^^^^\nAssertionError: Не удалось добавить товар в корзину\n",
+            "completedOn": "2025-07-08T10:36:43.047026Z",
+            "duration": 100
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Добавление товара в корзину",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 238, in test_shopping_cart\n    add_to_cart()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 222, in add_to_cart\n    assert False, \"Не удалось добавить товар в корзину\"\n           ^^^^^\nAssertionError: Не удалось добавить товар в корзину\n",
+        "completedOn": "2025-07-08T10:36:43.047140Z",
+        "duration": 100
+      },
+      {
+        "title": "Неудачный с вложенными шагами(true+false)",
+        "description": "Проверка валидации данных заказа",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:43.047156Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Добавление товара в корзину",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.047160Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.147329Z",
+            "duration": 100
+          },
+          {
+            "title": "Оформление заказа",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.147342Z",
+            "outcome": "Failed",
+            "stepResults": [
+              {
+                "title": "Проверка валидации данных",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147348Z",
+                "outcome": "Failed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "Ошибка валидации данных",
+                "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 261, in validation\n    assert False, \"Ошибка валидации данных\"\n           ^^^^^\nAssertionError: Ошибка валидации данных\n",
+                "completedOn": "2025-07-08T10:36:43.147484Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "Ошибки в шагах: Проверка валидации данных",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 264, in checkout\n    validation()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 261, in validation\n    assert False, \"Ошибка валидации данных\"\n           ^^^^^\nAssertionError: Ошибка валидации данных\n",
+            "completedOn": "2025-07-08T10:36:43.147595Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {
+          "checkout_method": "POST /checkout"
+        },
+        "message": "Ошибки в шагах: Оформление заказа",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 268, in test_shopping_cart2\n    checkout()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 264, in checkout\n    validation()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 261, in validation\n    assert False, \"Ошибка валидации данных\"\n           ^^^^^\nAssertionError: Ошибка валидации данных\n",
+        "completedOn": "2025-07-08T10:36:43.147730Z",
+        "duration": 100
+      },
+      {
+        "title": "Успешный с глубокой вложенностью",
+        "description": "Тест проверяет взаимодействие нескольких компонентов системы",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:43.147736Z",
+        "outcome": "Passed",
+        "stepResults": [
+          {
+            "title": "Модуль A",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.147740Z",
+            "outcome": "Passed",
+            "stepResults": [
+              {
+                "title": "Подмодуль A1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147741Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.147742Z",
+                "duration": 0
+              },
+              {
+                "title": "Подмодуль A2",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147745Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.147745Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.147747Z",
+            "duration": 0
+          },
+          {
+            "title": "Модуль B",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.147751Z",
+            "outcome": "Passed",
+            "stepResults": [
+              {
+                "title": "Подмодуль B1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147752Z",
+                "outcome": "Passed",
+                "stepResults": [
+                  {
+                    "title": "Компонент B1.1",
+                    "description": "",
+                    "info": "",
+                    "startedOn": "2025-07-08T10:36:43.147753Z",
+                    "outcome": "Passed",
+                    "stepResults": [],
+                    "attachments": [],
+                    "parameters": {},
+                    "message": "",
+                    "traces": "",
+                    "completedOn": "2025-07-08T10:36:43.147754Z",
+                    "duration": 0
+                  }
+                ],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.147755Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.147757Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:43.147759Z",
+        "duration": 0
+      },
+      {
+        "title": "Успешный с глубокой вложенностью",
+        "description": "Тест проверяет взаимодействие нескольких компонентов системы",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:43.147761Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Модуль A",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.147763Z",
+            "outcome": "Passed",
+            "stepResults": [
+              {
+                "title": "Подмодуль A1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147765Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.147765Z",
+                "duration": 0
+              },
+              {
+                "title": "Подмодуль A2",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147768Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.147769Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.147770Z",
+            "duration": 0
+          },
+          {
+            "title": "Модуль B",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.147772Z",
+            "outcome": "Failed",
+            "stepResults": [
+              {
+                "title": "Подмодуль B1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.147773Z",
+                "outcome": "Failed",
+                "stepResults": [
+                  {
+                    "title": "Компонент B1.1",
+                    "description": "",
+                    "info": "",
+                    "startedOn": "2025-07-08T10:36:43.147775Z",
+                    "outcome": "Failed",
+                    "stepResults": [],
+                    "attachments": [],
+                    "parameters": {},
+                    "message": "Ошибка в компоненте B1.1",
+                    "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 328, in component_b11\n    assert False, \"Ошибка в компоненте B1.1\"\n           ^^^^^\nAssertionError: Ошибка в компоненте B1.1\n",
+                    "completedOn": "2025-07-08T10:36:43.147841Z",
+                    "duration": 0
+                  }
+                ],
+                "attachments": [],
+                "parameters": {},
+                "message": "Ошибки в шагах: Компонент B1.1",
+                "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 330, in submodule_b1\n    component_b11()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 328, in component_b11\n    assert False, \"Ошибка в компоненте B1.1\"\n           ^^^^^\nAssertionError: Ошибка в компоненте B1.1\n",
+                "completedOn": "2025-07-08T10:36:43.147934Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "Ошибки в шагах: Подмодуль B1",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 332, in module_b\n    submodule_b1()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 330, in submodule_b1\n    component_b11()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 328, in component_b11\n    assert False, \"Ошибка в компоненте B1.1\"\n           ^^^^^\nAssertionError: Ошибка в компоненте B1.1\n",
+            "completedOn": "2025-07-08T10:36:43.148063Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Модуль B",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 198, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 335, in test_complex_system2\n    module_b()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 332, in module_b\n    submodule_b1()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 330, in submodule_b1\n    component_b11()\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testItReports.py\", line 291, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/selfReportGEn/testingModule.py\", line 328, in component_b11\n    assert False, \"Ошибка в компоненте B1.1\"\n           ^^^^^\nAssertionError: Ошибка в компоненте B1.1\n",
+        "completedOn": "2025-07-08T10:36:43.148213Z",
+        "duration": 0
+      },
+      {
+        "title": "Успешный с глубокой вложенностью",
+        "description": "Тест проверяет взаимодействие нескольких компонентов системы",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:43.148218Z",
+        "outcome": "Passed",
+        "stepResults": [
+          {
+            "title": "Модуль A",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.148221Z",
+            "outcome": "Passed",
+            "stepResults": [
+              {
+                "title": "Подмодуль A1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.148222Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.148223Z",
+                "duration": 0
+              },
+              {
+                "title": "Подмодуль A2",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.148225Z",
+                "outcome": "Passed",
+                "stepResults": [],
+                "attachments": [],
+                "parameters": {},
+                "message": "",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.148226Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.148228Z",
+            "duration": 0
+          },
+          {
+            "title": "Модуль B",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-07-08T10:36:43.148230Z",
+            "outcome": "Skipped",
+            "stepResults": [
+              {
+                "title": "Подмодуль B1",
+                "description": "",
+                "info": "",
+                "startedOn": "2025-07-08T10:36:43.148232Z",
+                "outcome": "Skipped",
+                "stepResults": [
+                  {
+                    "title": "Компонент B1.1",
+                    "description": "",
+                    "info": "",
+                    "startedOn": "2025-07-08T10:36:43.148233Z",
+                    "outcome": "Skipped",
+                    "stepResults": [],
+                    "attachments": [],
+                    "parameters": {},
+                    "message": "Тест временно отключен - платежный шлюз в разработке",
+                    "traces": "",
+                    "completedOn": "2025-07-08T10:36:43.148237Z",
+                    "duration": 0
+                  }
+                ],
+                "attachments": [],
+                "parameters": {},
+                "message": "Все шаги пропущены",
+                "traces": "",
+                "completedOn": "2025-07-08T10:36:43.148238Z",
+                "duration": 0
+              }
+            ],
+            "attachments": [],
+            "parameters": {},
+            "message": "Все шаги пропущены",
+            "traces": "",
+            "completedOn": "2025-07-08T10:36:43.148240Z",
+            "duration": 0
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "",
+        "traces": "",
+        "completedOn": "2025-07-08T10:36:43.148242Z",
+        "duration": 0
+      }
+    ],
+    "setupResults": [
+      {
+        "title": "Инициализация тестового окружения",
+        "description": "Подготовка данных для тестов",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:42.243627Z",
+        "completedOn": "2025-07-08T10:36:42.243636Z",
+        "outcome": "Passed",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {
+          "db_connection": "postgresql://user:pass@localhost:5432/test",
+          "api_url": "https://api.example.com/v1"
+        },
+        "duration": 0
+      }
+    ],
+    "teardownResults": [
+      {
+        "title": "Очистка тестовых данных",
+        "description": "Удаление временных файлов и записей",
+        "info": "",
+        "startedOn": "2025-07-08T10:36:43.148245Z",
+        "completedOn": "2025-07-08T10:36:43.148245Z",
+        "outcome": "Passed",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {
+          "cleanup_method": "full"
+        },
+        "duration": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v4" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434309</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v4>
+      <ns1:Identity>00024</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>00024</ns1:NUMBER>
+        <ns1:Date>2025-06-25</ns1:Date>
+        <ns1:ImportedDate>2025-06-25</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-05-27</ns1:GTDDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000007</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:Party>Party123</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:MarkInfo>
+            <ns3:amc>201201001052740225001TU6WWOG9YBRDMJAOCSLHVZPX8JHI45UXFNNAU7SYPTJVQX1HMUYVKN9LAMCO8E2RDFGWICR3HRNATIQQ62PMLHLFSJNW8BKBVCSRDGTGWCDX14HVWAS3TBNCSF7OBLEXF</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v4>
+  </ns0:Document>
+</ns0:Documents>

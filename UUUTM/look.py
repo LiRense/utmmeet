@@ -85,7 +85,7 @@ def install_utm():
     # sys.exit(prg.exec_())
     print(data2)
     if data2 != "":
-        os.system(f'echo {passw} | sudo -S  dpkg --install {data}')
+        os.system(f'echo {passw} | sudo -S  dpkg --install "{data}"')
         time.sleep(30)
     else:
         print("not file")

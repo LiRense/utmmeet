@@ -1,222 +1,464 @@
-h6. RIP
+h6. domain-fsm
 
-# product
-## skip {{collapse(БД)
 <pre>
 </pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус прохождения проверки проставился корректно - УСПЕХ*
-## warn {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус прохождения проверки проставился корректно, тикет успешный с предупреждением - УСПЕХ*
-## error {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус проверки определился корректно, проверка провалилась корректно с корректной ошибкой - УСПЕХ*
-# quantity
-## skip {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Пока не очень понятно как воспроизвести именно эту проверку. Так как она перекрывается другой проверкой по тэгу Quantity*
-## warn {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Пока не очень понятно как воспроизвести именно эту проверку. Так как она перекрывается другой проверкой по тэгу Quantity*
-## error {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус проверки определился корректно, проверка провалилась корректно с частично корректной ошибкой(код продукции отсутствует "Значение количества продукции с кодом  не соответствует формату") - ОШИБКА*
-# daterange
-## skip {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус прохождения проверки проставился корректно - УСПЕХ*
-## warn {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: Проверка определилась, статус прохождения проверки проставился корректно, тикет успешный с предупреждением - УСПЕХ*
-## error {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: проверка определилась, статус прохождения проверки проставился корректно, тикет сформировался корректный - УСПЕХ*
-# doubles
-## skip {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-{{collapse(select + result)
-<pre>
-</pre>
-}}
-*Полученный результат: проверка определилась, статус прохождения проверки проставился корректно, тикет сформировался корректный - УСПЕХ*
-## warn {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-{{collapse(select + result)
-<pre>
-</pre>
-}}
-*Полученный результат:  проверка определилась, статус прохождения проверки проставился корректно, тикет успешный с предупреждением - УСПЕХ*
-## error {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-{{collapse(select + result)
-<pre>
-</pre>
-}}
-*Полученный результат:  проверка определилась, статус прохождения проверки проставился корректно, проверка отработала - УСПЕХ*
-# senderproducer
-## skip {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: проверка определилась, статус прохождения проверки проставился корректно,тикет корректный - УСПЕХ*
-## warn {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: проверка определилась, статус прохождения проверки проставился корректно,тикет корректный - УСПЕХ*
-## error {{collapse(БД)
-<pre>
-</pre>
-}}
-{{collapse(Полный лог)
-<pre>
-</pre>
-}}
-{{collapse(Часть лога)
-<pre>
-</pre>
-}}
-*Полученный результат: проверка определилась, статус прохождения проверки проставился корректно, тикет сформировался корректный - УСПЕХ*
 
----
+# Блок 1 (перебор базовых результатов для ЮЛ по схеме)
+## sender(ЮЛ) с лицензией, consignee(ЮЛ) с лицензией {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка наличия лицензии - УСПЕХ*
+## sender(ЮЛ) с лицензией, consignee(ЮЛ) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ЮЛ) без лицензии, consignee(ЮЛ) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ЮЛ) без лицензией, consignee(ЮЛ) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработан - УСПЕХ*
+# Блок 2 (перебор базовых результатов для ИП по схеме)
+## sender(ИП) с лицензией, consignee(ИП) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии sender - УСПЕХ*
+## sender(ИП) с лицензией, consignee(ИП) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ИП) без лицензии, consignee(ИП) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ИП) без лицензией, consignee(ИП) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешная обработка - УСПЕХ*
+# Блок 3 (проверка что только 1 ИНН сам себе может отправлять)
+## sender(ИП) без лицензии, consignee(ЮЛ) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ИНН не совпадают, получили отбивку - УСПЕХ*
+## sender(ЮЛ) без лицензии, consignee(ИП) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ИНН не совпадают, получили отбивку - УСПЕХ*
+# Блок 4 (проверка, что нет повторов передачи на 1 КПП)
+## sender(ЮЛ 030000434308), consignee(Юл 030000434308)
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получаем ошибку - УСПЕХ*
+## sender(ИП 030043434308), consignee(ИП 030043434308)
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получаем ошибку - УСПЕХ*
+# Блока 5 (проверка соответствия типа для ЮЛ)
+## sender(import), consignee(producer) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка по типу лицензии - УСПЕХ*
+## sender(producer), consignee(import) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка по типу лицензии - УСПЕХ*
+## sender(import), consignee(import) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработан - УСПЕХ*
+## sender(producer), consignee(producer) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработан - УСПЕХ*
+## sender(unknown), consignee(producer) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии - УСПЕХ*
+## sender(producer), consignee(unknown) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии - УСПЕХ*
+## sender(unknown), consignee(unknown) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии - УСПЕХ*
+# Блок 6 (нет данных в NSI_CLIENTS)
+## sender(NO INFO), consignee(producer) ИП
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии у sender - УСПЕХ*
+## sender(producer), consignee(NO INFO) ИП
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
+## sender(NO INFO), consignee(producer)  ЮЛ
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
+## sender(producer), consignee(NO INFO)  ЮЛ
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
+# Блок 7 (проверка на суперЛицензию для ЮЛ)
+## sender(producer), consignee(super) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработали - УСПЕХ*
+## sender(super), consignee(producer) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработали - УСПЕХ*
+## sender(import), consignee(super) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработали - УСПЕХ*
+## sender(super), consignee(import) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработали - УСПЕХ*
+## sender(super), consignee(super) {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешно обработали - УСПЕХ*
 
-h6. Ошибки 
 
-* Решил перечитать все шаблоны тестов ошибок
-И увидел, что в quantity вместо кода продукции стоит пробел (Значение количества продукции с кодом не соответствует формату), а шаблон выгядит вот так: Значение количества продукции с кодом %s не соответствует формату (П. 2.3)
-* quantity - Пока не очень понятно как воспроизвести именно эту проверку. Так как она перекрывается другой проверкой по тэгу Quantity (У Леши было предложение объединение этих проверок, но для этого требуется официальное указание) (П. 2)

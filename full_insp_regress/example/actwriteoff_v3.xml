@@ -1,0 +1,30 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/ActWriteOff_v3" xmlns:ns2="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:ActWriteOff_v3>
+      <ns1:Identity>00021</ns1:Identity>
+      <ns1:Header>
+        <ns1:ActNumber>00021</ns1:ActNumber>
+        <ns1:ActDate>2024-09-23</ns1:ActDate>
+        <ns1:TypeWriteOff>Проверки</ns1:TypeWriteOff>
+        <ns1:Note>без комментария</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Quantity>1.5</ns1:Quantity>
+          <ns1:InformF1F2>
+            <ns1:InformF2>
+              <ns2:F2RegId>TEST-FB-000000040964745</ns2:F2RegId>
+            </ns1:InformF2>
+          </ns1:InformF1F2>
+          <ns1:MarkCodeInfo>
+            <ns3:amc>2002003031015509230011EISLGXKSHOZRMV5NUBLUD4IWH2CBEQZPA6DLJ8EMLZKTNBPHSX5I3MTF7URX0FKODNVBAVOLOSIHPNEDXCU25380WWQP1KHBT7FXQZGOVTCHI1UDWFPZUWNCKSDBFJMT</ns3:amc>
+          </ns1:MarkCodeInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:ActWriteOff_v3>
+  </ns0:Document>
+</ns0:Documents>

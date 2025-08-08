@@ -932,50 +932,53 @@ def join_group(call):
         bot.answer_callback_query(call.id, "Ошибка при подключении к группе")
 
 
-# Обновляем функцию handle_start для сохранения имен пользователей
-@bot.message_handler(commands=['start'])
-def handle_start(message):
+def process_group_code(message, temp_msg_id):
     try:
         user_id = str(message.from_user.id)
-        # Сохраняем имя пользователя
-        user_name = message.from_user.first_name
-        if message.from_user.last_name:
-            user_name += f" {message.from_user.last_name}"
-        if message.from_user.username:
-            user_name += f" (@{message.from_user.username})"
-        user_names[user_id] = user_name
+        group_code = message.text.strip().upper()
 
-        # Инициализация данных пользователя
-        if user_id not in user_tasks:
-            user_tasks[user_id] = {}
+        # Удаляем сообщение с вводом кода и запросом
+        try:
+            bot.delete_message(message.chat.id, message.message_id)
+            bot.delete_message(message.chat.id, temp_msg_id)
+        except Exception as e:
+            logger.error(f"Ошибка удаления сообщения: {e}")
 
-        # Очищаем все предыдущие сообщения
-        cleanup_user_messages(message.chat.id, user_id)
+        # Удаляем временный ID сообщения
+        if f"{user_id}_temp" in message_ids:
+            del message_ids[f"{user_id}_temp"]
 
-        text = "📅 Добро пожаловать в планировщик дел!\n\n"
-        markup = types.InlineKeyboardMarkup()
+        # Ищем группу с таким кодом
+        group_found = None
+        for group_id, group in groups.items():
+            if group['code'] == group_code:
+                group_found = group_id
+                break
 
-        if user_id in user_groups:
-            group_code = groups[user_groups[user_id]]['code']
-            text += f"Вы в группе: {group_code}\n"
-            markup.row(types.InlineKeyboardButton("Открыть планировщик", callback_data="day_today"))
-        else:
-            text += "Вы не состоите в группе\n"
-            markup.row(
-                types.InlineKeyboardButton("Создать группу", callback_data="create_group"),
-                types.InlineKeyboardButton("Присоединиться", callback_data="join_group")
+        if group_found:
+            # Добавляем пользователя в группу
+            if user_id not in groups[group_found]['members']:
+                groups[group_found]['members'].append(user_id)
+
+            user_groups[user_id] = group_found
+            save_data()
+
+            bot.send_message(
+                message.chat.id,
+                f"Вы успешно присоединились к группе {group_code}",
+                reply_to_message_id=message_ids.get(user_id)
             )
 
-        msg = bot.send_message(
-            message.chat.id,
-            text,
-            reply_markup=markup
-        )
-        message_ids[user_id] = msg.message_id
-        save_data()  # Сохраняем обновленные данные
+            show_day(message.chat.id, datetime.now().date())
+        else:
+            bot.send_message(
+                message.chat.id,
+                "Группа с таким кодом не найдена",
+                reply_to_message_id=message_ids.get(user_id)
+            )
     except Exception as e:
-        logger.error(f"Ошибка в handle_start: {e}")
-        bot.send_message(message.chat.id, "Произошла ошибка при запуске бота")
+        logger.error(f"Ошибка при обработке кода группы: {e}")
+        bot.send_message(message.chat.id, "Произошла ошибка при подключении к группе")
 
 
 # Обновляем функцию handle_start для сохранения имен пользователей
@@ -1106,13 +1109,22 @@ def handle_callback(call):
 
 if __name__ == '__main__':
     logger.info("Бот запущен")
-    while True:
-        try:
-            transfer_uncompleted_tasks()
-            bot.infinity_polling()
-        except Exception as e:
-            logger.error(f"Ошибка бота: {e}")
-            logger.info("Перезапуск бота через 10 секунд...")
-            time.sleep(10)
-        finally:
-            save_data()
+    try:
+        # Удаляем вебхук перед запуском polling
+        bot.remove_webhook()
+        time.sleep(1)  # Даем время на удаление вебхука
+
+        while True:
+            try:
+                transfer_uncompleted_tasks()
+                bot.infinity_polling()
+            except Exception as e:
+                logger.error(f"Ошибка бота: {e}")
+                logger.info("Перезапуск бота через 10 секунд...")
+                time.sleep(10)
+            finally:
+                save_data()
+    except Exception as e:
+        logger.error(f"Критическая ошибка: {e}")
+    finally:
+        save_data()

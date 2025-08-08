@@ -1,0 +1,20 @@
+<ns:Documents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:wa="http://fsrar.ru/WEGAIS/ActTTNSingle_v4" xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+<ns:Owner>
+	<ns:FSRAR_ID>030043434308</ns:FSRAR_ID>
+</ns:Owner>
+	<ns:Document>
+		<ns:WayBillAct_v4>
+			<wa:Header>
+				<wa:IsAccept>Accepted</wa:IsAccept>
+				<wa:ACTNUMBER>001</wa:ACTNUMBER>
+				<wa:ActDate>2025-04-21</wa:ActDate>
+				<wa:WBRegId>TEST-TTN-0007920609</wa:WBRegId>
+			</wa:Header>
+			<wa:Content>
+			</wa:Content>
+			<wa:Transport>
+				<wa:ChangeOwnership>IsChange</wa:ChangeOwnership>
+			</wa:Transport>
+		</ns:WayBillAct_v4>
+	</ns:Document>
+</ns:Documents>

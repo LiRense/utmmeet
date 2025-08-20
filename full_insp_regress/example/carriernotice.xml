@@ -1,0 +1,93 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/CarrierNotice" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/ProductRef_v2" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000424093</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:CarrierNotice>
+      <ns1:Header>
+        <ns1:ClientIdentity>107</ns1:ClientIdentity>
+        <ns1:Serial>100007</ns1:Serial>
+        <ns1:Shipper>
+          <ns2:UL>
+            <ns2:ClientRegId>030000424093</ns2:ClientRegId>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101004</ns2:KPP>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Shipper>
+        <ns1:Consignee>
+          <ns2:FL>
+            <ns2:ClientRegId>030000428196</ns2:ClientRegId>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:FL>
+        </ns1:Consignee>
+        <ns1:Carrier>
+          <ns2:UL>
+            <ns2:ClientRegId>030000424092</ns2:ClientRegId>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101003</ns2:KPP>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Carrier>
+        <ns1:ClientTransport>
+          <ns2:TR>
+            <ns2:ClientRegId>069900424093</ns2:ClientRegId>
+            <ns2:address>
+              <ns2:description>ВО 9999 77 RUS</ns2:description>
+            </ns2:address>
+          </ns2:TR>
+        </ns1:ClientTransport>
+        <ns1:ShipmentOutDate>2021-06-23</ns1:ShipmentOutDate>
+        <ns1:ShipmentInDate>2021-06-23</ns1:ShipmentInDate>
+        <ns1:EGAISFixNumberTTN>TEST-WBF-201800000162484</ns1:EGAISFixNumberTTN>
+        <ns1:NotifNumber>1</ns1:NotifNumber>
+        <ns1:NotifDate>2021-06-23</ns1:NotifDate>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:PosIdentity>1</ns1:PosIdentity>
+          <ns1:Product>
+            <ns3:AlcCode>0000000000708201901</ns3:AlcCode>
+            <ns3:FullName>"Водка Ивановская пол-литровая"</ns3:FullName>
+            <ns3:ProductVCode>200</ns3:ProductVCode>
+            <ns3:UnitType>Packed</ns3:UnitType>
+            <ns3:Producer>
+              <ns2:UL>
+                <ns2:ClientRegId>030000424092</ns2:ClientRegId>
+                <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                <ns2:INN>7841051711</ns2:INN>
+                <ns2:KPP>770101003</ns2:KPP>
+                <ns2:address>
+                  <ns2:Country>643</ns2:Country>
+                  <ns2:RegionCode>91</ns2:RegionCode>
+                  <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+                </ns2:address>
+              </ns2:UL>
+            </ns3:Producer>
+          </ns1:Product>
+          <ns1:Quantity20>1</ns1:Quantity20>
+          <ns1:AlcPerc20>40.000</ns1:AlcPerc20>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:CarrierNotice>
+  </ns0:Document>
+</ns0:Documents>

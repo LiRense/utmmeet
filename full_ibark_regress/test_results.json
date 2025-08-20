@@ -1,0 +1,251 @@
+[
+  {
+    "configurationId": "130ccce4-3abd-4c32-bda1-ae0dfb1ca83b",
+    "links": [],
+    "failureReasonNames": [],
+    "autoTestExternalId": "default_test_id",
+    "outcome": "Failed",
+    "message": "Ошибки в тестах: СМОК-тестирование waybill_v4, СМОК-тестирование repproducedproduct_v4, СМОК-тестирование repimportedproduct_v4, СМОК-тестирование actchargeon_v2",
+    "traces": "\n                                                  \n\nСМОК-тестирование waybill_v4:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 276, in waybill_v4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 300, in WayBill_v4_test\n    waybill_v4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 281, in waybill_v4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n\n\n                                                  \n\n\n\n                                                  \n\nСМОК-тестирование repproducedproduct_v4:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 71, in rpp_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 95, in RPP_4_test\n    rpp_4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 76, in rpp_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n\n\n                                                  \n\n\n\n                                                  \n\nСМОК-тестирование repimportedproduct_v4:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 139, in rip_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 163, in RIP_4_test\n    rip_4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 144, in rip_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n\n\n                                                  \n\n\n\n                                                  \n\nСМОК-тестирование actchargeon_v2:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 207, in aco_2_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 231, in ACO_2_test\n    aco_2_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 212, in aco_2_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n\n\n                                                  \n\n",
+    "startedOn": "2025-08-06T09:25:21.523136Z",
+    "completedOn": "2025-08-06T09:32:45.313692Z",
+    "duration": 443790,
+    "attachments": [],
+    "parameters": {
+      "environment": "inspector"
+    },
+    "properties": {},
+    "stepResults": [
+      {
+        "title": "СМОК-тестирование waybill_v4",
+        "description": "",
+        "info": "",
+        "startedOn": "2025-08-06T09:25:21.523140Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Генерация xml",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-08-06T09:25:21.523149Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:25:21.524137Z",
+            "duration": 0
+          },
+          {
+            "title": "Вставка в БД",
+            "description": "Кладем сформированный документ в бд outbox в matainfo",
+            "info": "",
+            "startedOn": "2025-08-06T09:25:21.524145Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:25:23.568879Z",
+            "duration": 2044
+          },
+          {
+            "title": "Отправка json",
+            "description": "Отправляем json на обработку в inspector в confirmed",
+            "info": "",
+            "startedOn": "2025-08-06T09:25:23.568888Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "NoBrokersAvailable",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 276, in waybill_v4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 281, in waybill_v4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+            "completedOn": "2025-08-06T09:25:25.579333Z",
+            "duration": 2010
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Отправка json",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 276, in waybill_v4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 300, in WayBill_v4_test\n    waybill_v4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 281, in waybill_v4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+        "completedOn": "2025-08-06T09:25:25.579916Z",
+        "duration": 4056
+      },
+      {
+        "title": "СМОК-тестирование repproducedproduct_v4",
+        "description": "",
+        "info": "",
+        "startedOn": "2025-08-06T09:25:25.580004Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Генерация xml",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-08-06T09:25:25.580012Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:25:25.580359Z",
+            "duration": 0
+          },
+          {
+            "title": "Вставка в БД",
+            "description": "Кладем сформированный документ в бд outbox в matainfo",
+            "info": "",
+            "startedOn": "2025-08-06T09:25:25.580365Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:26:34.671534Z",
+            "duration": 69091
+          },
+          {
+            "title": "Отправка json",
+            "description": "Отправляем json на обработку в inspector в confirmed",
+            "info": "",
+            "startedOn": "2025-08-06T09:26:34.671543Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "NoBrokersAvailable",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 71, in rpp_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 76, in rpp_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+            "completedOn": "2025-08-06T09:26:36.672885Z",
+            "duration": 2001
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Отправка json",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 71, in rpp_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n    producer = KafkaProducer(\n               ^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 95, in RPP_4_test\n    rpp_4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 76, in rpp_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+        "completedOn": "2025-08-06T09:26:36.673196Z",
+        "duration": 71093
+      },
+      {
+        "title": "СМОК-тестирование repimportedproduct_v4",
+        "description": "",
+        "info": "",
+        "startedOn": "2025-08-06T09:26:36.673269Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Генерация xml",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-08-06T09:26:36.673275Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:26:36.675622Z",
+            "duration": 2
+          },
+          {
+            "title": "Вставка в БД",
+            "description": "Кладем сформированный документ в бд outbox в matainfo",
+            "info": "",
+            "startedOn": "2025-08-06T09:26:36.675632Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:31:53.648016Z",
+            "duration": 316972
+          },
+          {
+            "title": "Отправка json",
+            "description": "Отправляем json на обработку в inspector в confirmed",
+            "info": "",
+            "startedOn": "2025-08-06T09:31:53.648026Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "NoBrokersAvailable",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 139, in rip_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 144, in rip_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+            "completedOn": "2025-08-06T09:31:55.649415Z",
+            "duration": 2001
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Отправка json",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 139, in rip_4_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 163, in RIP_4_test\n    rip_4_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 144, in rip_4_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+        "completedOn": "2025-08-06T09:31:55.649699Z",
+        "duration": 318976
+      },
+      {
+        "title": "СМОК-тестирование actchargeon_v2",
+        "description": "",
+        "info": "",
+        "startedOn": "2025-08-06T09:31:55.649772Z",
+        "outcome": "Failed",
+        "stepResults": [
+          {
+            "title": "Генерация xml",
+            "description": "",
+            "info": "",
+            "startedOn": "2025-08-06T09:31:55.649778Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:31:55.650121Z",
+            "duration": 0
+          },
+          {
+            "title": "Вставка в БД",
+            "description": "Кладем сформированный документ в бд outbox в matainfo",
+            "info": "",
+            "startedOn": "2025-08-06T09:31:55.650126Z",
+            "outcome": "Passed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "",
+            "traces": "",
+            "completedOn": "2025-08-06T09:32:43.312113Z",
+            "duration": 47661
+          },
+          {
+            "title": "Отправка json",
+            "description": "Отправляем json на обработку в inspector в confirmed",
+            "info": "",
+            "startedOn": "2025-08-06T09:32:43.312122Z",
+            "outcome": "Failed",
+            "stepResults": [],
+            "attachments": [],
+            "parameters": {},
+            "message": "NoBrokersAvailable",
+            "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 207, in aco_2_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 212, in aco_2_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+            "completedOn": "2025-08-06T09:32:45.313302Z",
+            "duration": 2001
+          }
+        ],
+        "attachments": [],
+        "parameters": {},
+        "message": "Ошибки в шагах: Отправка json",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 207, in aco_2_json_send\n    sender.send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/regress.py\", line 278, in send\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/producer/kafka.py\", line 481, in __init__\n    client = self.config['kafka_client'](\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 262, in __init__\n    self.config['api_version'] = self.check_version()\n                                 ^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/venv/lib/python3.11/site-packages/kafka/client_async.py\", line 1074, in check_version\n    raise Errors.NoBrokersAvailable()\nkafka.errors.NoBrokersAvailable: NoBrokersAvailable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 231, in ACO_2_test\n    aco_2_json_send()\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/selfReportGEn2/testItReports.py\", line 295, in wrapper\n    result = step_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/full_insp_regress/test_regress.py\", line 212, in aco_2_json_send\n    assert False, e\n           ^^^^^\nAssertionError: NoBrokersAvailable\n",
+        "completedOn": "2025-08-06T09:32:45.313594Z",
+        "duration": 49663
+      }
+    ],
+    "setupResults": [],
+    "teardownResults": []
+  }
+]

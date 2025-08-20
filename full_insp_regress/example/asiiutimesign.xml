@@ -1,0 +1,47 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/AsiiuTime" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/ProductRef_v2" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000424092</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:AsiiuTime>
+      <ns1:Sensor>
+        <ns1:SensorNumber>1100607_05</ns1:SensorNumber>
+        <ns1:PlaceId>1186240</ns1:PlaceId>
+        <ns1:SensorModel>КСИП-2С</ns1:SensorModel>
+      </ns1:Sensor>
+      <ns1:Producer>
+        <ns2:UL>
+          <ns2:INN>7841051711</ns2:INN>
+          <ns2:KPP>770101003</ns2:KPP>
+          <ns2:ClientRegId>030000424092</ns2:ClientRegId>
+          <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+          <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+          <ns2:address>
+            <ns2:Country>643</ns2:Country>
+            <ns2:RegionCode>77</ns2:RegionCode>
+            <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+          </ns2:address>
+        </ns2:UL>
+      </ns1:Producer>
+      <ns1:Data>
+        <ns1:Position>
+          <ns1:Product>
+            <ns3:UnitType>Packed</ns3:UnitType>
+            <ns3:FullName>Водка СИБИРСКИЙ ВОЛК</ns3:FullName>
+            <ns3:AlcCode>0300004343080000001</ns3:AlcCode>
+            <ns3:Capacity>0.5</ns3:Capacity>
+            <ns3:AlcVolume>40.000</ns3:AlcVolume>
+            <ns3:ProductVCode>200</ns3:ProductVCode>
+          </ns1:Product>
+          <ns1:ControlDate>2023-08-30T17:00:00</ns1:ControlDate>
+          <ns1:VbsControl>81863.8000</ns1:VbsControl>
+          <ns1:AControl>234187.8000</ns1:AControl>
+          <ns1:PercentAlc>40.0</ns1:PercentAlc>
+          <ns1:BottleCountControl>8314122</ns1:BottleCountControl>
+          <ns1:Temperature>12.0</ns1:Temperature>
+          <ns1:Mode>005</ns1:Mode>
+        </ns1:Position>
+      </ns1:Data>
+    </ns0:AsiiuTime>
+  </ns0:Document>
+</ns0:Documents>

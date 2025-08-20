@@ -1,0 +1,53 @@
+/* Для больших экранов (например, десктопы) */
+@media (min-width: 1200px) {
+    .wy-nav-content {
+        max-width: 80% !important;
+    }
+    .wy-side-nav-search,
+    .wy-side-nav {
+        width: 20% !important;
+    }
+}
+
+/* Для средних экранов (планшеты) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .wy-nav-content {
+        max-width: 90% !important;
+    }
+    .wy-side-nav-search,
+    .wy-side-nav {
+        width: 25% !important;
+    }
+}
+
+/* Для маленьких экранов (мобильные устройства) */
+@media (max-width: 767px) {
+    .wy-nav-content {
+        max-width: 100% !important;
+    }
+    .wy-side-nav-search,
+    .wy-side-nav {
+        width: 100% !important;
+    }
+}
+
+
+/* Увеличение ширины поисковой строки */
+.wy-side-nav-search {
+    width: 100% !important; /* Занимает всю ширину боковой панели */
+    padding: 0 10px !important; /* Отступы внутри поля */
+    margin-bottom: 10px !important; /* Отступ снизу */
+}
+
+/* Увеличение ширины самой боковой панели (если нужно) */
+.wy-side-nav-search input[type="text"] {
+    width: 100% !important; /* Поле ввода занимает всю ширину */
+    box-sizing: border-box !important; /* Учитывает padding в ширине */
+}
+
+/* Опционально: увеличение ширины всей боковой панели */
+.wy-side-nav-search,
+.wy-side-nav {
+    width: 280px !important; /* Фиксированная ширина */
+    min-width: 280px !important; /* Минимальная ширина */
+}

@@ -1,0 +1,26 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/ActUnFixBarCode" xmlns:ns2="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000438898</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:ActUnFixBarCode>
+      <ns1:Identity>1</ns1:Identity>
+      <ns1:Header>
+        <ns1:Number>10001</ns1:Number>
+        <ns1:ActDate>2023-10-26</ns1:ActDate>
+        <ns1:Note>текст комментария</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Inform2RegId>TEST-FB-000000040868060</ns1:Inform2RegId>
+          <ns1:MarkInfo>
+            <ns2:amc>136100000000750118001D5CCFC794963898C1B13E41231CKY42T7UDIJJY2AWLHS7HPGINLMY7PQPDNJALVS42WNCHYRCO257SPCSCF4ASM37BZNTLIASYRVGFUTCXDXDJPTESTOVAYAMARKA002</ns2:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:ActUnFixBarCode>
+  </ns0:Document>
+</ns0:Documents>
+
+

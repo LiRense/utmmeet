@@ -1,0 +1,100 @@
+<ns:Documents
+xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3"
+xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01"
+xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2"
+xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2"
+xmlns:wb="http://fsrar.ru/WEGAIS/TTNSingle_v4"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+	<ns:Owner>
+		<ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
+	</ns:Owner>
+	<ns:Document>
+		<ns:WayBill_v4>
+			<wb:Identity>10</wb:Identity>
+			<wb:Header>
+				<wb:NUMBER>10</wb:NUMBER>
+				<wb:Date>2025-04-21</wb:Date>
+				<wb:ShippingDate>2024-04-21</wb:ShippingDate>
+				<wb:Type>WBInvoiceFromMe</wb:Type>
+				<wb:Shipper>
+					<oref:UL>
+						<oref:INN>7841051711</oref:INN>
+						<oref:KPP>770101008</oref:KPP>
+						<oref:ClientRegId>030000434308</oref:ClientRegId>
+						<oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+						<oref:ShortName>АО "ЦЕНТРИНФОРМ"</oref:ShortName>
+						<oref:address>
+							<oref:Country>643</oref:Country>
+							<oref:RegionCode>77</oref:RegionCode>
+							<oref:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</oref:description>
+						</oref:address>
+					</oref:UL>
+				</wb:Shipper>
+				<wb:Consignee>
+				<oref:FL>
+					<oref:INN>771391935319</oref:INN>
+					<oref:ClientRegId>030043434308</oref:ClientRegId>
+					<oref:FullName>ИП Мартихин Иван Андреевич</oref:FullName>
+					<oref:ShortName>ИП Мартихин Иван Андреевич</oref:ShortName>
+					<oref:address>
+						<oref:Country>643</oref:Country>
+						<oref:RegionCode>77</oref:RegionCode>
+						<oref:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</oref:description>
+					</oref:address>
+				</oref:FL>
+				</wb:Consignee>
+				<wb:Transport>
+					<wb:TRANSPORT_TYPE>car</wb:TRANSPORT_TYPE>
+					<wb:TRAN_TYPE>Автомобильный транспорт</wb:TRAN_TYPE>
+					<wb:ChangeOwnership>IsChange</wb:ChangeOwnership>
+					<wb:TRANSPORT_REGNUMBER>Хино т630см174</wb:TRANSPORT_REGNUMBER>
+					<wb:TRAN_DRIVER>Петров Валерий Валентинович</wb:TRAN_DRIVER>
+					<wb:TRAN_LOADPOINT>Россия,,Адыгея Республика,,,,,,,Тахтамукайский муниципальный район, Тахтамукайское сельское поселение, аул Тахтамукай, ул. Адыгейская, здание 97/1А |  | строение 4, "Складской комплекс, II этап строительства", назначение: нежилое, 1 этаж, помещение № 114 (S=7815,71 кв.м)</wb:TRAN_LOADPOINT>
+					<wb:TRAN_UNLOADPOINT>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,| 1-й этаж - магазин "Красное&amp;Белое"</wb:TRAN_UNLOADPOINT>
+				</wb:Transport>
+				<wb:Base>9821259c-4a1f-411a-94f1-e147835a000a</wb:Base>
+			</wb:Header>
+			<wb:Content>
+				<wb:Position>
+					<wb:Identity>1</wb:Identity>
+				    <wb:Product>
+                        <pref:FullName>Водка СИБИРСКИЙ ВОЛК</pref:FullName>
+                        <pref:AlcCode>0300004343080000001</pref:AlcCode>
+ 			            <pref:ProductVCode>200</pref:ProductVCode>
+			            <pref:UnitType>Packed</pref:UnitType>
+                        <pref:Producer>
+                            <oref:UL>
+                                <oref:ClientRegId>030000434308</oref:ClientRegId>
+                                <oref:INN>7841051711</oref:INN>
+                                <oref:KPP>770101008</oref:KPP>
+                                <oref:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</oref:FullName>
+                                <oref:ShortName>АО "ЦЕНТРИНФОРМ"</oref:ShortName>
+                                <oref:address>
+                                    <oref:Country>643</oref:Country>
+                                    <oref:RegionCode>77</oref:RegionCode>
+                                    <oref:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</oref:description>
+                                </oref:address>
+                            </oref:UL>
+                        </pref:Producer>
+					</wb:Product>
+					<wb:Quantity>2</wb:Quantity>
+					<wb:Price>5008.48</wb:Price>
+					<wb:FARegId>TEST-FA-000000036477315</wb:FARegId>
+					<wb:InformF2>
+						<ce:F2RegId>TEST-FB-000000041014823</ce:F2RegId>
+						<ce:MarkInfo>
+							<ce:boxpos>
+								<ce:boxnumber>44000000032510423900088328</ce:boxnumber>
+								<ce:amclist>
+							        <ce:amc>200200001073170425001ZCWWOHCVURENBX6A1QUG9DSI8F2SO5MRDE4IX3TYFR7FOS2IUZBVKAWWGS149EBJZQMVCEGHGCVYMKDX06QO9TSHEQJZ7NTLAIM5US8KJAGHXHURHCDPFOKLY5JBWIN1I</ce:amc>
+								</ce:amclist>
+							</ce:boxpos>
+						</ce:MarkInfo>
+					</wb:InformF2>
+				</wb:Position>
+			</wb:Content>
+		</ns:WayBill_v4>
+	</ns:Document>
+</ns:Documents>
+
+

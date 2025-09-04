@@ -1,7 +1,7 @@
 import json
 import logging
 import time
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import xml.etree.ElementTree as ET
 from datetime import date
 import psycopg2
@@ -9,9 +9,10 @@ from kafka import KafkaProducer, KafkaConsumer
 from psycopg2 import sql
 from loguru import logger
 import uuid
-from random import randint
-
+from random import randint, choices
+import string
 import BCode_gen
+
 
 
 class Forming_xml():
@@ -30,8 +31,9 @@ class Forming_xml():
                  ip_fsrar='030043434308',
                  ip_name='ИП Мартихин Иван Андреевич',
                  isUnPacked=False,
-                 docId='PRODAP-0000000000', 
-                 isMark=True):
+                 docId='PRODAP-0000000000',
+                 isMark=True,
+                 docNum=''):
         self.doc_type = doc_type.lower()
         self.docId = docId
 
@@ -54,12 +56,20 @@ class Forming_xml():
         self.isUnPacked = isUnPacked
         self.isMark = isMark
 
+        self.docNum = docNum
+
     def update_docId(self):
         prefix, number_str = self.docId.split('-')
         number = int(number_str)
         new_number = number + 1
         new_number_str = f"{new_number:0{len(number_str)}d}"
         self.docId = f"{prefix}-{new_number_str}"
+
+    def get_day(self):
+        logger.debug('Получаю дату документа')
+        today = date.today()
+        formatted_date = today.strftime("%Y-%m-%d")
+        return str(formatted_date)
 
     def gen_150_mark(self):
         number = str(randint(0,99999999))
@@ -79,11 +89,27 @@ class Forming_xml():
 
         return alk + serial + str(number) + month + year + version + kript
 
-    def get_day(self):
-        logger.debug('Получаю дату документа')
+    def gen_68_mark(self):
         today = date.today()
-        formatted_date = today.strftime("%Y-%m-%d")
-        return str(formatted_date)
+
+        n = int(self.product_code)
+        b36 = ''
+        while n:
+            n, remainder = divmod(n, 36)
+            b36 = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'[remainder] + b36
+
+        version = '22N'
+        base36_code = b36 or '0'
+        job_year = str(today.year)[-1:]
+        job_month = f'{today.month:02d}'
+        job_day = f'{today.day:02d}'
+        jobcode = f'084U{job_year}{job_month}{job_day}001'
+        num_mark = '000001'
+        random_bit = str(randint(0, 1))
+        random_number = str(randint(100, 999))
+        random_chars = ''.join(choices(string.ascii_uppercase + string.digits, k=31))
+
+        return f'{version}{base36_code}{jobcode}{num_mark}{random_bit}{random_number}{random_chars}'
 
     def generate_RPP_4(self):
 
@@ -95,9 +121,11 @@ class Forming_xml():
             tree = ET.parse(ex_xml)
             root = tree.getroot()
 
+            self.docNum = str(randint(0, 9999))
+
             # Num
-            root[1][0][0].text = str(randint(0, 9999))
-            root[1][0][1][1].text = str(randint(0, 9999))
+            root[1][0][0].text = self.docNum
+            root[1][0][1][1].text = self.docNum
 
             # FSRAR_ID
             root[0][0].text = self.fsrar
@@ -301,7 +329,7 @@ class Outbox_checker():
         self.port = port
         self.sql_req = sql_req
 
-    def selecter(self, doc_uiid):
+    def selecter(self, doc_uiid=''):
         logger.debug('Выполняю select')
 
         conn = None
@@ -372,7 +400,7 @@ class Outbox_checker():
 
 
 class Kafka_sender():
-    def __init__(self, doc_type, uuid, topic='confirmed', docId='PRODAP-0000000000', fsrar='030000434308', inn='7841051711'):
+    def __init__(self, doc_type, uuid, fsrar='030000434308', inn='7841051711'):
         self.doc_type = doc_type
         self.uuid = uuid
         self.fsrar = fsrar
@@ -380,15 +408,16 @@ class Kafka_sender():
         self.date = self.get_day()
         self.timezone = '+03:00'
         self.kpp = ''
-        self.topic = topic
-        self.docId = docId
 
     def json_creator(self):
         raw_message = {
-            "date": self.date,
-            "uri": str(self.fsrar + "-" + self.uuid),
             "type": self.doc_type,
-            "DocId": self.docId
+            "uri": str(self.fsrar + "-" + self.uuid),
+            "fsrarid": self.fsrar,
+            "date": self.date,
+            "timezone": self.timezone,
+            "inn": self.inn,
+            "kpp": self.kpp
         }
         return raw_message
 
@@ -396,13 +425,14 @@ class Kafka_sender():
         message = self.json_creator()
 
         bootstrap_server = ['test-kafka1.fsrar.ru:9092', 'test-kafka2.fsrar.ru:9092', 'test-kafka3.fsrar.ru:9092']
+        topic = 'confirmed'
 
         producer = KafkaProducer(
             bootstrap_servers=bootstrap_server,
             value_serializer=lambda v: json.dumps(v, ensure_ascii=False).encode('utf-8')
         )
-        producer.send(self.topic, message)
-        logger.debug(f'Сообщение отправлено в топик {self.topic}')
+        producer.send(topic, message)
+        logger.debug(f'Сообщение отправлено в топик {topic}')
         producer.close()
 
     def get_day(self):
@@ -411,12 +441,11 @@ class Kafka_sender():
         formatted_date = today.strftime("%Y-%m-%d")
         return str(formatted_date)
 
-
 class Result_checker():
     def __init__(self):
         pass
 
-    def find_message_by_uri(self, uri: str, max_attempts=3, retry_interval=10, topic='svs-inspector'):
+    def find_message_by_uri(self, uri: str, topic="svs-inspector", max_attempts=3, retry_interval=10):
         attempt = 0
 
         while attempt < max_attempts:
@@ -462,12 +491,12 @@ class Result_checker():
             logger.debug(f"Не удалось десериализовать сообщение: {e}. Сообщение будет пропущено.")
             return None
 
-if __name__ == "__main__":
-
-    forming = Forming_xml(doc_type='CarrierNotice')
-    corr_xml = forming.generate_CarrierNotice()
-    logger.debug('Успех генерации xml')
-
+# if __name__ == "__main__":
+#
+#     forming = Forming_xml(doc_type='CarrierNotice')
+#     corr_xml = forming.generate_CarrierNotice()
+#     logger.debug('Успех генерации xml')
+#
 
 # if __name__ == "__main__":
 #

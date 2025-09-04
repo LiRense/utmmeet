@@ -1,4 +1,4 @@
-from selfReportGEn2.testItReports import testReport
+from testitReports import testReport
 import time
 from regress import *
 import os
@@ -87,8 +87,12 @@ def RPP_4_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -165,8 +169,12 @@ def RIP_4_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -243,8 +251,12 @@ def ACO_2_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -267,13 +279,43 @@ def WayBill_v4_test():
     forming = None
     params = None
     sender = None
+    form_A = None
+
+    @testReport.stepResults.step("Получение информации из БД")
+    def waybill_v4_forma():
+        nonlocal form_A
+        testReport.stepResults.description("Ведем поиск последней FormA")
+        logger.debug("Ведем поиск последней FormA")
+        try:
+            db_ins = DB_placer('codes', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
+            db_ins.sql_req = f"SELECT reg_id FROM registry.form_a AS x order by reg_id DESC limit 1"
+
+            form = db_ins.inserter()
+            logger.debug(form)
+
+            if form:
+                form_A = form[0][0]
+
+                logger.debug('Обновили форму 1 документа')
+                assert True, "Обновили форму 1 документа"
+            else:
+                logger.debug('ФормА не найдена, используем пример формы А')
+                assert True, "Используем хардкод формы А"
+
+        except Exception as e:
+            logger.error(f'Ошибка обновлении формы А: {e}')
+            assert False, e
 
     @testReport.stepResults.step("Генерация xml")
     def waybill_v4_gen_xml():
         nonlocal corr_xml, forming
         try:
             forming = Forming_xml(doc_type='waybill_v4')
+
+            forming.formA = form_A
+
             corr_xml = forming.generate_WayBill_4()
+
             logger.debug('Успех генерации xml')
             assert True, "Успех генерации xml"
         except Exception as e:
@@ -321,8 +363,12 @@ def WayBill_v4_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -334,6 +380,7 @@ def WayBill_v4_test():
             logger.error(f'Ошибка при поиске сообщения: {e}')
             assert False, f"Ошибка при поиске сообщения: {e}"
 
+    waybill_v4_forma()
     waybill_v4_gen_xml()
     waybill_v4_insert_db()
     waybill_v4_json_send()
@@ -399,8 +446,12 @@ def WayBillActAccepted_v4_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -477,8 +528,12 @@ def WayBillActRejected_v4_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -555,8 +610,12 @@ def AWO_v3_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -593,8 +652,6 @@ def ActFixBC_test():
 
             formB = db_ins.inserter()[0][0]
 
-            logger.debug(db_ins.inserter())
-
             logger.debug('FormB найдена')
             assert True, "FormB найдена"
         except Exception as e:
@@ -608,7 +665,6 @@ def ActFixBC_test():
             forming = Forming_xml(doc_type='actfixbarcode')
             forming.formB = formB
             corr_xml = forming.generate_ActFixBC()
-
 
             logger.debug('Успех генерации xml')
             assert True, "Успех генерации xml"
@@ -657,8 +713,12 @@ def ActFixBC_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -683,17 +743,45 @@ def ActUnFixBC_test():
     params = None
     sender = None
 
+
     @testReport.stepResults.step("Генерация xml")
     def actunfixbc_gen_xml():
         nonlocal corr_xml, forming
+        formB = None
         try:
             forming = Forming_xml(doc_type='actunfixbarcode')
+
+            @testReport.stepResults.step("Подготовка данных для теста")
+            def actunfixbc_prepare_db():
+                nonlocal formB
+                testReport.stepResults.description("Ведем поиск последней formB")
+                logger.debug("Ведем поиск последней formB")
+                try:
+                    db_ins = DB_placer('codes', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
+
+                    db_ins.sql_req = f"select x.reg_id from registry.form_b as x inner join registry.documents d on d.formb = x.id where d.fsrarid = '{forming.fsrar}' order by d.ins desc limit 1"
+
+                    formB = db_ins.inserter()[0][0]
+
+                    logger.debug('FormB найдена')
+                    assert True, "FormB найдена"
+                except Exception as e:
+                    logger.error(f'Ошибка поиска fromB: {e}')
+                    assert False, e
+
+            actunfixbc_prepare_db()
+
+            forming.formB = formB
+
             corr_xml = forming.generate_ActUnFixBC()
+
             logger.debug('Успех генерации xml')
             assert True, "Успех генерации xml"
         except Exception as e:
             logger.error(f'Ошибка при генерации xml: {e}')
             assert False, e
+
+
 
     @testReport.stepResults.step("Вставка в БД")
     def actunfixbc_insert_db():
@@ -736,8 +824,12 @@ def ActUnFixBC_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -748,6 +840,7 @@ def ActUnFixBC_test():
         except Exception as e:
             logger.error(f'Ошибка при поиске сообщения: {e}')
             assert False, f"Ошибка при поиске сообщения: {e}"
+
 
     actunfixbc_gen_xml()
     actunfixbc_insert_db()
@@ -814,8 +907,12 @@ def RAWO_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -892,8 +989,12 @@ def RACO_test():
                 db_selecter = Outbox_checker('transport', 'dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
                 result = db_selecter.selecter(sender.uuid)
                 comment = db_selecter.get_comment(result)
+
                 if not comment:
                     logger.error('Сообщение не найдено')
+                    assert False, "Сообщение не найдено"
+                elif comment is None:
+                    logger.error('Сообщение не найдено (None)')
                     assert False, "Сообщение не найдено"
                 elif 'принят системой на обработку' in comment:
                     logger.error('Сообщение не найдено')
@@ -962,7 +1063,8 @@ def ASIIU_test():
     def asiiu_result_checker():
         testReport.stepResults.description("Ищем результат обработки xml в топике svs-inspector")
         try:
-            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
+            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid), topic='crater',
+                                                              max_attempts=1, retry_interval=1)
             if result:
                 logger.debug(f'Сообщение найдено: {result}')
                 assert True, f"Сообщение найдено: {result}"
@@ -977,6 +1079,9 @@ def ASIIU_test():
                     comment = db_selecter.get_comment(result)
                     if not comment:
                         logger.error('Сообщение не найдено')
+                        assert False, "Сообщение не найдено"
+                    elif comment is None:
+                        logger.error('Сообщение не найдено (None)')
                         assert False, "Сообщение не найдено"
                     elif 'принят системой на обработку' in comment:
                         logger.error('Сообщение не найдено')
@@ -1045,7 +1150,8 @@ def ASIIUTIME_test():
     def asiiutime_result_checker():
         testReport.stepResults.description("Ищем результат обработки xml в топике svs-inspector")
         try:
-            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
+            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid), topic='crater',
+                                                              max_attempts=1, retry_interval=1)
             if result:
                 logger.debug(f'Сообщение найдено: {result}')
                 assert True, f"Сообщение найдено: {result}"
@@ -1061,6 +1167,9 @@ def ASIIUTIME_test():
                     comment = db_selecter.get_comment(result)
                     if not comment:
                         logger.error('Сообщение не найдено')
+                        assert False, "Сообщение не найдено"
+                    elif comment is None:
+                        logger.error('Сообщение не найдено (None)')
                         assert False, "Сообщение не найдено"
                     elif 'принят системой на обработку' in comment:
                         logger.error('Сообщение не найдено')
@@ -1129,7 +1238,8 @@ def CarrierNotice_test():
     def carriernotice_result_checker():
         testReport.stepResults.description("Ищем результат обработки xml в топике svs-inspector")
         try:
-            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
+            result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid), topic='crater',
+                                                              max_attempts=1, retry_interval=1)
             if result:
                 logger.debug(f'Сообщение найдено: {result}')
                 assert True, f"Сообщение найдено: {result}"
@@ -1145,6 +1255,9 @@ def CarrierNotice_test():
                     comment = db_selecter.get_comment(result)
                     if not comment:
                         logger.error('Сообщение не найдено')
+                        assert False, "Сообщение не найдено"
+                    elif comment is None:
+                        logger.error('Сообщение не найдено (None)')
                         assert False, "Сообщение не найдено"
                     elif 'принят системой на обработку' in comment:
                         logger.error('Сообщение не найдено')

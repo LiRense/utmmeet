@@ -1,0 +1,54 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/ActChargeOn_v2" xmlns:ns2="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns4="http://fsrar.ru/WEGAIS/ActInventoryF1F2Info" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:ActChargeOn_v2>
+      <ns1:Identity>00021</ns1:Identity>
+      <ns1:Header>
+        <ns1:Number>00021</ns1:Number>
+        <ns1:ActDate>2025-07-01</ns1:ActDate>
+        <ns1:TypeChargeOn>Излишки</ns1:TypeChargeOn>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:Identity>001</ns1:Identity>
+          <ns1:Product>
+            <ns2:UnitType>Packed</ns2:UnitType>
+            <ns2:Type>АП</ns2:Type>
+            <ns2:FullName>Водка СИБИРСКИЙ ВОЛК</ns2:FullName>
+            <ns2:AlcCode>0300004343080000007</ns2:AlcCode>
+            <ns2:Capacity>1</ns2:Capacity>
+            <ns2:AlcVolume>40.000</ns2:AlcVolume>
+            <ns2:ProductVCode>200</ns2:ProductVCode>
+            <ns2:Producer>
+              <ns3:FO>
+                <ns3:ClientRegId>050000000859</ns3:ClientRegId>
+                <ns3:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns3:FullName>
+                <ns3:ShortName>"Придвинье"</ns3:ShortName>
+                <ns3:address>
+                  <ns3:Country>112</ns3:Country>
+                  <ns3:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns3:description>
+                </ns3:address>
+              </ns3:FO>
+            </ns2:Producer>
+          </ns1:Product>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:InformF1F2>
+            <ns1:InformF1F2Reg>
+              <ns1:InformF1>
+                <ns4:Quantity>1</ns4:Quantity>
+                <ns4:BottlingDate>2024-09-20</ns4:BottlingDate>
+                <ns4:TTNNumber>2478558857</ns4:TTNNumber>
+                <ns4:TTNDate>2024-09-20</ns4:TTNDate>
+              </ns1:InformF1>
+            </ns1:InformF1F2Reg>
+          </ns1:InformF1F2>
+          <ns1:MarkCodeInfo>
+            <MarkCode>188403862254671022001XY4LZ5IJTWFNTXWFTFNRYIAVZY7ZFW6EUTMGKCYLBJE2Z63VWKT2TU7CPLDF55X2PM676IN7ZY5XO3DFNRBFTH6OGFHY6L45CRKCYOVKVIONRPY6WPZLD3O3NCTMUK55Q</MarkCode>
+          </ns1:MarkCodeInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:ActChargeOn_v2>
+  </ns0:Document>
+</ns0:Documents>

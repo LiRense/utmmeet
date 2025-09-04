@@ -1107,20 +1107,83 @@ def handle_callback(call):
         bot.answer_callback_query(call.id, "Произошла ошибка, попробуйте снова")
 
 
+def delete_webhook_safely():
+    """Безопасное удаление вебхука с несколькими попытками"""
+    max_attempts = 3
+    for attempt in range(max_attempts):
+        try:
+            result = bot.remove_webhook()
+            logger.info(f"Попытка {attempt + 1}: Вебхук удален")
+            time.sleep(1)
+            # Дополнительная проверка
+            bot.get_webhook_info()
+            return True
+        except Exception as e:
+            logger.warning(f"Попытка {attempt + 1} не удалась: {e}")
+            time.sleep(2)
+    return False
+
+def check_webhook_status():
+    """Проверяет статус вебхука"""
+    try:
+        webhook_info = bot.get_webhook_info()
+        if webhook_info.url:
+            logger.info(f"Обнаружен вебхук: {webhook_info.url}")
+            return True
+        else:
+            logger.info("Вебхук не активен")
+            return False
+    except Exception as e:
+        logger.error(f"Ошибка проверки вебхука: {e}")
+        return False
+
+def force_delete_webhook(bot):
+    max_attempts = 5
+    for attempt in range(max_attempts):
+        try:
+            # Удаляем вебхук
+            bot.remove_webhook()
+            logger.info(f"Попытка {attempt + 1}: Вебхук удалён")
+
+            # Проверяем статус вебхука
+            webhook_info = bot.get_webhook_info()
+            if not webhook_info.url:
+                logger.info("Вебхук успешно отключён")
+                return True
+            else:
+                logger.warning(f"Вебхук всё ещё активен: {webhook_info.url}")
+                time.sleep(2)
+        except Exception as e:
+            logger.error(f"Ошибка при удалении вебхука (попытка {attempt + 1}): {e}")
+            time.sleep(2)
+
+    logger.error("Не удалось удалить вебхук после нескольких попыток")
+    return False
+
 if __name__ == '__main__':
     logger.info("Бот запущен")
     try:
-        # Удаляем вебхук перед запуском polling
-        bot.remove_webhook()
-        time.sleep(1)  # Даем время на удаление вебхука
+        # Принудительно удаляем вебхук
+        if not force_delete_webhook(bot):
+            logger.error("Не удалось удалить вебхук. Завершаем работу.")
+            exit(1)
 
+        # Запускаем polling
+        logger.info("Запускаем polling...")
         while True:
             try:
                 transfer_uncompleted_tasks()
-                bot.infinity_polling()
+                bot.polling(none_stop=True, timeout=30, interval=2)
+            except telebot.apihelper.ApiTelegramException as e:
+                if "webhook is active" in str(e):
+                    logger.warning("Вебхук снова активен. Пытаемся удалить...")
+                    force_delete_webhook(bot)
+                    time.sleep(5)
+                else:
+                    logger.error(f"API ошибка: {e}")
+                    time.sleep(10)
             except Exception as e:
-                logger.error(f"Ошибка бота: {e}")
-                logger.info("Перезапуск бота через 10 секунд...")
+                logger.error(f"Общая ошибка: {e}")
                 time.sleep(10)
             finally:
                 save_data()
@@ -1128,3 +1191,5 @@ if __name__ == '__main__':
         logger.error(f"Критическая ошибка: {e}")
     finally:
         save_data()
+
+

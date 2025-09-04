@@ -1,0 +1,13 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RequestRepealACO" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000504835</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RequestRepealACO>
+      <ns1:ClientId>030000504835</ns1:ClientId>
+      <ns1:RequestNumber>005</ns1:RequestNumber>
+      <ns1:RequestDate>2023-06-06T18:45:00</ns1:RequestDate>
+      <ns1:ACORegId>TEST-INV-0000076264</ns1:ACORegId>
+    </ns0:RequestRepealACO>
+  </ns0:Document>
+</ns0:Documents>

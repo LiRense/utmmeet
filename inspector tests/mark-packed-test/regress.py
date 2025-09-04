@@ -11,6 +11,7 @@ from loguru import logger
 import uuid
 from random import randint, choices
 import string
+import BCode_gen
 
 
 class Forming_xml():
@@ -28,8 +29,13 @@ class Forming_xml():
                  ip_inn='771391935319',
                  ip_fsrar='030043434308',
                  ip_name='ИП Мартихин Иван Андреевич',
-                 formB='FB-000000000012750'):
+                 isUnPacked=False,
+                 docId='PRODAP-0000000000',
+                 isMark=True,
+                 formA='TEST-FA-000000036477315',
+                 formB='TEST-FB-000000041014823'):
         self.doc_type = doc_type.lower()
+        self.docId = docId
 
         self.fsrar = fsrar
         self.inn = inn
@@ -47,7 +53,18 @@ class Forming_xml():
         self.ip_fsrar = ip_fsrar
         self.ip_name = ip_name
 
+        self.isUnPacked = isUnPacked
+        self.isMark = isMark
+
+        self.formA = formA
         self.formB = formB
+
+    def update_docId(self):
+        prefix, number_str = self.docId.split('-')
+        number = int(number_str)
+        new_number = number + 1
+        new_number_str = f"{new_number:0{len(number_str)}d}"
+        self.docId = f"{prefix}-{new_number_str}"
 
     def get_day(self):
         logger.debug('Получаю дату документа')
@@ -95,9 +112,10 @@ class Forming_xml():
 
         return f'{version}{base36_code}{jobcode}{num_mark}{random_bit}{random_number}{random_chars}'
 
-
-
     def generate_RPP_4(self):
+
+        self.docId = 'PRODAP-0000000090'
+
         logger.debug('Генерирую xml')
 
         with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
@@ -114,29 +132,34 @@ class Forming_xml():
             root[1][0][1][2].text = self.get_day()
             # ProducedDate
             root[1][0][1][3].text = self.get_day()
-
             # ClientRegId
             root[1][0][1][4][0][0].text = self.fsrar
             # INN
             root[1][0][1][4][0][3].text = self.inn
             # KPP
             root[1][0][1][4][0][4].text = self.kpp
-
             # ProductCode
             root[1][0][2][0][0].text = self.product_code
             # Quantity
             root[1][0][2][0][1].text = self.quantity
             # alcPercent
             root[1][0][2][0][2].text = self.alc_percent
+            # BCode
+            root[1][0][2][0][5][0].text = self.gen_150_mark()
 
-            # r = root[1][0][2][0][1]
-            # logger.debug(r)
-            # logger.debug(r.text)
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][5]
+                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
+                    position.remove(position[-1])
+
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
 
     def generate_RIP_4(self):
         logger.debug('Генерирую xml')
+
+        self.docId = 'IMP-0000000118'
 
         with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
             tree = ET.parse(ex_xml)
@@ -164,15 +187,22 @@ class Forming_xml():
             root[1][0][2][0][0].text = self.product_code
             # Quantity
             root[1][0][2][0][1].text = self.quantity
+            # BCode
+            root[1][0][2][0][8][0].text = self.gen_150_mark()
+
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][8]
+                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
+                    position.remove(position[-1])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
-            # r = root[1][0][2][0][1]
-            # logger.debug(r)
-            # logger.debug(r.text)
 
     def generate_ACO_2(self):
         logger.debug('Генерирую xml')
+
+        self.docId = 'INV-0000000073'
 
         with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
             tree = ET.parse(ex_xml)
@@ -200,6 +230,14 @@ class Forming_xml():
             # Quantity
             root[1][0][2][0][2].text = self.quantity
             root[1][0][2][0][3][0][0][0].text = self.quantity
+            # BCode
+            root[1][0][2][0][4][0].text = self.gen_150_mark()
+
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][4]
+                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
+                    position.remove(position[-1])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
@@ -236,58 +274,18 @@ class Forming_xml():
             root[1][0][2][0][1][2].text = self.product_vcode
             # Quantity
             root[1][0][2][0][2].text = self.quantity
+            # formA formB
+            root[1][0][2][0][4].text = self.formA
+            root[1][0][2][0][5][0].text = self.formB
+            # BCode
+            root[1][0][2][0][5][1][0][1][0].text = self.gen_150_mark()
 
-            # r = root[1][0][2][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
 
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_WayBillActAccepted_v4(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0][1].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            # Date
-            root[1][0][0][2].text = self.get_day()
-            # IsAccept
-            root[1][0][0][0].text = 'Accepted'
-
-            # r = root[1][0][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
-
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_WayBillActRejected_v4(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0][1].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            # Date
-            root[1][0][0][2].text = self.get_day()
-            # IsAccept
-            root[1][0][0][0].text = 'Rejected'
-
-            # r = root[1][0][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][5][1][0][1]
+                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
+                    position.remove(position[-1])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
@@ -309,232 +307,19 @@ class Forming_xml():
             root[1][0][1][1].text = self.get_day()
             # Quantity
             root[1][0][2][0][1].text = self.quantity
+            # BCode
+            root[1][0][2][0][3][0].text = self.gen_150_mark()
 
-            # r = root[1][0][2][0][1]
-            # logger.debug(r)
-            # logger.debug(r.text)
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][3]
+                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
+                    position.remove(position[-1])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
 
-    def generate_ActFixBC(self):
-        logger.debug('Генерирую xml')
 
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0].text = str(randint(0, 9999))
-            root[1][0][1][0].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            # Date
-            root[1][0][1][1].text = self.get_day()
-            # FormB
-            root[1][0][2][0][1].text = self.formB
-            # Mark
-            root[1][0][2][0][2][0].text = self.gen_68_mark()
-
-
-            # r = root[1][0][1][1]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_ActUnFixBC(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0].text = str(randint(0, 9999))
-            root[1][0][1][0].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            # Date
-            root[1][0][1][1].text = self.get_day()
-
-            # r = root[1][0][1][1]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_RAWO(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][1].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][0].text = self.fsrar
-            # Date
-            root[1][0][2].text = date.today().strftime("%Y-%m-%dT%H:%M:%S")
-
-            # r = root[1][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_RACO(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][1].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][0].text = self.fsrar
-            # Date
-            root[1][0][2].text = date.today().strftime("%Y-%m-%dT%H:%M:%S")
-
-            # r = root[1][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_ASIIU(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][1][0][2].text = self.kpp
-            # INN
-            root[1][0][1][0][0].text = self.inn
-            # KPP
-            root[1][0][1][0][1].text = self.kpp
-            # ProductName
-            root[1][0][2][0][0][1].text = self.pr_name
-            # ProductCode
-            root[1][0][2][0][0][2].text = self.product_code
-            # Capacity
-            root[1][0][2][0][0][3].text = self.capacity
-            # AlcPercent
-            root[1][0][2][0][0][4].text = self.alc_percent
-            root[1][0][2][0][7].text = self.alc_percent
-            # ProducteVCode
-            root[1][0][2][0][0][5].text = self.product_vcode
-            # Date
-            root[1][0][2][0][1].text = datetime.now().strftime("%Y-%m-%dT%H:%M:%S") # startDate
-            root[1][0][2][0][2].text = (datetime.now()+timedelta(seconds=20)).strftime("%Y-%m-%dT%H:%M:%S")  # endDate
-
-
-            # r = root[1][0][2][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_ASIIUTIME(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][1][0][2].text = self.kpp
-            # INN
-            root[1][0][1][0][0].text = self.inn
-            # KPP
-            root[1][0][1][0][1].text = self.kpp
-            # ProductName
-            root[1][0][2][0][0][1].text = self.pr_name
-            # ProductCode
-            root[1][0][2][0][0][2].text = self.product_code
-            # Capacity
-            root[1][0][2][0][0][3].text = self.capacity
-            # AlcPercent
-            root[1][0][2][0][0][4].text = self.alc_percent
-            root[1][0][2][0][4].text = self.alc_percent
-            # ProducteVCode
-            root[1][0][2][0][0][5].text = self.product_vcode
-            # Date
-            root[1][0][2][0][1].text = datetime.now().strftime("%Y-%m-%dT%H:%M:%S") # ControlDate
-
-
-            # r = root[1][0][2][0][2]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_CarrierNotice(self):
-        logger.debug('Генерирую xml')
-
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0][0].text = str(randint(0, 9999))
-            root[1][0][0][1].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][0][2][0][0].text = self.fsrar
-            root[1][0][0][4][0][0].text = self.fsrar
-            root[1][0][0][5][0][0].text = self.fsrar
-            root[1][0][1][0][1][4][0][0].text = self.fsrar
-            # UL_INN
-            root[1][0][0][2][0][1].text = self.inn
-            root[1][0][0][4][0][1].text = self.inn
-            root[1][0][1][0][1][4][0][2].text = self.inn
-            # UL_KPP
-            root[1][0][0][2][0][2].text = self.kpp
-            root[1][0][0][4][0][2].text = self.kpp
-            root[1][0][1][0][1][4][0][3].text = self.kpp
-            # FL_fsrar
-            root[1][0][0][3][0][0].text = self.ip_fsrar
-            # Fl_inn
-            root[1][0][0][3][0][1].text = self.ip_inn
-            #Fl_name
-            root[1][0][0][3][0][2].text = self.ip_name
-            root[1][0][0][3][0][3].text = self.ip_name
-            # Date
-            root[1][0][0][6].text = self.get_day()
-            root[1][0][0][7].text = self.get_day()
-            root[1][0][0][10].text = self.get_day()
-            # AlcCode
-            root[1][0][1][0][1][0].text = self.product_code
-            # AlcName
-            root[1][0][1][0][1][1].text = self.pr_name
-            # PrVCode
-            root[1][0][1][0][1][2].text = self.product_vcode
-            # AlcPercent
-            root[1][0][1][0][3].text = self.alc_percent
-
-
-
-
-            # r =  root[1][0][0][2][0][0]
-            # logger.debug(r)
-            # logger.debug(r.text)
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            # print(corrected_xml)
-            return corrected_xml
 
 class DB_placer():
     def __init__(self, db, user, password, host, port, sql_req=''):
@@ -685,10 +470,10 @@ class Outbox_checker():
             return comment.text if comment is not None else None
 
         except ET.ParseError as e:
-            print(f"Ошибка парсинга XML: {e}")
+            logger.debug(f"Ошибка парсинга XML: {e}")
             return None
         except Exception as e:
-            print(f"Неожиданная ошибка: {e}")
+            logger.debug(f"Неожиданная ошибка: {e}")
             return None
 
 
@@ -785,12 +570,12 @@ class Result_checker():
             logger.debug(f"Не удалось десериализовать сообщение: {e}. Сообщение будет пропущено.")
             return None
 
-if __name__ == "__main__":
-
-    forming = Forming_xml(doc_type='CarrierNotice')
-    corr_xml = forming.generate_CarrierNotice()
-    logger.debug('Успех генерации xml')
-
+# if __name__ == "__main__":
+#
+#     forming = Forming_xml(doc_type='CarrierNotice')
+#     corr_xml = forming.generate_CarrierNotice()
+#     logger.debug('Успех генерации xml')
+#
 
 # if __name__ == "__main__":
 #

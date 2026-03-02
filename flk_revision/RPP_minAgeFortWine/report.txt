@@ -1,0 +1,2625 @@
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.164 (4037)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8c^'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4037', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>7608</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>7815</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200822451090226001NFXLSC6XAJQTWJZMSME0YP7LVYRVKDD9UTWOUFQXCLC3FNXJISDVATQ4Y20TRGJMEHUGI5AB7RAKEHJBJWM2FLM4ZQ96FVGT0RSYYDX3V8T136HSYLCLZNT5QIXVEIMKA</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:52:42.2983908</tc:TicketDate>
+      <tc:Identity>7608</tc:Identity>
+      <tc:DocId>C9A78B79-07F3-4358-B134-C8E58A57B00C</tc:DocId>
+      <tc:TransportId>bb3ce44c-4132-4ef0-8fac-d764d3a0e7aa</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012704</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:52:42.2983908</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7608"-"TEST-IMPAP-0000012704"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7608"-"TEST-IMPAP-0000012704"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.121 (411)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8c_'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '411', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>1923</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>9871</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200545038760226001J2MZEGLI4HTF0IAYYROV8PCVSWBK6KQXFDAPU40UZ1XFIENQIOTLMPY26QLTRZ5KGXK7ANV8QGVSLH9U5X0HJC3MLOYV1IRX4UBKZNBAFOJIONEFTYSWC16JGXHK4ILYD</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:54:17.6769583</tc:TicketDate>
+      <tc:Identity>1923</tc:Identity>
+      <tc:DocId>9628076C-CF8A-4DDD-BAF2-99819252300E</tc:DocId>
+      <tc:TransportId>5da816ba-0d66-413f-a449-ebca2e9c6a6c</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012705</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:54:17.6769583</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["1923"-"TEST-IMPAP-0000012705"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["1923"-"TEST-IMPAP-0000012705"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.161 (4111)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8c`'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4111', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>5488</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>2393</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200175419560226001FNT7TQQDX9EPMZBVVKOO1RFGCIW24NY83IABAP8NFHRWRUSQZ1MI92YFIKBLKXBDE3PO0Y4V0JAHHLCKZ2QPDTORLTUSN6D85WQJYYOV13VEMBFJEQ8YRUWKYFXGTPNXD</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:55:03.7126392</tc:TicketDate>
+      <tc:Identity>5488</tc:Identity>
+      <tc:DocId>DDB62654-43FD-48EC-9105-48FEA6C015AB</tc:DocId>
+      <tc:TransportId>83322db8-e5f8-4b95-bf0b-8f024cbb6ded</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012706</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:55:03.7126392</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["5488"-"TEST-IMPAP-0000012706"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["5488"-"TEST-IMPAP-0000012706"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.162 (4112)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ca'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4112', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>3610</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>479</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200221574120226001H4PFYALWF1ZOBY7RRICD6BGTPQXVWMAQXT3S1ABWTJQHNO0UAVB3LK5U468P7CI2NJRHKMEMZH6ROA9T4NSLCXUHDQRMVGDJVTE3802KEBOPL2V5B9UDNCZJGZOLTC7YW</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:55:39.7175024</tc:TicketDate>
+      <tc:Identity>3610</tc:Identity>
+      <tc:DocId>133929B7-13DA-4523-8173-D04A5A14928D</tc:DocId>
+      <tc:TransportId>608205e2-0ce0-471e-bf40-5db1c156c72e</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012707</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:55:39.7175024</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["3610"-"TEST-IMPAP-0000012707"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["3610"-"TEST-IMPAP-0000012707"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.163 (4113)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cb'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4113', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>7629</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>4641</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200515894410226001L1EJCLNZQGSPFIXMOWHA6FUKRAVMKU9JSNP7H4E8TED6ODIPJ0FSICG2UFQBPW9BNLOKRC1WM1VWSYNCDBVJNCRLEFHQAXRJQKOGIMEWAP5IUT1OBJQPT3LYPAHV72VHR</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:56:15.909566</tc:TicketDate>
+      <tc:Identity>7629</tc:Identity>
+      <tc:DocId>9E94A2E0-26B7-430B-9483-3CC77F6A896A</tc:DocId>
+      <tc:TransportId>53747888-4b68-4fe0-8437-64dd081156a9</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012708</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:56:15.909566</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7629"-"TEST-IMPAP-0000012708"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7629"-"TEST-IMPAP-0000012708"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.169 (4114)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cc'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4114', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>9953</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>706</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200216610970226001GJ9LA4JQNUCEFMO5N1SDQFY2ZLSRU8K7VIZXQW1FHON480BUTKGGBLL7DZY2DWIEXX5QVUAHFEVNQYYGZZ3KMIOTAJJM59BSEHIWNSGWUVLPHSWZTAJQUMFY9GNK8TXPG</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:56:51.6648288</tc:TicketDate>
+      <tc:Identity>9953</tc:Identity>
+      <tc:DocId>AEA11639-EF4A-43D9-9FD0-034C80354D5D</tc:DocId>
+      <tc:TransportId>e17bbc2c-16ac-45e3-baed-2b93cda565a6</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012709</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:56:51.6648288</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["9953"-"TEST-IMPAP-0000012709"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["9953"-"TEST-IMPAP-0000012709"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.122 (4121)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cd'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4121', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>7920</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>8748</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200986774960226001Y8Q6E3TLIUWSOBAVR7CNAS1MC2EGKIDNXPFTAN1W3EXR645TBILPXNPESVGLOMYHGAOKV2YTLRTUISBHN0HEXMXCUGTPEOF2DZYF6ANKIY4JNAPG40QI6UHRQSFY2FVYW</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:57:16.0788716</tc:TicketDate>
+      <tc:Identity>7920</tc:Identity>
+      <tc:DocId>20CB741C-C923-4986-A7D1-2EC71EBFD71F</tc:DocId>
+      <tc:TransportId>a520d205-1764-47fe-a39d-96a852ea036f</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012710</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:57:16.0788716</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7920"-"TEST-IMPAP-0000012710"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["7920"-"TEST-IMPAP-0000012710"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.123 (4131)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ce'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4131', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>5453</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>5158</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200795383730226001MI0NOJGQQOCWEYVALV7SNS3HBYGR9TBDXHUT6JJH1IBGULYKTNGQH4CUWN5Q27TA9RZ8PEAFK8DRDVXHJVURLBENO3IJK470HWWCFQYQNGAPIRTJC5NCL4HXVOZUAG7QB</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:57:51.6313341</tc:TicketDate>
+      <tc:Identity>5453</tc:Identity>
+      <tc:DocId>E6ED764F-E676-4CD7-9891-837C0D0E9BBD</tc:DocId>
+      <tc:TransportId>01f96b12-ef1a-4169-afbb-6a7c0c3f7bd1</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012711</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:57:51.6313341</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["5453"-"TEST-IMPAP-0000012711"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["5453"-"TEST-IMPAP-0000012711"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.124 (4302)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cf'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4302', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>6588</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>569</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200060792980226001RK59M8VE1NJI0QS64TOAVILX7ULZPNDPHOBYMIBWMCQRDFKG6ZGUEWNRHCZLAJTXOAEF2ODPTKZAE0XTISAD2EBKOGCS6LMU4H5OGQH8WZQ3YIQGA4EHERTJ9FZKS8HK2</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:58:27.8077976</tc:TicketDate>
+      <tc:Identity>6588</tc:Identity>
+      <tc:DocId>6A1B85CE-891C-4B33-9CBA-588454493594</tc:DocId>
+      <tc:TransportId>e22eb26d-e87d-407f-90e8-939e6a1977ae</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012712</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:58:27.8077976</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["6588"-"TEST-IMPAP-0000012712"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["6588"-"TEST-IMPAP-0000012712"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.125 (4312)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cg'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4312', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8464</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>9645</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200499809730226001KCDNPYTRZ3QR9TA08I4HYGF57MWEJCFXLUEV2EA3ZMYL6WVON8F4RQPHXRKIW07LQD9JUZBOFIH1LLJSRJUWHZUOAKVA7TQI6BN9YDDQPZ3GF8ABPBF3Y0T4RGPJRZALK</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T17:59:03.8438609</tc:TicketDate>
+      <tc:Identity>8464</tc:Identity>
+      <tc:DocId>7C4A5537-078A-4DFF-B363-0C6A4399B860</tc:DocId>
+      <tc:TransportId>34cf305e-576c-4e36-b4cc-e65435c0704d</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012713</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T17:59:03.8438609</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["8464"-"TEST-IMPAP-0000012713"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["8464"-"TEST-IMPAP-0000012713"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = None, ОКПД2 = 11.02.12.129 (4313)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ch'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4313', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8227</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>3688</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200768146770226001HTR8KYBSBWNQOMF0G6SKRDLVDCXM5X3JIELJKT3AO6PXWJZML0F2REQP4FSVEJZTC8NQIDGCZ3EJLYO0KGPALF47ZCI19MQNEIRPX2JAXT6BYAWLZPRVLWS2JXBNO1DUI</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:00:30.0652124</tc:TicketDate>
+      <tc:Identity>8227</tc:Identity>
+      <tc:DocId>F8E0C084-F5D4-4087-825F-564FB0EF7BB9</tc:DocId>
+      <tc:TransportId>cfcb4263-617d-4087-b577-06d3c2e4d398</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012714</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:00:30.0652124</tc:ConclusionDate>
+        <tc:Comments> В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["8227"-"TEST-IMPAP-0000012714"]. Импорт содержимого отчета о импорте продукции.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Минимальный срок выдержки крепленых вин'*
+*Полученный результат:  В уведомлении о начале оборота алкогольного кода 0300004343080000008 не был указан элемент "Минимальный срок выдержки крепленых вин". Владелец ["030000434308"], отчет об импорте продукции ["8227"-"TEST-IMPAP-0000012714"]. Импорт содержимого отчета о импорте продукции.*
+# MinAgeFortWine = 642, ОКПД2 = 11.02.12.164 (4037)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ci'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4037', 'gtin': None, 'minage': 642.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>4054</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>1684</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200337096460226001D87R6ZQPJUNKKTDGUXJ03BSOFOA2EVQ9WYLHZW1VRLY3ACPPGFMUTH6TKNQU0XWD7I5GVZ4OXOUHPMCIDJZPMSTKQVH17BE30YEVWUGFC5TWNVL0PXJ7XYJQ5E6HE1WP2</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:01:16.3192936</tc:TicketDate>
+      <tc:Identity>4054</tc:Identity>
+      <tc:DocId>38ACA963-8A57-45C8-A686-164C3D9261F2</tc:DocId>
+      <tc:TransportId>bf343c19-e8b1-455e-bc49-e0390751b203</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012715</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:01:16.3192936</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 690, ОКПД2 = 11.02.12.121 (411)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cj'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '411', 'gtin': None, 'minage': 690.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>823</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>378</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200918833070226001ACVBVESYPGOMGCUH5AWWQ3PJ9DDHKZ0Y8TUFRXDZIQP8E54VUYUW6MAJ1K9FSYPSW0DJI73GDQKJMOGVUAWXPSX3CSYULOBFHITC817FB0VTTKBP283YLHRVOM5KYQWMJ</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:01:51.840556</tc:TicketDate>
+      <tc:Identity>823</tc:Identity>
+      <tc:DocId>106A4609-49BF-48EE-A9D3-4DA2A12244F9</tc:DocId>
+      <tc:TransportId>f27a3c8e-7521-4eae-995b-f78f8d4716da</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012716</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:01:51.840556</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 872, ОКПД2 = 11.02.12.161 (4111)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ck'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4111', 'gtin': None, 'minage': 872.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8040</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>6356</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200492541840226001PWT407HUDKPBS9BSZCILALFGQMAFNUQYR3YWFDYNMCPFIUQ4SJV2OWH8ERIMKZQXK6RSWX9D1ZZQMHCPAHEOFBDW27IS46WROSUKRJY8N3MLWUA3GDEJ8XYBHCICJGWXT</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:02:18.7662033</tc:TicketDate>
+      <tc:Identity>8040</tc:Identity>
+      <tc:DocId>0683A404-2DAE-41E5-90CD-FBBD26CC72AB</tc:DocId>
+      <tc:TransportId>d8fca535-f2fc-4e5a-b364-6654ab2ae723</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012717</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:02:18.7662033</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 577, ОКПД2 = 11.02.12.162 (4112)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cl'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4112', 'gtin': None, 'minage': 577.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>5514</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>5841</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>2002000469658202260018ZUA4OFIYGTWLGQ0E2EUIBS3K1TCPH6PZHRQJRAZEB2KSCM3HS4DBGU7XWE0LRDYYFI59Q6X0NHFNHRIWL1VD6CAQPMUBEXGQWOD4MS75JLI7LHRO3ZV4UKHPFDYCIN6Q</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:02:52.0254617</tc:TicketDate>
+      <tc:Identity>5514</tc:Identity>
+      <tc:DocId>635D7B28-C01D-48F8-A491-10A24EF3D1B4</tc:DocId>
+      <tc:TransportId>e168dcc3-dc2b-4548-a6f9-68889616c35a</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012718</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:02:52.0254617</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 637, ОКПД2 = 11.02.12.163 (4113)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cm'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4113', 'gtin': None, 'minage': 637.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8435</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>5505</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200171140590226001RQWG5ZSP869GIY0XJABHFV7ZD1MT4IMOUKRWITXF2SA1H7GPOS0Y9ZHVNLEGCIB43RDMURWQTLW186NDFIWBKKSZUVLGIZTQ7JR25M3UCPY4ERZTJOQAHRHMSUCWOB0TX</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:03:28.061525</tc:TicketDate>
+      <tc:Identity>8435</tc:Identity>
+      <tc:DocId>FEEAC886-1C00-49EA-812E-24A6E69632C6</tc:DocId>
+      <tc:TransportId>0842e99b-091b-4451-bcd7-d3e8c9888b28</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012719</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:03:28.061525</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 625, ОКПД2 = 11.02.12.169 (4114)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cn'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4114', 'gtin': None, 'minage': 625.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8065</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>7234</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200367592340226001LUSVWVMHQBSB8ORZCZ9C4KIGG3J0ATRFFXWIFNCII41MAOYGSPK6UQ7L02WHVYRSJXPJE5TCUHJ1OFCXBKYMEW5DRSTPQTLSN2ZDIQVABHAJGFZOVJR6I4P7XMDTWINUJ</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:04:03.9727881</tc:TicketDate>
+      <tc:Identity>8065</tc:Identity>
+      <tc:DocId>1FC2272A-34B7-4403-84BE-E0447343C9D5</tc:DocId>
+      <tc:TransportId>a21e9560-4291-44ec-a88b-f6d9565972fd</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012720</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:04:03.9727881</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 515, ОКПД2 = 11.02.12.122 (4121)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8co'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4121', 'gtin': None, 'minage': 515.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>1866</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>6795</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200476503220226001YFIJMUXNDO5HYLBWEK6QCCJDGTTAPVMRQPUWDY34R8AU2TIVMXOC5SIGRYHZK079LSE6UPNN5YBEXJGITN03974SVKMGEJPWSTZIKPUFQ8VQYIBP6SKA10X8WXIQ3YFF4</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:04:39.7124508</tc:TicketDate>
+      <tc:Identity>1866</tc:Identity>
+      <tc:DocId>EFE1E9A7-9FE9-4E70-8E22-7002BDC48066</tc:DocId>
+      <tc:TransportId>8a06a65d-47bd-4ab0-9d23-e57412fcab06</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012721</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:04:39.7124508</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 531, ОКПД2 = 11.02.12.123 (4131)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cp'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4131', 'gtin': None, 'minage': 531.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>6065</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>2839</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200798382720226001RQWFFUBSLKNPYM1VG0KQZNEEJRP8XO7IDYD2CRNWKC6FW7QX8D1PMDLRAGTSZEXY5IOKUGIQ1C28AYVSJHYMGMIBWRKUQPDX4FT3BSDENCNJUXPQBGDVLZVJQKY0745TM</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:05:16.0605147</tc:TicketDate>
+      <tc:Identity>6065</tc:Identity>
+      <tc:DocId>78544CB9-5DCE-4C28-87BA-48CD65C81011</tc:DocId>
+      <tc:TransportId>f17b1aa4-d013-4ecc-a57a-e15e0b978af2</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012722</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:05:16.0605147</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 929, ОКПД2 = 11.02.12.124 (4302)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cq'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4302', 'gtin': None, 'minage': 929.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>8705</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>8319</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>2002003659968502260014QEIQNTPMZSHB9WID21TORLHVKXWCFRZ7LEUXSRU2BJ7F6DCNRZEDSVVE0KWW4GXKYLUOY31TRZN0OLEWWXBYIFS9D3V2ZAHMSKCU7FRDLEJUF8ZPH54ILGOB6TOIJEDB</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:05:51.7377773</tc:TicketDate>
+      <tc:Identity>8705</tc:Identity>
+      <tc:DocId>1B3C39F8-7456-41C1-9762-3FA888DE956E</tc:DocId>
+      <tc:TransportId>af88daad-fdd2-4aa0-8e1f-fb29d15545bc</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012723</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:05:51.7377773</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 150, ОКПД2 = 11.02.12.125 (4312)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cr'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4312', 'gtin': None, 'minage': 150.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>5676</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>3524</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>2002005773288102260016YXJBKXFDYLA4ZIR80IPOCJLWVBU5QOGPHZMZJTTHYIW7N0CS9FKQA1KB2N8VIOYUXQDFLJB2D4XGSPQQGUUT5IKNVCTLPOC8HK3VBZBEWLFEWRFARMUZCX6UNLSM9YJZ</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:06:27.6646404</tc:TicketDate>
+      <tc:Identity>5676</tc:Identity>
+      <tc:DocId>B79B0D4B-8E1F-4625-A4F0-9ECE7F731203</tc:DocId>
+      <tc:TransportId>f074d536-89da-4ed3-85c9-e6eebe758ddd</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012724</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:06:27.6646404</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 249, ОКПД2 = 11.02.12.129 (4313)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cs'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '4313', 'gtin': None, 'minage': 249.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>3876</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>4758</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>2002002495403002260014QHS1VNXHFDVEJN9LFLTWM3P76DPRO0TJKZCSFYBYWCZ6HXDOCEOLNEI1R79JXAZGU8QRBDMIFXX5MJ1DHAH3Z8VPETOLGQOTAYWEB0IQDLJVFX0E5F3AB7OBWJZOIVM2</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:06:52.0786833</tc:TicketDate>
+      <tc:Identity>3876</tc:Identity>
+      <tc:DocId>6DE7CBC4-D6A3-459C-83AE-4F4CD7A39F6A</tc:DocId>
+      <tc:TransportId>e3543226-808e-4a24-b3a5-a95e910cb545</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012725</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:06:52.0786833</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = None, ОКПД2 = 11.01.10.152 (2522)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8ct'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '2522', 'gtin': None, 'minage': None, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>2973</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>6585</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>2002000080708602260014WWUCOLXUIJTEQALQP9MNAKBV35KJGZ87C2FA1G7CHF3JNJB0XE8W2MLRPTIFX64GMK9UZSDJ7RU4ABFZMCVGMLDXVRFQTTN6OZNPYE3SIKUZGNA9BVNBRVQDDCFFPKLJ</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:07:27.771546</tc:TicketDate>
+      <tc:Identity>2973</tc:Identity>
+      <tc:DocId>4EE4BF91-12F9-4A02-BA0F-4BEC497C595C</tc:DocId>
+      <tc:TransportId>82f028af-a05b-478c-95cd-80ab74bbb7f4</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012726</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:07:27.771546</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 0, ОКПД2 = 11.01.10.152 (2522)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cu'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '2522', 'gtin': None, 'minage': 0.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>7527</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>806</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200741816100226001BLC3UYGSFGOI6JV2PZ9TSK7RRHJIF8NCZEATLZOCQZGDTMVSILWKW1E09N37P5TSGBRFRAFVQJPVJZMLNASEFGNY0XHC83ORDRWI629BHXMQB5UB0NFHCXYR9JONTAM3E</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:08:03.9324095</tc:TicketDate>
+      <tc:Identity>7527</tc:Identity>
+      <tc:DocId>93722693-917C-4FDB-AE70-5CCE66B7F97E</tc:DocId>
+      <tc:TransportId>e3dfad44-dfbe-49a2-a5d1-5b1907a771b6</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012727</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:08:03.9324095</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*
+# MinAgeFortWine = 1, ОКПД2 = 11.01.10.152 (2522)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000008', 'Alc_Name_Full': 'Водка Грузия', 'Client_Code': '377206000001454992', 'Owner_ID': None, 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '268', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00*\\x17\\x8cv'", 'Importer_OwnerID': '030000434308', 'BRAND': 'Грузия', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00002278', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '2522', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepImportedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepImportedProduct_v6>
+      <ns1:Identity>9314</ns1:Identity>
+      <ns1:Header>
+        <ns1:NUMBER>113</ns1:NUMBER>
+        <ns1:Date>2026-02-24</ns1:Date>
+        <ns1:ImportedDate>2026-02-24</ns1:ImportedDate>
+        <ns1:Importer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Importer>
+        <ns1:Supplier>
+          <ns2:FO>
+            <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+            <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+            <ns2:ShortName>"Придвинье"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>112</ns2:Country>
+              <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+            </ns2:address>
+          </ns2:FO>
+        </ns1:Supplier>
+        <ns1:GTDNUMBER>10009142/040718/0005309</ns1:GTDNUMBER>
+        <ns1:GTDDate>2025-03-03</ns1:GTDDate>
+        <ns1:ContractNUMBER>C4567_7654</ns1:ContractNUMBER>
+        <ns1:ContractDate>2024-12-01</ns1:ContractDate>
+        <ns1:Country>643</ns1:Country>
+        <ns1:Note>Примечание к документу о импорте</ns1:Note>
+        <ns1:IDInvoicePlannedImport>PROIN-0000000002</ns1:IDInvoicePlannedImport>
+        <ns1:UNFSM_FLAG>true</ns1:UNFSM_FLAG>
+        <ns1:BONDEDWAREHOUSE>030000434308</ns1:BONDEDWAREHOUSE>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000008</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>PARTY123</ns1:Party>
+          <ns1:PlannedImport>PROIN-0000000777</ns1:PlannedImport>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:YEAROFGRAPES>2025</ns1:YEAROFGRAPES>
+          <ns1:MarkInfo>
+            <ns3:amc>200200430115820226001XERO81WYTV0KJ5Z6BPNBZUM9AWSDHNFCLKUGGKSXMDPOUTYBPTOK876AFEJEJLAL3Q29HFCSYDSB96W4IQ10YAM3HWN7LHM2CJXZTSZLKGRJRPWLJS0EAN9FQDH3BTKSU</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepImportedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2026-02-24T18:08:52.0740941</tc:TicketDate>
+      <tc:Identity>9314</tc:Identity>
+      <tc:DocId>415AF474-EB82-4991-9A94-9A153D6A7229</tc:DocId>
+      <tc:TransportId>ebe39645-c7fe-4e8d-8a9b-d25c601ac981</tc:TransportId>
+      <tc:RegID>TEST-IMPAP-0000012728</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepImportedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Accepted</tc:Conclusion>
+        <tc:ConclusionDate>2026-02-24T18:08:52.0740941</tc:ConclusionDate>
+        <tc:Comments>Документ успешно принят системой на обработку.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Документ успешно принят системой на обработку*

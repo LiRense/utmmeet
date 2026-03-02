@@ -34,8 +34,8 @@ logger.add("my_log_file.log", rotation="10 MB", retention="10 days")
 logger.info('Запускаю нагрузку РусТокен')
 k = 1
 duration = 24 * 60 * 60  # 24 часа * 60 минут * 60 секунд (кол-во секунд в сутках)
-xml_data_1 = """<?xml version="1.0" encoding="utf-8"?>
-<ns:Documents Version="1" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:rpp="http://fsrar.ru/WEGAIS/ClaimIssueFSM" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2">
+xml_data_1 = """<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ns:Documents xmlns:ce="http://fsrar.ru/WEGAIS/CommonV3" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:pref="http://fsrar.ru/WEGAIS/ProductRef_v2" xmlns:rpp="http://fsrar.ru/WEGAIS/ClaimIssueFSM" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1">
   <ns:Owner>
     <ns:FSRAR_ID>030000434308</ns:FSRAR_ID>
   </ns:Owner>
@@ -43,7 +43,7 @@ xml_data_1 = """<?xml version="1.0" encoding="utf-8"?>
     <ns:ClaimIssueFSM>
       <rpp:Identity>UTM</rpp:Identity>
       <rpp:Header>"""
-xml_data_2 = """<rpp:Date>2025-05-26</rpp:Date>
+xml_data_2 = """<rpp:Date>2025-10-09</rpp:Date>
         <rpp:ReportUseAutoProcess>Отчет об использовании ФСМ прошу автоматически сформировать на основе данных, зафиксированных заявителем в ЕГАИС расчетным путем.</rpp:ReportUseAutoProcess>
         <rpp:TerrOrganRAR>
           <oref:UL>
@@ -89,15 +89,15 @@ xml_data_2 = """<rpp:Date>2025-05-26</rpp:Date>
       </rpp:Header>
       <rpp:Content>
         <rpp:Position>
-          <rpp:alcPercent>40</rpp:alcPercent>
-          <rpp:alcPercentMin>40</rpp:alcPercentMin>
-          <rpp:alcPercentMax>40</rpp:alcPercentMax>
-          <rpp:QuantityDal>0.0500</rpp:QuantityDal>
-          <rpp:Capacity>0.5</rpp:Capacity>
-          <rpp:Quantity>1</rpp:Quantity>
+          <rpp:alcPercent>45</rpp:alcPercent>
+          <rpp:alcPercentMin>45</rpp:alcPercentMin>
+          <rpp:alcPercentMax>45</rpp:alcPercentMax>
+          <rpp:QuantityDal>0.1140</rpp:QuantityDal>
+          <rpp:Capacity>0.57</rpp:Capacity>
+          <rpp:Quantity>2</rpp:Quantity>
           <rpp:VidAP171fz>Бренди</rpp:VidAP171fz>
-          <rpp:SampleFSM>ФСМ. Алкогольная продукция свыше 9%. До 0,5 л</rpp:SampleFSM>
-          <rpp:MarkType>187</rpp:MarkType>
+          <rpp:SampleFSM>ФСМ. Алкогольная продукция свыше 9%. До 0,75 л</rpp:SampleFSM>
+          <rpp:MarkType>188</rpp:MarkType>
           <rpp:Identity>0</rpp:Identity>
         </rpp:Position>
       </rpp:Content>
@@ -126,18 +126,22 @@ while k != duration:
     logger.debug(response.text)
 
     logger.info('Читаем ошибки')
-    error_blocks = read_errors_from_timestamp(r'C:\UTM\transporter\l\transport_info.log', f'{formatted_time}')
+    error_blocks = read_errors_from_timestamp(r'/opt/utm/transport/l/transport_info.log', f'{formatted_time}')
     if not error_blocks:
         logger.debug('Ошибок не обнаружено')
     else:
-        for block in error_blocks:
-            error_lines = []
-            error_line = next(line for line in block if 'ERROR' in line)
-            error_lines.append(error_line.strip())
-            trimmed_error_lines = [line.split('- ')[1] for line in error_lines]
-            for line_s in trimmed_error_lines:
-                logger.error(line_s)
-            logger.debug('                    |' + block)
+        try:
+            for block in error_blocks:
+                error_lines = []
+
+                error_line = next(line for line in block if 'ERROR' in line)
+                error_lines.append(error_line.strip())
+                trimmed_error_lines = [line.split('- ')[1] for line in error_lines]
+                for line_s in trimmed_error_lines:
+                    logger.error(line_s)
+                logger.debug('                    |' + block)
+        except Exception as e:
+            logger.error(f"Ошибка {e}")
 
     k+=1
 

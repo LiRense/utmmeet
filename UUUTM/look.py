@@ -144,7 +144,7 @@ def change_prop():
 
 def deshifr():
     change_prop()
-    varint = input("Выбор смены настроек\n1)Вручную\n2)Файлом\n>>> ")
+    varint = input("Выбор смены настроек\n1)Вручную\n2)Файлом\n3)Prod\n>>> ")
     if varint == "1":
         os.system(
             'cd /opt/encrypter/ ; /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter ./sp')
@@ -169,6 +169,15 @@ def deshifr():
             except:
                 print(f"Ошибка {i}")
         print("\n\n")
+    elif varint == "3":
+        os.system(
+            'cd /opt/encrypter/ ; /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter ./sp')
+        text = input("Введите запрос для изменения настроек (= заменяется на " "), exit: ")
+        text = text.replace("=", " ")
+        while text!="exit":
+            os.system(f'cd /opt/encrypter/ ; /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter ./sp {text}')
+            text = input("Введите запрос для изменения настроек (= заменяется на " "), exit: ")
+            text = text.replace("="," ")
 
 
     os.system('cd /opt/encrypter/ ; /opt/utm/jre/bin/java -cp /opt/encrypter/lib/"*" ru.centerinform.transport.conf.crypto.Encrypter ./sp')
@@ -245,9 +254,68 @@ def debugg():
         print('Очистка буферной директории')
         os.system(f'echo {passw} | sudo -S supervisorctl start utm')
 
+    except FileNotFoundError:
+        print("Файл для параметров логирования не найден")
+        backbone = None
+    except:
+        backbone = None
+    finally:
+        print(backbone)
 
+def debugg2():
+    os.system(f'echo {passw} | sudo -S supervisorctl stop utm')
+    os.system(f'echo {passw} | sudo -S chown -R ivan:root /opt/')
 
+    os.system(f'mkdir {datas["project_path"]}backbones')
+    try:
+        backbone = masking_backbone()
+        print(backbone)
+        backbone_zip = backbone + '.zip'
+        backbone_jar = backbone + '.jar'
+        os.system(f'echo {passw} | sudo -S cp /opt/utm/transport/lib/{backbone_jar} {datas["project_path"]}backbones/{backbone_zip}')
+        os.system(f'echo {passw} | sudo -S chown -R ivan:root {datas["project_path"]}')
 
+        print('Файл скопирован')
+        with ZipFile(f'{datas["project_path"]}backbones/{backbone_zip}', 'r') as zip_ref:
+            zip_ref.extract('logback-spring.xml',f'{datas["project_path"]}backbones/')
+
+        print('файл распакован')
+        print('меняю логирование')
+        with open(f'{datas["project_path"]}backbones/logback-spring.xml','rt') as prop:
+            with open(f'{datas["project_path"]}backbones/logback-spring_copy.xml','wt') as copy:
+                    for line in prop:
+                        if '<springProfile name="default,test,prod">' in line:
+                            copy.write(line)
+                            copy.write('        <logger name="ru.centerinform" level="DEBUG" />'+'\n')
+                            copy.write('        <logger name="org.apache.http" level="DEBUG" />'+'\n')
+                            copy.write('        <logger name="org.apache.http.wire" level="DEBUG" />'+'\n')
+                            copy.write('        <logger name="org.springframework.web" level="DEBUG" />'+'\n')
+                            copy.write('        <logger name="org.springframework.web.client" level="DEBUG" />'+'\n')
+                        else:
+                            copy.write(line)
+                    print('DEBUG логирование включено')
+        print('изменения внесены')
+        os.system(f'echo {passw} | sudo -S mv {datas["project_path"]}backbones/logback-spring_copy.xml {datas["project_path"]}backbones/logback-spring.xml')
+        print('Арихивирую')
+
+        with ZipFile(f'{datas["project_path"]}backbones/{backbone_zip}', 'r') as zip_ref:
+            with ZipFile(f'backbones/0{backbone_zip}','a') as new_zip:
+                for file in zip_ref.infolist():
+                    buffer = zip_ref.read(file.filename)
+                    if file.filename != 'logback-spring.xml':
+                        new_zip.writestr(file,buffer)
+
+        with ZipFile(f'backbones/0{backbone_zip}','a') as new_zip:
+            new_zip.write('backbones/logback-spring.xml',arcname='logback-spring.xml')
+        print('Файл был архивирован')
+        print('Перенос в папку УТМ')
+        os.system(f'echo {passw} | sudo -S chown -R ivan:root /opt/')
+        os.system(f'echo {passw} | sudo -S rm /opt/utm/transport/lib/{backbone_jar}')
+        os.system(f'echo {passw} | sudo -S mv {datas["project_path"]}backbones/0{backbone_zip} '
+                  f'/opt/utm/transport/lib/{backbone_jar}')
+        clear_buffer()
+        print('Очистка буферной директории')
+        os.system(f'echo {passw} | sudo -S supervisorctl start utm')
     except FileNotFoundError:
         print("Файл для параметров логирования не найден")
         backbone = None
@@ -446,6 +514,10 @@ while data != "exit":
     elif data == "10":
         start_backbone()
         debugg()
+        clear_buffer()
+    elif data == "13":
+        start_backbone()
+        debugg2()
         clear_buffer()
     elif data == '11':
         new_serial()

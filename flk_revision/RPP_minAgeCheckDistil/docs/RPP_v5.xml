@@ -1,0 +1,74 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v5" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" xmlns:ns4="http://fsrar.ru/WEGAIS/ProductRef_v2" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v5>
+      <ns1:Identity>35</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>35</ns1:NUMBER>
+        <ns1:Date>2025-09-25</ns1:Date>
+        <ns1:ProducedDate>2025-09-25</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200001080130925001OQKORIPN06Z7KFFCBHLWDGRTSE1WM4XUSVNEDWG8Z3FMUPSJ9Q4BLGDH0QTR56JVFCVOTKNITZ2YJGBMYOQUONEFDAE4S1K7NFTLDCSI3WUZULQSYPJA2GADDCBCE96NS</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:ContentResource>
+            <ns1:Resource>
+              <ns1:IdentityRes>1</ns1:IdentityRes>
+              <ns1:Product>
+                <ns4:UnitType>Packed</ns4:UnitType>
+                <ns4:Type>ЭС</ns4:Type>
+                <ns4:FullName>Дистиллят винный для бренди (дистиллят коньячный)</ns4:FullName>
+                <ns4:ShortName>Дистиллят винный для бренди (дистиллят коньячный)</ns4:ShortName>
+                <ns4:AlcCode>0300004343080000025</ns4:AlcCode>
+                <ns4:Capacity>0.5</ns4:Capacity>
+                <ns4:AlcVolume>42</ns4:AlcVolume>
+                <ns4:Producer>
+                  <ns2:FO>
+                    <ns2:ClientRegId>050000000859</ns2:ClientRegId>
+                    <ns2:FullName>"Витебский лекеро-водочный завод "Придвинье""</ns2:FullName>
+                    <ns2:ShortName>"Придвинье"</ns2:ShortName>
+                    <ns2:address>
+                      <ns2:Country>112</ns2:Country>
+                      <ns2:description>Республика Беларусь, 210001, г. Витебск, ул. Революционная, 45</ns2:description>
+                    </ns2:address>
+                  </ns2:FO>
+                </ns4:Producer>
+                <ns4:ProductVCode>4813</ns4:ProductVCode>
+              </ns1:Product>
+              <ns1:RegForm2>TEST-FB-000000041029480</ns1:RegForm2>
+              <ns1:Quantity>1</ns1:Quantity>
+              <ns1:MarkInfo>
+                <ns3:amc>200200001080130925001OQKORIPN06Z7KFFCBHLWDGRTSE1WM4XUSVNEDWG8Z3FMUPSJ9Q4BLGDH0QTR56JVFCVOTKNITZ2YJGBMYOQUONEFDAE4S1K7NFTLDCSI3WUZULQSYPJA2GADDCBCE96NT</ns3:amc>
+              </ns1:MarkInfo>
+            </ns1:Resource>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v5>
+  </ns0:Document>
+</ns0:Documents>

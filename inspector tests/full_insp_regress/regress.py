@@ -30,7 +30,9 @@ class Forming_xml():
                  ip_fsrar='030043434308',
                  ip_name='ИП Мартихин Иван Андреевич',
                  formA='TEST-FA-000000036477315',
-                 formB='TEST-FB-000000041014823'):
+                 formB='TEST-FB-000000041014823',
+                 docId=7920609,
+                 isUnPacked=False):
         self.doc_type = doc_type.lower()
 
         self.fsrar = fsrar
@@ -51,6 +53,9 @@ class Forming_xml():
 
         self.formA = formA
         self.formB = formB
+        self.docId = docId
+
+        self.isUnPacked = isUnPacked
 
     def get_day(self):
         logger.debug('Получаю дату документа')
@@ -203,6 +208,8 @@ class Forming_xml():
             # Quantity
             root[1][0][2][0][2].text = self.quantity
             root[1][0][2][0][3][0][0][0].text = self.quantity
+            # BCode
+            root[1][0][2][0][4][0].text = self.gen_150_mark()
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
@@ -261,11 +268,14 @@ class Forming_xml():
             root[1][0][0][1].text = str(randint(0, 9999))
 
             # FSRAR_ID
-            root[0][0].text = self.fsrar
+            root[0][0].text = self.ip_fsrar
             # Date
             root[1][0][0][2].text = self.get_day()
             # IsAccept
             root[1][0][0][0].text = 'Accepted'
+            # WbRegId
+            root[1][0][0][3].text = f"TTN-{int(self.docId):0{10}d}"
+
 
             # r = root[1][0][0][2]
             # logger.debug(r)
@@ -285,11 +295,13 @@ class Forming_xml():
             root[1][0][0][1].text = str(randint(0, 9999))
 
             # FSRAR_ID
-            root[0][0].text = self.fsrar
+            root[0][0].text = self.ip_fsrar
             # Date
             root[1][0][0][2].text = self.get_day()
             # IsAccept
             root[1][0][0][0].text = 'Rejected'
+            # WbRegId
+            root[1][0][0][3].text = self.docId
 
             # r = root[1][0][0][2]
             # logger.debug(r)
@@ -391,6 +403,8 @@ class Forming_xml():
             root[1][0][0].text = self.fsrar
             # Date
             root[1][0][2].text = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+            # AWoRegID
+            root[1][0][3].text = f"WOF-{self.docId:0{10}d}"
 
             # r = root[1][0][2]
             # logger.debug(r)
@@ -413,6 +427,8 @@ class Forming_xml():
             root[1][0][0].text = self.fsrar
             # Date
             root[1][0][2].text = date.today().strftime("%Y-%m-%dT%H:%M:%S")
+            # RegID
+            root[1][0][3].text = f"INV-{int(self.docId):0{10}d}"
 
             # r = root[1][0][2]
             # logger.debug(r)
@@ -506,7 +522,7 @@ class Forming_xml():
             root[0][0].text = self.fsrar
             root[1][0][0][2][0][0].text = self.fsrar
             root[1][0][0][4][0][0].text = self.fsrar
-            root[1][0][0][5][0][0].text = self.fsrar
+            root[1][0][0][5][0][0].text = '06'+self.fsrar[2:]
             root[1][0][1][0][1][4][0][0].text = self.fsrar
             # UL_INN
             root[1][0][0][2][0][1].text = self.inn
@@ -527,6 +543,8 @@ class Forming_xml():
             root[1][0][0][6].text = self.get_day()
             root[1][0][0][7].text = self.get_day()
             root[1][0][0][10].text = self.get_day()
+            # EgaisFixNumber
+            root[1][0][0][8].text = f'TTN-{self.docId:0{10}d}'
             # AlcCode
             root[1][0][1][0][1][0].text = self.product_code
             # AlcName
@@ -804,8 +822,9 @@ if __name__ == "__main__":
 
 # if __name__ == "__main__":
 #
-#     forming = Forming_xml(doc_type='repproducedproduct_v4')
-#     corr_xml = forming.generate_RPP_4()
+#     forming = Forming_xml(doc_type='requestrepealawo')
+#     corr_xml = forming.generate_RAWO()
+#     print(corr_xml)
 #     logger.debug('Успех генерации xml')
 #
 #     db_ins = DB_placer('transport','dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
@@ -854,4 +873,3 @@ if __name__ == "__main__":
 #     logger.debug('Успех отправки json')
 #
 #     result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
-

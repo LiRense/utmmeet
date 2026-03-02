@@ -699,6 +699,25 @@ class TestReport:
                 current_step["duration"] = int(duration.total_seconds() * 1000)
                 self._skip_remaining = True
 
+        def error_skip(self, reason: str = ""):
+            """Проваливает текущий тест или шаг.
+
+            Args:
+                reason (str): Причина провала.
+            """
+            current_step = self._get_current_step()
+            if current_step:
+                current_step.update({
+                    "outcome": "Failed",
+                    "message": reason or "Получили ошибку, но продолжаем тестирование",
+                    "completedOn": datetime.utcnow().isoformat() + "Z",
+                    "traces": ""
+                })
+                duration = (datetime.fromisoformat(current_step["completedOn"][:-1]) -
+                            datetime.fromisoformat(current_step["startedOn"][:-1]))
+                current_step["duration"] = int(duration.total_seconds() * 1000)
+                self._skip_remaining = True
+
         def description(self, description: str):
             """Устанавливает описание для текущего шага или теста.
 

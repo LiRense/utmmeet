@@ -1,0 +1,1620 @@
+# Крепость равна средней = 42, Группа = ССНП (CodeVid = 48113, okpd2 = 20.42.15.144)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf0'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '48113', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>512</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>8725</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200620365981025001VTPB48STIZH5HDUWQOL6ZMCJPRGDQEF39ARG9POEISMYNZQDNF6WMJL3DBT8BKRLP5YCVKO4PR9IP0LOVSHDKZ2VF6N8BIUH7YTZKGCE3WJYCHGDFY0KCMN6PZVBXSG8O</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>42</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:25:18.8618374</tc:TicketDate>
+      <tc:Identity>512</tc:Identity>
+      <tc:DocId>986B4757-5C5C-41B8-BB73-FDC60D196978</tc:DocId>
+      <tc:TransportId>97ab1ee0-b88f-4ee7-9cf7-50fbf6ed0523</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055872</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:25:18.8618374</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["512"-"TEST-PRODAP-0000055872"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость меньше минимальной = 39, Группа = ССНП (CodeVid = 48113, okpd2 = 20.42.15.144)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf1'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '48113', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>4185</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>6158</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200911638461025001DNYQXEXB5HVPTGJ9AKKTN0G3WMI246C8L7MLXRUVCJOQKDR4LZ2SBMZXETUP6QK7DHAAPIWNYDQVKU7FGSAMCJ5RC2ZNZT0FBHS3WEGWXPLIRY7PTN6ADZKXED1BTBUMA</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>39</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:25:42.948083</tc:TicketDate>
+      <tc:Identity>4185</tc:Identity>
+      <tc:DocId>B6654842-7F8D-4371-83D9-1868AAF7D0A6</tc:DocId>
+      <tc:TransportId>c3de68ee-9f2c-43b7-9277-6134efeefe26</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055873</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:25:42.948083</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4185"-"TEST-PRODAP-0000055873"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4185"-"TEST-PRODAP-0000055873"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость больше максимальной = 47, Группа = ССНП (CodeVid = 48113, okpd2 = 20.42.15.144)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf2'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '48113', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>2329</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>4581</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200247409301025001EGIB7CDPHU0LUSYPZQJVGFZFCX3OQLBJRMXWTA3E5LUZERN9UWIHCD4AGJTQ2OPOFVDMMQGSZXYURHSJ2NSNGXFV5MUDZOTEIV8AWOLILCHQMEL4OVGK0HJJZMZ7A6OUP</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>47</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:26:18.7810533</tc:TicketDate>
+      <tc:Identity>2329</tc:Identity>
+      <tc:DocId>EF179B28-59B8-4D72-8E30-36F28B2910F2</tc:DocId>
+      <tc:TransportId>d1b87925-8cba-4025-8393-758b9f6e7d17</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055874</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:26:18.7810533</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["2329"-"TEST-PRODAP-0000055874"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["2329"-"TEST-PRODAP-0000055874"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость равна минимальной = 40, Группа = ССНП (CodeVid = 48113, okpd2 = 20.42.15.144)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf3'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '48113', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>2946</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>2225</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200358882871025001GJHAITYKB24PCB1LJY9NN76DESVSCGRZTE8FDHRVWGXEDBTI34H75FS6F1IZL9KORPK2ZCUAFNB2IPKQULOMJASRCYIC7BMLSAEWJV3K4FUQJTU1IPR0NKVO4DAAIE3KX</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:26:54.5360241</tc:TicketDate>
+      <tc:Identity>2946</tc:Identity>
+      <tc:DocId>AB1D314D-4A79-4B1C-BB9D-EBAFF7784316</tc:DocId>
+      <tc:TransportId>b07d8feb-967a-41b4-9946-0ec1d1774c0d</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055875</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:26:54.5360241</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["2946"-"TEST-PRODAP-0000055875"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость равна максимальной = 45, Группа = ССНП (CodeVid = 48113, okpd2 = 20.42.15.144)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf4'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '48113', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>9042</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>8694</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200532042421025001BHONVI6AXFSMKZVYDRQLJFUWE9HCQCNUKETOMBYNMATQSCZZWG7FO8XEINKP6V9JYLRESVJPMK6JFLTWV89CBPLNO34QTDHSMH1FSBQ2WRYG2PKIPVWUFFEZRYKVMA8LA</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>45</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:27:30.9773905</tc:TicketDate>
+      <tc:Identity>9042</tc:Identity>
+      <tc:DocId>629721BF-1E58-473C-9E4F-4AAF6169A2F5</tc:DocId>
+      <tc:TransportId>ff90a91b-cd1d-4f76-8c66-24f72ab7583e</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055876</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:27:30.9773905</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["9042"-"TEST-PRODAP-0000055876"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость равна средней = 42, Группа = СЛС (CodeVid = 1022, okpd2 = 20.13.21.120)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf5'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '1022', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>7211</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>90</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>2002002438257910250013TASSMFTZNHUYKELHVWDXWRIQJ8UKP6BGZRQS6JUPA0EIO9AY1KLNK2XZL7CVRYGQTMVCBTJ9SJENHYBLIHFPUWJUG6BTCL8N3ZK0ADQOXXQ2LMEAUIU1MF4BDORVTYSC</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>42</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:27:54.9856366</tc:TicketDate>
+      <tc:Identity>7211</tc:Identity>
+      <tc:DocId>96B55D50-B2CE-43EB-9F12-68CCC3A120B2</tc:DocId>
+      <tc:TransportId>92fba399-439b-43bb-a876-16bca46ae43c</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055877</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:27:54.9856366</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["7211"-"TEST-PRODAP-0000055877"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость меньше минимальной = 39, Группа = СЛС (CodeVid = 1022, okpd2 = 20.13.21.120)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf6'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '1022', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>4952</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>6335</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200121250701025001C9T1VRMG0YOLLZAUVPNAECFTY4862DRWKJ3SECXOKYQMPQGTXOYLAUUVNHMDG5R7LZ0VZFW4Z0H1HSGRXV6LK9KDUMZJJQWMTNWFCCFEGVEIROHVAEZ5CBXH4SDJM9URC</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>39</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:28:31.1930045</tc:TicketDate>
+      <tc:Identity>4952</tc:Identity>
+      <tc:DocId>E144F785-9BAD-495B-A7F5-E2AB26C7AB54</tc:DocId>
+      <tc:TransportId>a9ba61af-4258-4d8f-817a-290b9e6c1002</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055878</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:28:31.1930045</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4952"-"TEST-PRODAP-0000055878"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4952"-"TEST-PRODAP-0000055878"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость больше максимальной = 47, Группа = СЛС (CodeVid = 1022, okpd2 = 20.13.21.120)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf7'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '1022', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>2067</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>749</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200439550051025001MSOJOE4MZXLUTC2KFAZ0I1BJIGAE9B8QRXSUWTPDXBRINB0EAQ569TYNA4HSUJLSVUZFVKHRTPBPIEY9XRA4JJKLDTNEMZGRC1CQ8IKDYGVV2VOJPVMERNSH7IA1GTB4S</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>47</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:29:06.6203774</tc:TicketDate>
+      <tc:Identity>2067</tc:Identity>
+      <tc:DocId>6DAA2081-52EE-4B35-B300-34B770ECA496</tc:DocId>
+      <tc:TransportId>999b49b6-a45e-40ad-9fe5-0f098143faea</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055879</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:29:06.6203774</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["2067"-"TEST-PRODAP-0000055879"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["2067"-"TEST-PRODAP-0000055879"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость равна минимальной = 40, Группа = СЛС (CodeVid = 1022, okpd2 = 20.13.21.120)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf8'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '1022', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>8394</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>9790</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200986872891025001KDIXB2QDJI0TQ8EO3TPUWPMSAHNOUYLA5SLR4ZAYKLEWZYKNQHMBGFOMBTJ2DH1P5ESRQ9TUXNDD7543MVLJTNHYFWQ9AZRLPKQTMAEISIBUNRUPAGYBAMGUK3ZZQS0VJ</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:30:22.9974878</tc:TicketDate>
+      <tc:Identity>8394</tc:Identity>
+      <tc:DocId>B58FBBA7-DE7B-482E-A21A-BE60923AC080</tc:DocId>
+      <tc:TransportId>72cf8fd6-1b49-4fa0-a81b-5763831981ff</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055880</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:30:22.9974878</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["8394"-"TEST-PRODAP-0000055880"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость равна максимальной = 45, Группа = СЛС (CodeVid = 1022, okpd2 = 20.13.21.120)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xf9'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '1022', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>7412</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>6122</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200469224251025001HMG1RA6FGTUXR79EBYIQTDDWFBLE5NKSM23ZZXKP2VOTJFG0A36ZTWNHYML8MDQN5BPRHKGIDJ7PFQMHTDKARCONAWKRELC5XHV901IWTBS3VWUAYRJTXGWMZ6OS2RBI9</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>45</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:31:22.0119095</tc:TicketDate>
+      <tc:Identity>7412</tc:Identity>
+      <tc:DocId>44846A94-CFC4-436D-BF39-B2F9E36300A2</tc:DocId>
+      <tc:TransportId>0f2bd737-e7f6-4a6f-9305-3181f81a01b9</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055881</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:31:22.0119095</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["7412"-"TEST-PRODAP-0000055881"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость равна средней = 42, Группа = ССПП (CodeVid = 3446, okpd2 = 11.02.12.360)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xfa'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '3446', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>1355</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>2423</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200226684871025001FB7QX8YPAUDZMHQ6SARSHC9VWTZ3LKVFJDRXPONUA6LYMILFVT9KFSQZM4REH0XBVD251URWWII4FJZ68MNVP9R1UL2QVJEBWZDC3LAXPGTCMSIPXWJKTHACN9KLO2AFE</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>42</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:31:42.6193774</tc:TicketDate>
+      <tc:Identity>1355</tc:Identity>
+      <tc:DocId>BF590E67-7A92-47B0-8709-2942BEE43E1C</tc:DocId>
+      <tc:TransportId>e775184c-5f14-4cf3-83d6-72019c3b230d</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055882</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:31:42.6193774</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["1355"-"TEST-PRODAP-0000055882"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость меньше минимальной = 39, Группа = ССПП (CodeVid = 3446, okpd2 = 11.02.12.360)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xfb'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '3446', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>223</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>9060</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200702627671025001V4NXIFHF6TCZQIQ5RYOAP2CPLUKGTXE3RL9UFUBPCFJXZGLZY9UORC8QD1RHIW7QXKJSHOM4MVWYBS1EOG4IL5JCDFRPJXQGTZARMNHNW70KK6IGN1LRPMOJRAYHS4HVL</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>39</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:32:18.7019461</tc:TicketDate>
+      <tc:Identity>223</tc:Identity>
+      <tc:DocId>2B6A445A-5755-4B34-8309-9900F3659CF7</tc:DocId>
+      <tc:TransportId>079a32bb-097d-4e06-8e76-d3cf1cae95ae</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055883</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:32:18.7019461</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["223"-"TEST-PRODAP-0000055883"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["223"-"TEST-PRODAP-0000055883"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость больше максимальной = 47, Группа = ССПП (CodeVid = 3446, okpd2 = 11.02.12.360)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xfc'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '3446', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>4472</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>7752</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200590243661025001VA0FMOBJF4OJDEUVW68GNPUSNKCLR5QREWLYGGFR3INVTECFYHLY74ZZKEXJQOUJQXH21WPAZYVCO13TJ5KFAUPLPRSXT97QNM4CEOVIKN8ZNGN2SMGZEVW9C6KZH3QEW</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>47</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:32:54.9405138</tc:TicketDate>
+      <tc:Identity>4472</tc:Identity>
+      <tc:DocId>E4E77BA0-8A3E-4C12-B028-E9012CBC3E2B</tc:DocId>
+      <tc:TransportId>bc95b8c3-5b71-4b9c-a3c8-731d0de0554f</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055884</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:32:54.9405138</tc:ConclusionDate>
+        <tc:Comments> «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4472"-"TEST-PRODAP-0000055884"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Ошибка крепости'*
+*Полученный результат:  «Фактическая крепость» не входит в диапазон крепости, указанной в Заявке о фиксации в ЕГАИС сведений о спиртосодержащей продукции и вине наливом, крепленном вине наливом (виноматериале) Владелец ["030000434308"], отчет о производстве ["4472"-"TEST-PRODAP-0000055884"], позиция "1". Импорт содержимого отчета о производстве.*
+# Крепость равна минимальной = 40, Группа = ССПП (CodeVid = 3446, okpd2 = 11.02.12.360)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xfd'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '3446', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>2702</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>3926</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200751664801025001A21SA5PKFWI4CZMSLZHRPW6JNC8IYJQR0XFXTKIPVLZ0HDLJPQJ4UMKEANBVEDSCYMHRF2GOB3IH7R1AMVXGNDJYFJUPTKEH5UCGW9OBDYNZCZM01SLJGKWEBA4PVNBUQ</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:33:30.7110845</tc:TicketDate>
+      <tc:Identity>2702</tc:Identity>
+      <tc:DocId>4BE2ED7F-1D80-490C-9788-954C94563E98</tc:DocId>
+      <tc:TransportId>20df079a-1e1f-44b5-ab26-5d9112190167</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055885</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:33:30.7110845</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["2702"-"TEST-PRODAP-0000055885"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*
+# Крепость равна максимальной = 45, Группа = ССПП (CodeVid = 3446, okpd2 = 11.02.12.360)
+{{collapse(NSI_Product)
+<pre>
+[{'Alc_Code': '0300004343080000017', 'Alc_Name_Full': 'Водка Вкусная', 'Client_Code': None, 'Owner_ID': '030000434308', 'Capacity': 0.5, 'AlcPerc': 42.0, 'AlcPercMin': 40.0, 'AlcPercMax': 45.0, 'ProductType_Code': '200', 'Country_Code': '643', 'isUnpacked': 'False', 'Version_ts': "b'\\x00\\x00\\x00\\x00)\\xea\\x15\\xfe'", 'Importer_OwnerID': None, 'BRAND': 'Вкусная', 'PACKAGE_TYPE_CODE': '00001', 'frapid': '03-00004212', 'shelflife': '0', 'isRest': 'True', 'CodeVid_egais': '3446', 'gtin': None, 'minage': 1.0, 'SugarContWine': '1', 'SugarContSparkWine': '1'}]
+</pre>
+}}
+{{collapse(doc)
+<pre>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>1417</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>9371</ns1:NUMBER>
+        <ns1:Date>2025-10-17</ns1:Date>
+        <ns1:ProducedDate>2025-10-17</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200200900270391025001A8EKN4FFQ6R1ULWBICUSX5MZHWGDTQ3YPL2RLLOQGENVSC4KDKCZ2YRGXMNYO60WBIF1QXZHGKL4WGASNMFWHEDAT2BETQCUHRNQJ9JLPXIOJ8QAYQG25WKCTDCZUVFLS</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>45</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>
+</pre>
+}}
+{{collapse(ticket)
+<pre>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ns:Documents xmlns:tc="http://fsrar.ru/WEGAIS/Ticket" xmlns:oref="http://fsrar.ru/WEGAIS/ClientRef" xmlns:ns="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0">
+  <ns:Owner>
+    <ns:FSRAR_ID>3463047</ns:FSRAR_ID>
+  </ns:Owner>
+  <ns:Document>
+    <ns:Ticket>
+      <tc:TicketDate>2025-10-17T15:33:54.5789315</tc:TicketDate>
+      <tc:Identity>1417</tc:Identity>
+      <tc:DocId>2EE29771-D877-4D19-9955-1194EB4F5073</tc:DocId>
+      <tc:TransportId>cec94297-32d0-4348-ac1e-4280dab66696</tc:TransportId>
+      <tc:RegID>TEST-PRODAP-0000055886</tc:RegID>
+      <tc:DocHash />
+      <tc:DocType>RepProducedProduct_v6</tc:DocType>
+      <tc:Result>
+        <tc:Conclusion>Rejected</tc:Conclusion>
+        <tc:ConclusionDate>2025-10-17T15:33:54.5789315</tc:ConclusionDate>
+        <tc:Comments> Использование «старых» алкогольных кодов продукции при фиксации «отчета о производстве» заблокировано в связи с вступлением в силу нового формата, утвержденного приказом Росалкогольтабакконтроля от 26.11.2024 № 468 (далее – Формат). Необходимо получить «новый» код продукции в ЕГАИС в соответствии с новым Форматом. Справочники ЕГАИС, которые используются при заполнении Заявки (26.1), опубликованы на официальном сайте Росалкогольтабакконтроля. Владелец ["030000434308"], отчет о производстве ["1417"-"TEST-PRODAP-0000055886"], позиция "1". Импорт содержимого отчета о производстве.</tc:Comments>
+      </tc:Result>
+    </ns:Ticket>
+  </ns:Document>
+</ns:Documents>
+</pre>
+}}
+*Ожидаемый результат: 'Успешно принят на обработку'*
+*Полученный результат: Получили ошибку про использование "старых" алккодов - считаем, что проверка ФЛК по крепости пройдена*

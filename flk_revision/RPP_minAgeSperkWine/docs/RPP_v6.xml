@@ -1,0 +1,69 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v6" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v6>
+      <ns1:Identity>40</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>40</ns1:NUMBER>
+        <ns1:Date>2025-09-19</ns1:Date>
+        <ns1:ProducedDate>2025-09-19</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:INN>7841051711</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000017</ns1:ProductCode>
+          <ns1:Quantity>1</ns1:Quantity>
+          <ns1:MarkInfo>
+            <ns3:amc>200783565302831194697778M324DAZXUIR3V80SCIZ9JJZGQS6974VNPYUFELLNO338UQM403SG5UWI3O9T7DR68S1Z1BUBSSRXAQPV4KCEA7TQWYCSX3CN9FUEBMZ80N9O306V3VLNALCOYMNJ7G</ns3:amc>
+          </ns1:MarkInfo>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160201/2</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:Comment1>Комментарий 1</ns1:Comment1>
+          <ns1:Comment2>Комментарий 2</ns1:Comment2>
+          <ns1:Comment3>Комментарий 3</ns1:Comment3>
+          <ns1:ContentResource>
+            <ns1:GRAPERESOURCE>
+              <ns1:IDENTITYGRAPERES>5827</ns1:IDENTITYGRAPERES>
+              <ns1:GRAPESORT>7852532</ns1:GRAPESORT>
+              <ns1:WEIGHT>10</ns1:WEIGHT>
+              <ns1:DATEOFRECEIPT>2025-03-25</ns1:DATEOFRECEIPT>
+              <ns1:VINEYARDNUMBER>35-2025-00009610</ns1:VINEYARDNUMBER>
+              <ns1:GRAPESUPPLIER>
+                <ns2:UL>
+                  <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+                  <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+                  <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+                  <ns2:INN>7841051711</ns2:INN>
+                  <ns2:KPP>770101008</ns2:KPP>
+                  <ns2:address>
+                    <ns2:Country>643</ns2:Country>
+                    <ns2:RegionCode>77</ns2:RegionCode>
+                    <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+                  </ns2:address>
+                </ns2:UL>
+              </ns1:GRAPESUPPLIER>
+            </ns1:GRAPERESOURCE>
+          </ns1:ContentResource>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v6>
+  </ns0:Document>
+</ns0:Documents>

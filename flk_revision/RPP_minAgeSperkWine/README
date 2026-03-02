@@ -1,0 +1,94 @@
+Заполняем данные по алккоду в БД
+
+Формируем xml RPP
+
+Отправка curl UTM
+
+Идем в outbox, находим тикет
+
+Проверяем что он не "Успешно принят в обработку"
+
+Отдаем в формате
+# MinAgeSparkWine = {значение}, ОКПД2 = {значение} ({значение}) {{ collapse(NSI_Product)
+<pre>
+{Строка из БД}
+</pre>
+}}
+{{ collapse(doc)
+<pre>
+{xml документа}
+</pre>
+}}
+{{ collapse(ticket)
+<pre>
+{Строка из БД}
+</pre>
+}}
+*{результат}*
+
+
+Использование DB_toonel
+
+# Создание подключения
+with DBConnector(
+    jump_host='jump_host_ip',
+    jump_port=22,
+    remote_host='db_host_ip',
+    remote_port=5432,
+    username='ssh_user',
+    ssh_pkey='path/to/ssh/key'
+) as connector:
+
+    # Подключение к PostgreSQL
+    connector.connect_postgresql('database_name', 'db_user', 'db_password')
+
+    # SELECT запрос
+    result = connector.execute_query("SELECT * FROM users WHERE age > %s", (25,))
+    print(result)
+
+
+    # INSERT запрос
+    new_id = connector.execute_query(
+        "INSERT INTO users (name, email) VALUES (%s, %s) RETURNING id",
+        ('John', 'john@email.com'),
+        fetch=True
+    )
+
+    # UPDATE запрос
+    affected_rows = connector.execute_query(
+        "UPDATE users SET active = %s WHERE last_login < %s",
+        (False, '2023-01-01'),
+        fetch=False
+    )
+
+    # Массовая вставка
+    users_data = [('Alice', 'alice@email.com'), ('Bob', 'bob@email.com')]
+    total_rows = connector.execute_many(
+        "INSERT INTO users (name, email) VALUES (%s, %s)",
+        users_data
+    )
+
+
+
+
+
+
+
+
+# Настройки подключения
+    client = RemoteMSSQLClient(
+        target_host="sql-server.example.com",
+        server_script_path="/path/to/mssql_server.py",
+        connection_string="DRIVER={ODBC Driver 17 for SQL Server};SERVER=localhost;DATABASE=testdb;UID=user;PWD=password",
+        target_user="ssh_user"
+    )
+
+    try:
+        # SELECT пример
+        rows = client.select("SELECT * FROM users WHERE age > %s", {"age": 25})
+        print(f"Найдено {len(rows)} записей")
+
+        # UPDATE пример
+        affected = client.update("UPDATE users SET status = %s WHERE id = %s",
+                               {"status": "active", "id": 1})
+        print(f"Обновлено {affected} строк")

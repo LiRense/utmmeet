@@ -24,9 +24,16 @@ logger = logging.getLogger(__name__)
 
 # Загрузка переменных окружения
 load_dotenv()
+load_dotenv("info.env")
 
-# Инициализация бота
-bot = telebot.TeleBot("7674096315:AAGYG7Vn8N7EmBPjGWv8vToL6r456mGlhfQ")
+bot_token = os.getenv("BOT_TOKEN")
+print(f"Загруженный токен: {bot_token}")  # Отладочный вывод
+
+if not bot_token:
+    raise ValueError("Токен бота не найден. Проверьте файл info.env.")
+
+# Инициализируем бота
+bot = telebot.TeleBot(bot_token)
 
 # Константы
 TASK_STATUS = [" ", "✓", "✗"]

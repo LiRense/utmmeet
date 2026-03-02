@@ -9,8 +9,10 @@ from kafka import KafkaProducer, KafkaConsumer
 from psycopg2 import sql
 from loguru import logger
 import uuid
-from random import randint, choices
-import string
+from random import randint
+
+from sqlalchemy import false
+
 import BCode_gen
 
 
@@ -29,11 +31,16 @@ class Forming_xml():
                  ip_inn='771391935319',
                  ip_fsrar='030043434308',
                  ip_name='ИП Мартихин Иван Андреевич',
+                 ip_product_code ='0300434343080000007',
                  isUnPacked=False,
                  docId='PRODAP-0000000000',
                  isMark=True,
-                 formA='TEST-FA-000000036477315',
-                 formB='TEST-FB-000000041014823'):
+                 bcode="",
+                 formA="FA-000000000000654",
+                 formB="FB-000000000000006",
+                 name='АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"',
+                 isIp=False,
+                 fixNum = ''):
         self.doc_type = doc_type.lower()
         self.docId = docId
 
@@ -52,25 +59,33 @@ class Forming_xml():
         self.ip_inn = ip_inn
         self.ip_fsrar = ip_fsrar
         self.ip_name = ip_name
+        self.ip_product_code = ip_product_code
 
         self.isUnPacked = isUnPacked
         self.isMark = isMark
 
+        self.bcode = bcode
         self.formA = formA
         self.formB = formB
+        self.fixNum = fixNum
 
-    def update_docId(self):
+        self.name = name
+        self.isIp = isIp
+
+
+
+    def plus_docId(self):
         prefix, number_str = self.docId.split('-')
         number = int(number_str)
         new_number = number + 1
         new_number_str = f"{new_number:0{len(number_str)}d}"
         self.docId = f"{prefix}-{new_number_str}"
 
-    def get_day(self):
-        logger.debug('Получаю дату документа')
-        today = date.today()
-        formatted_date = today.strftime("%Y-%m-%d")
-        return str(formatted_date)
+    def update_docId(self, new_number):
+        prefix, number_str = self.docId.split('-')
+        number = int(number_str)
+        new_number_str = f"{new_number:0{len(number_str)}d}"
+        self.docId = f"{prefix}-{new_number_str}"
 
     def gen_150_mark(self):
         number = str(randint(0,99999999))
@@ -90,27 +105,11 @@ class Forming_xml():
 
         return alk + serial + str(number) + month + year + version + kript
 
-    def gen_68_mark(self):
+    def get_day(self):
+        logger.debug('Получаю дату документа')
         today = date.today()
-
-        n = int(self.product_code)
-        b36 = ''
-        while n:
-            n, remainder = divmod(n, 36)
-            b36 = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'[remainder] + b36
-
-        version = '22N'
-        base36_code = b36 or '0'
-        job_year = str(today.year)[-1:]
-        job_month = f'{today.month:02d}'
-        job_day = f'{today.day:02d}'
-        jobcode = f'084U{job_year}{job_month}{job_day}001'
-        num_mark = '000001'
-        random_bit = str(randint(0, 1))
-        random_number = str(randint(100, 999))
-        random_chars = ''.join(choices(string.ascii_uppercase + string.digits, k=31))
-
-        return f'{version}{base36_code}{jobcode}{num_mark}{random_bit}{random_number}{random_chars}'
+        formatted_date = today.strftime("%Y-%m-%d")
+        return str(formatted_date)
 
     def generate_RPP_4(self):
 
@@ -122,36 +121,74 @@ class Forming_xml():
             tree = ET.parse(ex_xml)
             root = tree.getroot()
 
-            # Num
-            root[1][0][0].text = str(randint(0, 9999))
-            root[1][0][1][1].text = str(randint(0, 9999))
+            if self.doc_type == 'repproducedproduct_v4_ip':
+                self.isIp = True
+                self.doc_type = 'repproducedproduct_v4'
+            elif self.doc_type == 'repproducedproduct_v4':
+                self.isIp = False
+                self.doc_type = 'repproducedproduct_v4'
 
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            # Date
-            root[1][0][1][2].text = self.get_day()
-            # ProducedDate
-            root[1][0][1][3].text = self.get_day()
-            # ClientRegId
-            root[1][0][1][4][0][0].text = self.fsrar
-            # INN
-            root[1][0][1][4][0][3].text = self.inn
-            # KPP
-            root[1][0][1][4][0][4].text = self.kpp
-            # ProductCode
-            root[1][0][2][0][0].text = self.product_code
-            # Quantity
-            root[1][0][2][0][1].text = self.quantity
-            # alcPercent
-            root[1][0][2][0][2].text = self.alc_percent
-            # BCode
-            root[1][0][2][0][5][0].text = self.gen_150_mark()
+            if self.isIp == False:
+
+                # Num
+                root[1][0][0].text = str(randint(0, 9999))
+                root[1][0][1][1].text = str(randint(0, 9999))
+
+                # FSRAR_ID
+                root[0][0].text = self.fsrar
+                # Date
+                root[1][0][1][2].text = self.get_day()
+                # ProducedDate
+                root[1][0][1][3].text = self.get_day()
+                # ClientRegId
+                root[1][0][1][4][0][0].text = self.fsrar
+                # Name
+                root[1][0][1][4][0][1].text = self.name
+                root[1][0][1][4][0][2].text = self.name
+                # INN
+                root[1][0][1][4][0][3].text = self.inn
+                # KPP
+                root[1][0][1][4][0][4].text = self.kpp
+                # ProductCode
+                root[1][0][2][0][0].text = self.product_code
+                # Quantity
+                root[1][0][2][0][1].text = self.quantity
+                # alcPercent
+                root[1][0][2][0][2].text = self.alc_percent
+                # BCode
+                root[1][0][2][0][5][0].text = self.gen_150_mark()
+            elif self.isIp == True:
+                # Num
+                root[1][0][0].text = str(randint(0, 9999))
+                root[1][0][1][1].text = str(randint(0, 9999))
+
+                # FSRAR_ID
+                root[0][0].text = self.ip_fsrar
+                # Date
+                root[1][0][1][2].text = self.get_day()
+                # ProducedDate
+                root[1][0][1][3].text = self.get_day()
+                # ClientRegId
+                root[1][0][1][4][0][0].text = self.ip_fsrar
+                # Name
+                root[1][0][1][4][0][1].text = self.ip_name
+                root[1][0][1][4][0][2].text = self.ip_name
+                # INN
+                root[1][0][1][4][0][3].text = self.ip_inn
+                # ProductCode
+                root[1][0][2][0][0].text = self.ip_product_code
+                # Quantity
+                root[1][0][2][0][1].text = self.quantity
+                # alcPercent
+                root[1][0][2][0][2].text = self.alc_percent
+                # BCode
+                root[1][0][2][0][5][0].text = self.gen_150_mark()
 
             if self.isMark == False:
                 # BCode delete
-                position = root[1][0][2][0][5]
-                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
-                    position.remove(position[-1])
+                position = root[1][0][2][0]
+                if len(position) > 5:
+                    position.remove(position[5])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
@@ -192,9 +229,9 @@ class Forming_xml():
 
             if self.isMark == False:
                 # BCode delete
-                position = root[1][0][2][0][8]
-                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
-                    position.remove(position[-1])
+                position = root[1][0][2][0]
+                if len(position) > 8:
+                    position.remove(position[8])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
@@ -235,63 +272,17 @@ class Forming_xml():
 
             if self.isMark == False:
                 # BCode delete
-                position = root[1][0][2][0][4]
-                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
-                    position.remove(position[-1])
+                position = root[1][0][2][0]
+                if len(position) > 4:
+                    position.remove(position[4])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
 
-    def generate_WayBill_4(self):
+    def generate_AWO_3(self):
         logger.debug('Генерирую xml')
 
-        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
-            tree = ET.parse(ex_xml)
-            root = tree.getroot()
-
-            # Num
-            root[1][0][0].text = str(randint(0, 9999))
-            root[1][0][1][0].text = str(randint(0, 9999))
-
-            # FSRAR_ID
-            root[0][0].text = self.fsrar
-            root[1][0][1][4][0][2].text = self.fsrar
-            root[1][0][2][0][1][4][0][0].text = self.fsrar
-            # Date
-            root[1][0][1][1].text = self.get_day()
-            root[1][0][1][2].text = self.get_day()
-            # INN
-            root[1][0][1][4][0][0].text = self.inn
-            root[1][0][2][0][1][4][0][1].text = self.inn
-            # KPP
-            root[1][0][1][4][0][0].text = self.kpp
-            root[1][0][2][0][1][4][0][2].text = self.kpp
-            # FullName
-            root[1][0][2][0][1][0].text = self.pr_name
-            # ProductCode
-            root[1][0][2][0][1][1].text = self.product_code
-            # ProductVCode
-            root[1][0][2][0][1][2].text = self.product_vcode
-            # Quantity
-            root[1][0][2][0][2].text = self.quantity
-            # formA formB
-            root[1][0][2][0][4].text = self.formA
-            root[1][0][2][0][5][0].text = self.formB
-            # BCode
-            root[1][0][2][0][5][1][0][1][0].text = self.gen_150_mark()
-
-
-            if self.isMark == False:
-                # BCode delete
-                position = root[1][0][2][0][5][1][0][1]
-                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
-                    position.remove(position[-1])
-
-            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
-            return corrected_xml
-
-    def generate_AWO_v3(self):
-        logger.debug('Генерирую xml')
+        self.docId = 'AWO-0000000184'
 
         with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
             tree = ET.parse(ex_xml)
@@ -307,18 +298,166 @@ class Forming_xml():
             root[1][0][1][1].text = self.get_day()
             # Quantity
             root[1][0][2][0][1].text = self.quantity
+            # formB
+            root[1][0][2][0][2][0][0].text = self.formB
             # BCode
-            root[1][0][2][0][3][0].text = self.gen_150_mark()
+            root[1][0][2][0][3][0].text = self.bcode
 
             if self.isMark == False:
                 # BCode delete
-                position = root[1][0][2][0][3]
-                if len(position) > 0 and 'MarkInfo' in position[-1].tag:
-                    position.remove(position[-1])
+                position = root[1][0][2][0]
+                if len(position) > 3:
+                    position.remove(position[3])
 
             corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
             return corrected_xml
 
+    # Тут сложные тесты, сначала нужно поставить продукцию другой орге, потом через оргу отправить ТТН, потом с нас отправить AFBC на другую марку орги
+    # Т. е. RPP_v4 2 марки На ИП
+    # ТТН 1 марка с ИП на 030000434308
+    # AFBC форма из ТТН, марка другая от ИП
+    def generate_AFBC(self):
+        logger.debug('Генерирую xml')
+
+        self.docId = 'AFBC-0000000111'
+
+        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
+            tree = ET.parse(ex_xml)
+            root = tree.getroot()
+
+            logger.debug(root)
+            # Num
+            root[1][0][0].text = str(randint(0, 9999))
+            root[1][0][1][0].text = str(randint(0, 9999))
+
+            # FSRAR_ID
+            root[0][0].text = self.fsrar
+            # Date
+            root[1][0][1][1].text = self.get_day()
+            # formBа
+            root[1][0][2][0][1].text = self.formB
+            # BCode
+            root[1][0][2][0][2][0].text = self.bcode
+
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0]
+                if len(position) > 2:
+                    position.remove(position[2])
+
+            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
+            return corrected_xml
+
+    def generate_TTN(self):
+        logger.debug('Генерирую xml')
+
+        self.docId = 'TTN-0000000213'
+
+        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
+
+            if self.doc_type == 'waybill_v4_ip':
+                self.isIp = True
+            elif self.doc_type == 'waybill_v4':
+                self.isIp = False
+            self.doc_type = 'waybill_v4'
+
+            if self.isIp == False:
+
+                tree = ET.parse(ex_xml)
+                root = tree.getroot()
+
+                logger.debug(root)
+                # Num
+                root[1][0][0].text = str(randint(0, 9999))
+                root[1][0][1][0].text = str(randint(0, 9999))
+                # Date
+                root[1][0][1][1].text = self.get_day()
+                root[1][0][1][2].text = self.get_day()
+                # alcCode
+                root[1][0][2][0][1][1].text = self.product_code
+                # VidCode
+                root[1][0][2][0][1][2].text = self.product_vcode
+                # UnitType
+                if self.isUnPacked == False:
+                    root[1][0][2][0][1][3].text = 'Packed'
+                elif self.isUnPacked == True:
+                    root[1][0][2][0][1][3].text = 'UnPacked'
+                # Quantity
+                root[1][0][2][0][2].text = self.quantity
+                # FormA
+                root[1][0][2][0][4].text = self.formA
+                # FormB
+                root[1][0][2][0][5][0].text = self.formB
+                # mark
+                root[1][0][2][0][5][1][0][1][0].text = self.bcode
+            elif self.isIp == True:
+
+                tree = ET.parse(ex_xml)
+                root = tree.getroot()
+
+                logger.debug(root)
+                # Num
+                root[1][0][0].text = str(randint(0, 9999))
+                root[1][0][1][0].text = str(randint(0, 9999))
+                # Date
+                root[1][0][1][1].text = self.get_day()
+                root[1][0][1][2].text = self.get_day()
+                # alcCode
+                root[1][0][2][0][1][1].text = self.product_code
+                # VidCode
+                root[1][0][2][0][1][2].text = self.product_vcode
+                # UnitType
+                if self.isUnPacked == False:
+                    root[1][0][2][0][1][3].text = 'Packed'
+                elif self.isUnPacked == True:
+                    root[1][0][2][0][1][3].text = 'UnPacked'
+                # Quantity
+                root[1][0][2][0][2].text = self.quantity
+                # FormA
+                root[1][0][2][0][4].text = self.formA
+                # FormB
+                root[1][0][2][0][5][0].text = self.formB
+                # mark
+                root[1][0][2][0][5][1][0][1][0].text = self.bcode
+
+            if self.isMark == False:
+                # BCode delete
+                position = root[1][0][2][0][5][1][0]
+                if len(position) > 1:
+                    position.remove(position[1])
+
+            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
+            return corrected_xml
+
+    def generate_TTNinformreg(self):
+        logger.debug('Генерирую xml TTNinformreg')
+
+        with open(f'example/{self.doc_type}.xml', 'r') as ex_xml:
+
+            tree = ET.parse(ex_xml)
+            root = tree.getroot()
+
+
+            logger.debug(root)
+            # Num
+            root[1][0][0][0].text = str(randint(0, 9999))
+            # docId
+            root[1][0][0][1].text = self.docId
+            # FixNum
+            root[1][0][0][2].text = self.fixNum
+            # Date
+            root[1][0][0][3].text = self.get_day()
+            # WbNUM
+            root[1][0][0][4].text = str(randint(0, 9999))
+            # Date
+            root[1][0][0][5].text = self.get_day()
+            # InformF2RegId
+            root[1][0][1][0][1].text = self.formB
+            # Date
+            root[1][0][1][0][1].text = self.get_day()
+
+            corrected_xml = ET.tostring(root, encoding='unicode', xml_declaration=True)
+            return corrected_xml
 
 
 class DB_placer():
@@ -470,15 +609,15 @@ class Outbox_checker():
             return comment.text if comment is not None else None
 
         except ET.ParseError as e:
-            logger.debug(f"Ошибка парсинга XML: {e}")
+            print(f"Ошибка парсинга XML: {e}")
             return None
         except Exception as e:
-            logger.debug(f"Неожиданная ошибка: {e}")
+            print(f"Неожиданная ошибка: {e}")
             return None
 
 
 class Kafka_sender():
-    def __init__(self, doc_type, uuid, fsrar='030000434308', inn='7841051711'):
+    def __init__(self, doc_type, uuid, topic='confirmed', docId='PRODAP-0000000000', fsrar='030000434308', inn='7841051711'):
         self.doc_type = doc_type
         self.uuid = uuid
         self.fsrar = fsrar
@@ -486,16 +625,15 @@ class Kafka_sender():
         self.date = self.get_day()
         self.timezone = '+03:00'
         self.kpp = ''
+        self.topic = topic
+        self.docId = docId
 
     def json_creator(self):
         raw_message = {
-            "type": self.doc_type,
-            "uri": str(self.fsrar + "-" + self.uuid),
-            "fsrarid": self.fsrar,
             "date": self.date,
-            "timezone": self.timezone,
-            "inn": self.inn,
-            "kpp": self.kpp
+            "uri": str(self.fsrar + "-" + self.uuid),
+            "type": self.doc_type,
+            "DocId": self.docId
         }
         return raw_message
 
@@ -503,14 +641,13 @@ class Kafka_sender():
         message = self.json_creator()
 
         bootstrap_server = ['test-kafka1.fsrar.ru:9092', 'test-kafka2.fsrar.ru:9092', 'test-kafka3.fsrar.ru:9092']
-        topic = 'confirmed'
 
         producer = KafkaProducer(
             bootstrap_servers=bootstrap_server,
             value_serializer=lambda v: json.dumps(v, ensure_ascii=False).encode('utf-8')
         )
-        producer.send(topic, message)
-        logger.debug(f'Сообщение отправлено в топик {topic}')
+        producer.send(self.topic, message)
+        logger.debug(f'Сообщение отправлено в топик {self.topic}')
         producer.close()
 
     def get_day(self):
@@ -524,7 +661,7 @@ class Result_checker():
     def __init__(self):
         pass
 
-    def find_message_by_uri(self, uri: str, topic="svs-inspector", max_attempts=3, retry_interval=10):
+    def find_message_by_uri(self, uri: str, max_attempts=3, retry_interval=10, topic='svs-inspector'):
         attempt = 0
 
         while attempt < max_attempts:
@@ -572,61 +709,9 @@ class Result_checker():
 
 # if __name__ == "__main__":
 #
-#     forming = Forming_xml(doc_type='CarrierNotice')
-#     corr_xml = forming.generate_CarrierNotice()
+#     forming = Forming_xml(doc_type='actfixbarcode')
+#     forming.isMark=True
+#     forming.isUnPacked = True
+#     corr_xml = forming.generate_AFBC()
+#     logger.debug(corr_xml)
 #     logger.debug('Успех генерации xml')
-#
-
-# if __name__ == "__main__":
-#
-#     forming = Forming_xml(doc_type='repproducedproduct_v4')
-#     corr_xml = forming.generate_RPP_4()
-#     logger.debug('Успех генерации xml')
-#
-#     db_ins = DB_placer('transport','dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
-#     hex_xml = db_ins.text_to_hex(corr_xml)
-#     query, params = db_ins.prepare_sql(hex_xml)
-#     db_ins.sql_req = (query, params) # Кортеж
-#     db_ins.inserter()
-#     logger.debug('Успех вставки в БД')
-#
-#     sender = Kafka_sender(forming.doc_type, params[1])
-#     sender.send()
-#     logger.debug('Успех отправки json')
-#
-#     result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
-#
-#     forming = Forming_xml(doc_type='repimportedproduct_v4')
-#     corr_xml = forming.generate_RIP_4()
-#     logger.debug('Успех генерации xml')
-#
-#     db_ins = DB_placer('transport','dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
-#     hex_xml = db_ins.text_to_hex(corr_xml)
-#     query, params = db_ins.prepare_sql(hex_xml)
-#     db_ins.sql_req = (query, params) # Кортеж
-#     db_ins.inserter()
-#     logger.debug('Успех вставки в БД')
-#
-#     sender = Kafka_sender(forming.doc_type, params[1])
-#     sender.send()
-#     logger.debug('Успех отправки json')
-#
-#     result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
-#
-#     forming = Forming_xml(doc_type='actchargeon_v2')
-#     corr_xml = forming.generate_ACO_2()
-#     logger.debug('Успех генерации xml')
-#
-#     db_ins = DB_placer('transport','dba', 'vfvfvskfnfve', '46.148.205.149', '5432')
-#     hex_xml = db_ins.text_to_hex(corr_xml)
-#     query, params = db_ins.prepare_sql(hex_xml)
-#     db_ins.sql_req = (query, params) # Кортеж
-#     db_ins.inserter()
-#     logger.debug('Успех вставки в БД')
-#
-#     sender = Kafka_sender(forming.doc_type, params[1])
-#     sender.send()
-#     logger.debug('Успех отправки json')
-#
-#     result = Result_checker().find_message_by_uri(str(sender.fsrar + "-" + sender.uuid))
-

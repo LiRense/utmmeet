@@ -72,7 +72,7 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: успешно обработан - УСПЕХ*
-# Блок 2 (перебор базовых результатов для ИП по схеме)
+# Блок 2.1 (перебор базовых результатов для ИП по схеме) + ИНН одинаковый(перенос на другой КПП)
 ## sender(ИП) с лицензией, consignee(ИП) с лицензией  {{collapse(NLC)
 <pre>
 </pre>
@@ -141,8 +141,77 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: успешная обработка - УСПЕХ*
+# Блок 2.2 (перебор базовых результатов для ИП по схеме) + ИНН разный(Условно ИНН изменился у ИП)
+## sender(ИП) с лицензией, consignee(ИП) с лицензией {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии sender - УСПЕХ*
+## sender(ИП) с лицензией, consignee(ИП) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ИП) без лицензии, consignee(ИП) без лицензии {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: ошибка лицензии consignee - УСПЕХ*
+## sender(ИП) без лицензией, consignee(ИП) с лицензией  {{collapse(NLC)
+<pre>
+</pre>
+}}
+{{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: успешная обработка - УСПЕХ*
 # Блок 3 (проверка что только 1 ИНН сам себе может отправлять)
-## sender(ИП) без лицензии, consignee(ЮЛ) с лицензией  {{collapse(NLC)
+## sender(ИП) c лицензией, consignee(ЮЛ) с лицензией  {{collapse(NLC)
 <pre>
 </pre>
 }}
@@ -159,7 +228,7 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: ИНН не совпадают, получили отбивку - УСПЕХ*
-## sender(ЮЛ) без лицензии, consignee(ИП) с лицензией  {{collapse(NLC)
+## sender(ЮЛ) с лицензией, consignee(ИП) с лицензией  {{collapse(NLC)
 <pre>
 </pre>
 }}
@@ -300,7 +369,7 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: получили ошибку отсутствия лицензии - УСПЕХ*
-## sender(unknown), consignee(unknown) {{collapse(NLC)
+## sender(unknown), consignee(unknown)  {{collapse(NLC)
 <pre>
 </pre>
 }}
@@ -317,10 +386,9 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: получили ошибку отсутствия лицензии - УСПЕХ*
-# Блок 6 (нет данных в NSI_CLIENTS)
-## sender(NO INFO), consignee(producer) ИП
-{{collapse(NSI_CLIENTS)
-<pre>
+# Блок 6 (нет данных в NLC)
+## sender(NO INFO), consignee(producer) ИП {{collapse(NSI_CLIENTS)
+<pre>|ID       |Owner_ID    |Full_Name                         |Short_Name      |INN       |KPP      |Country_Code|Region_Code|Dejure_Address                                        |Fact_Address                                         |isLicense|Version_ts      |pass_owner_id|isRest|
 </pre>
 }}
 {{collapse(doc)
@@ -332,7 +400,23 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: получили ошибку отсутствия лицензии у sender - УСПЕХ*
-## sender(producer), consignee(NO INFO) ИП
+## sender(producer), consignee(NO INFO) ИП {{collapse(NSI_CLIENTS)
+<pre>
+</pre>
+}}
+{{collapse(doc)
+<pre>
+</pre>
+}}
+{{collapse(log)
+<pre>
+</pre>
+}}
+*Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
+## sender(NO INFO), consignee(producer) ЮЛ{{collapse(NLC)
+<pre>
+</pre>
+}} 
 {{collapse(NSI_CLIENTS)
 <pre>
 </pre>
@@ -346,21 +430,10 @@ h6. domain-fsm
 </pre>
 }}
 *Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
-## sender(NO INFO), consignee(producer)  ЮЛ
-{{collapse(NSI_CLIENTS)
+## sender(producer), consignee(NO INFO)  ЮЛ {{collapse(NLC)
 <pre>
 </pre>
 }}
-{{collapse(doc)
-<pre>
-</pre>
-}}
-{{collapse(log)
-<pre>
-</pre>
-}}
-*Полученный результат: получили ошибку отсутствия лицензии у consignee - УСПЕХ*
-## sender(producer), consignee(NO INFO)  ЮЛ
 {{collapse(NSI_CLIENTS)
 <pre>
 </pre>
@@ -462,3 +535,9 @@ h6. domain-fsm
 *Полученный результат: успешно обработали - УСПЕХ*
 
 
+---
+
+h6. Итог
+
+
+Тестирование успешно, прошу перенести в релиз

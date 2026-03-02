@@ -1,0 +1,52 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/TTNInformF2Reg" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>3463047</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:TTNInformF2Reg>
+      <ns1:Header>
+        <ns1:Identity>6385</ns1:Identity>
+        <ns1:WBRegId>TTN-0000000297</ns1:WBRegId>
+        <ns1:EGAISFixNumber>WBF-000000000000209</ns1:EGAISFixNumber>
+        <ns1:EGAISFixDate>2025-10-27</ns1:EGAISFixDate>
+        <ns1:WBNUMBER>7063</ns1:WBNUMBER>
+        <ns1:WBDate>2025-10-27</ns1:WBDate>
+        <ns1:Shipper>
+          <ns2:UL>
+            <ns2:ClientRegId>030000434308</ns2:ClientRegId>
+            <ns2:INN>770101008</ns2:INN>
+            <ns2:KPP>770101008</ns2:KPP>
+            <ns2:FullName>АКЦИОНЕРНОЕ ОБЩЕСТВО "ЦЕНТРИНФОРМ"</ns2:FullName>
+            <ns2:ShortName>АО "ЦЕНТРИНФОРМ"</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия, 191123,САНКТ-ПЕТЕРБУРГ Г,ШПАЛЕРНАЯ УЛ,ДОМ 26 ,</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Shipper>
+        <ns1:Consignee>
+          <ns2:UL>
+            <ns2:ClientRegId>030043434308</ns2:ClientRegId>
+            <ns2:INN>771391935319</ns2:INN>
+            <ns2:KPP />
+            <ns2:FullName>ИП Мартихин Иван Андреевич</ns2:FullName>
+            <ns2:ShortName>ИП Мартихин Иван Андреевич</ns2:ShortName>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:UL>
+        </ns1:Consignee>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:InformF2RegId>FB-000000000001077</ns1:InformF2RegId>
+          <ns1:BottlingDate>2025-10-22</ns1:BottlingDate>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:TTNInformF2Reg>
+  </ns0:Document>
+</ns0:Documents>

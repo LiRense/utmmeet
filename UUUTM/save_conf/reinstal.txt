@@ -1,1 +1,1 @@
-data /home/ivan/Загрузки/u-trans-4.2.0-2662-i386-test.deb
+data /home/ivan/Загрузки/u-trans-4.2.0-2611-i386-test (11).deb

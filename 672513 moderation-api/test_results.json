@@ -1,0 +1,37 @@
+[
+  {
+    "configurationId": "7953a32b-e333-4cc3-a1c3-feeb047c9791",
+    "links": [],
+    "failureReasonNames": [],
+    "autoTestExternalId": "default_test_id",
+    "outcome": "Failed",
+    "message": "Ошибки в тестах: Получение bearer",
+    "traces": "\n                                                  \n\nПолучение bearer:\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/test_regress.py\", line 51, in get_bearer\n    elif response[0] != 200:\n         ~~~~~~~~^^^\nTypeError: 'AttributeError' object is not subscriptable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/testitReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/test_regress.py\", line 64, in get_bearer\n    assert False, e\n           ^^^^^\nAssertionError: 'AttributeError' object is not subscriptable\n\n\n                                                  \n\n",
+    "startedOn": "2026-02-19T11:38:27.587016Z",
+    "completedOn": "2026-02-19T11:38:27.602327Z",
+    "duration": 15,
+    "attachments": [],
+    "parameters": {
+      "environment": "api-moderation"
+    },
+    "properties": {},
+    "stepResults": [
+      {
+        "title": "Получение bearer",
+        "description": "",
+        "info": "",
+        "startedOn": "2026-02-19T11:38:27.587022Z",
+        "outcome": "Failed",
+        "stepResults": [],
+        "attachments": [],
+        "parameters": {},
+        "message": "'AttributeError' object is not subscriptable",
+        "traces": "Traceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/test_regress.py\", line 51, in get_bearer\n    elif response[0] != 200:\n         ~~~~~~~~^^^\nTypeError: 'AttributeError' object is not subscriptable\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/testitReports.py\", line 202, in wrapper\n    result = test_func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ivan/PycharmProjects/utmmeet/672513 moderation-api/test_regress.py\", line 64, in get_bearer\n    assert False, e\n           ^^^^^\nAssertionError: 'AttributeError' object is not subscriptable\n",
+        "completedOn": "2026-02-19T11:38:27.602315Z",
+        "duration": 15
+      }
+    ],
+    "setupResults": [],
+    "teardownResults": []
+  }
+]

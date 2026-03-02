@@ -1,0 +1,42 @@
+<ns0:Documents xmlns:ns0="http://fsrar.ru/WEGAIS/WB_DOC_SINGLE_01" xmlns:ns1="http://fsrar.ru/WEGAIS/RepProducedProduct_v4" xmlns:ns2="http://fsrar.ru/WEGAIS/ClientRef_v2" xmlns:ns3="http://fsrar.ru/WEGAIS/CommonV3" Version="1.0">
+  <ns0:Owner>
+    <ns0:FSRAR_ID>030000434308</ns0:FSRAR_ID>
+  </ns0:Owner>
+  <ns0:Document>
+    <ns0:RepProducedProduct_v4>
+      <ns1:Identity>03</ns1:Identity>
+      <ns1:Header>
+        <ns1:Type>OperProduction</ns1:Type>
+        <ns1:NUMBER>03</ns1:NUMBER>
+        <ns1:Date>2025-02-06</ns1:Date>
+        <ns1:ProducedDate>2025-02-06</ns1:ProducedDate>
+        <ns1:Producer>
+          <ns2:FL>
+            <ns2:ClientRegId>030043434308</ns2:ClientRegId>
+            <ns2:FullName>ИП Мартихин Иван Андреевич</ns2:FullName>
+            <ns2:ShortName>ИП Мартихин Иван Андреевич</ns2:ShortName>
+            <ns2:INN>771391935319</ns2:INN>
+            <ns2:address>
+              <ns2:Country>643</ns2:Country>
+              <ns2:RegionCode>77</ns2:RegionCode>
+              <ns2:description>Россия,117105,Москва Г, Варшавское ш, д. 37 А, стр. 8</ns2:description>
+            </ns2:address>
+          </ns2:FL>
+        </ns1:Producer>
+        <ns1:Note>for testing only</ns1:Note>
+      </ns1:Header>
+      <ns1:Content>
+        <ns1:Position>
+          <ns1:ProductCode>0300004343080000007</ns1:ProductCode>
+          <ns1:Quantity>9</ns1:Quantity>
+          <ns1:alcPercent>40</ns1:alcPercent>
+          <ns1:Party>20160208</ns1:Party>
+          <ns1:Identity>1</ns1:Identity>
+          <ns1:MarkInfo>
+            <ns3:amc>201201001052740225001TU6WWOG9YBRDMJAOCSLHVZPX8JHI45UXFNNAU7SYPTJVQX1HMUYVKN9LAMCO8E2RDFGWICR3HRNATIQQ62PMLHLFSJNW8BKBVCSRDGTGWCDX14HVWAS3TBNCSF7OBLEXF</ns3:amc>
+          </ns1:MarkInfo>
+        </ns1:Position>
+      </ns1:Content>
+    </ns0:RepProducedProduct_v4>
+  </ns0:Document>
+</ns0:Documents>

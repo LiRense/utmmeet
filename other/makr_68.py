@@ -24,5 +24,5 @@ def gen_68_mark(product_code):
 
     return f'{version}{base36_code}{jobcode}{num_mark}{random_bit}{random_number}{random_chars}'
 
-for i in range(1,21):
+for i in range(1,101):
     print(f"{i}) {gen_68_mark('0300003727440000047')}")

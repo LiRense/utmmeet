@@ -1,0 +1,67 @@
+stages:
+  - test
+  - result
+
+default:
+  tags:
+    - test-circuit
+
+run_test:
+  image: alpine:latest
+  stage: test
+  before_script:
+    - apk add --no-cache openssh-client rsync
+    - mkdir -p ~/.ssh
+    - cat "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan $SSH_HOST >> ~/.ssh/known_hosts
+    - ssh-keyscan $SSH_JUMP_HOST >> ~/.ssh/known_hosts
+    - echo "Копирование testitReports.py в директорию tests..."
+    - cp testitReports.py $CI_PROJECT_DIR/tests/test_${GLOBAL_ID}/testitReports.py
+  script:
+    - rsync -avz --exclude='.gitlab-ci.yml' -e "ssh -J $SSH_USER@$SSH_JUMP_HOST" $CI_PROJECT_DIR/tests/test_${GLOBAL_ID}/ $SSH_USER@$SSH_HOST:~/testIt/test_${GLOBAL_ID}/
+    - ssh -J $SSH_USER@$SSH_JUMP_HOST $SSH_USER@$SSH_HOST "export CONFIG_ID='$CONFIG_ID' && export EXTERNALID='$EXTERNALID' && cd ~/testIt/test_${GLOBAL_ID}/ && python3.10 test_regress.py"
+    - scp -o ProxyJump=$SSH_USER@$SSH_JUMP_HOST $SSH_USER@$SSH_HOST:~/testIt/test_${GLOBAL_ID}/test_results.json $CI_PROJECT_DIR/test_results.json
+    - ssh -J $SSH_USER@$SSH_JUMP_HOST $SSH_USER@$SSH_HOST "rm -rf ~/testIt/test_${GLOBAL_ID}"
+  artifacts:
+    when: always
+    paths:
+      - $CI_PROJECT_DIR/test_results.json
+    expire_in: never
+  allow_failure: true
+
+result_job:
+  image: alpine/curl:latest
+  stage: result
+  script:
+    - |
+
+      curl -v -X 'POST' \
+        "https://testit.gitlab-ci.ru/api/v2/testRuns/${RUN_ID}/testResults" \
+        -H 'accept: application/json' \
+        -H "Authorization: ${PRIVATE_TOKEN}" \
+        -H 'Content-Type: application/json' \
+        -d @$CI_PROJECT_DIR/test_results.json
+  dependencies:
+    - run_test
+
+
+  #     CURL_CMD=$(cat <<EOF
+  #     curl -v -X 'POST' \\
+  #       "https://testit.gitlab-ci.ru/api/v2/testRuns/${RUN_ID}/testResults" \\
+  #       -H 'accept: application/json' \\
+  #       -H 'Authorization: ${PRIVATE_TOKEN}' \\
+  #       -H 'Content-Type: application/json' \\
+  #       -d '$(cat $CI_PROJECT_DIR/test_results.json)'
+  #     EOF
+  #     )
+
+  #     # Выводим команду для копирования (с заменой токена на маскированное значение)
+  #     # echo "Полная команда curl (для проверки):"
+  #     echo "$CURL_CMD" | sed "s/${PRIVATE_TOKEN}/<MASKED_TOKEN>/g"
+
+  #     # Выполняем команду
+  #     echo "Выполняем запрос..."
+  #     eval "$CURL_CMD"
+  # dependencies:
+  #   - run_test

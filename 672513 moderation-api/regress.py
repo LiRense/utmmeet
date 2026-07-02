@@ -6,6 +6,7 @@ import requests
 import json
 from typing import Optional, Dict, Any, Union
 from loguru import logger
+import psycopg2
 
 
 class CSV_getter():
@@ -15,14 +16,25 @@ class CSV_getter():
         self.df = None
 
     def config_pars(self):
-        config = configparser.ConfigParser()
+        config = configparser.ConfigParser(interpolation=None)
         config.read('config.ini')
 
-        return {
+        result = {
             'swagger_url': config.get('Swagger address', 'url', fallback='http://localhost'),
             'method': config.get('Token path', 'method', fallback='POST'),
-            'endpoint': config.get('Token path', 'endpoint', fallback='/token')
+            'endpoint': config.get('Token path', 'endpoint', fallback='/token'),
+            'token_url': config.get('Token path', 'token_url', fallback='/token'),
+            'certificate': config.getboolean('Token path', 'certificate', fallback=False),
+            'basic_auth': config.get('Token path', 'basic_auth',
+                                     fallback='Basic cmVzZXQtbW9uaXRvcmluZy1yZXN1bHRzOmZhbHNl')
         }
+
+        for section in config.sections():
+            if section.startswith('DB_'):
+                var_name = section.lower()
+                result[var_name] = dict(config.items(section))
+
+        return result
 
     def get_rows(self):
         """Читает CSV файл и возвращает только активные строки (isActive = TRUE)"""
@@ -90,6 +102,9 @@ class CSV_getter():
                 # Добавляем информацию об активности (может быть полезна)
                 if 'isActive' in row:
                     test['isActive'] = row['isActive']
+                if 'request' in row:
+                    test['request'] = row['request']
+
             all_tests.extend(tests)
 
         return all_tests
@@ -198,7 +213,6 @@ class CSV_getter():
 
         return all_combinations
 
-
     def send_curl(self,
                   base_url: str = None,
                   endpoint: str = None,
@@ -208,24 +222,25 @@ class CSV_getter():
                   method: str = 'GET',
                   data: Optional[Union[Dict, str]] = None,
                   files: Optional[Dict[str, Any]] = None,
-                  timeout: int = 30):
-
+                  timeout: int = 30,
+                  verify: Optional[bool] = None):
         """
-           curl
-
-           Args:
-               base_url:  'https://api.example.com'
-               endpoint: '/users'
-               params: Параметры запроса (query parameters)
-               headers: Дополнительные заголовки
-               bearer: Bearer токен для авторизации (если None - без авторизации)
-               method: HTTP метод ('GET', 'POST', 'PUT', 'DELETE', и т.д.)
-               data: Данные для отправки в теле запроса
-               timeout: Таймаут запроса в секундах
-
-           Returns:
-               Response объект от requests
-           """
+        curl
+        Args:
+            base_url:  'https://api.example.com'
+            endpoint: '/users'
+            params: Параметры запроса (query parameters)
+            headers: Дополнительные заголовки
+            bearer: Bearer токен для авторизации (если None - без авторизации)
+            method: HTTP метод ('GET', 'POST', 'PUT', 'DELETE', и т.д.)
+            data: Данные для отправки в теле запроса
+            files: Файлы для multipart/form-data
+            timeout: Таймаут запроса в секундах
+        Returns:
+            Response объект от requests
+        """
+        if verify is None:
+            verify = self.config_pars()['certificate']
 
         full_url = f"{base_url.rstrip('/')}/{endpoint.lstrip('/')}"
 
@@ -235,19 +250,44 @@ class CSV_getter():
 
         logger.debug('Checking ...')
 
+        if files:
+            for key, value in files.items():
+                if value == ('', ''):
+                    logger.debug(f"Обнаружен пустой файл: {key} -> будет как -F '{key}='")
 
         if bearer:
-            request_headers['Authorization'] = f'{bearer}' if 'Bearer' in bearer else f'Bearer {bearer}'
-        if data and 'Content-Type' not in request_headers:
+            if 'Bearer' in bearer or 'Basic' in bearer:
+                request_headers['Authorization'] = bearer
+            else:
+                request_headers['Authorization'] = f'Bearer {bearer}'
+
+        if files:
+            # Если есть файлы - requests сам установит multipart/form-data
+            logger.debug("Запрос с файлами - Content-Type будет установлен автоматически")
+            # Не трогаем Content-Type вообще
+        elif data and 'Content-Type' not in request_headers:
+            # Только для запросов БЕЗ файлов устанавливаем application/json
             request_headers['Content-Type'] = 'application/json'
+            logger.debug("Установлен Content-Type: application/json")
+
         if data:
             if isinstance(data, dict) and request_headers.get('Content-Type') == 'application/json':
-                request_data = json.dumps(data)
+                request_data = json.dumps(data, ensure_ascii=False).encode('utf-8')
+            elif isinstance(data, str):
+                request_data = data.encode('utf-8')
+            elif isinstance(data, (list, tuple)):
+                request_data = json.dumps(data, ensure_ascii=False).encode('utf-8')
             else:
                 request_data = data
 
         try:
             logger.debug('request sending')
+            logger.debug(f"URL: {full_url}")
+            logger.debug(f"Method: {method}")
+            logger.debug(f"Headers: {request_headers}")
+            logger.debug(f"Has files: {files is not None}")
+            if files:
+                logger.debug(f"Files keys: {list(files.keys())}")
 
             response = requests.request(
                 method=method.upper(),
@@ -256,28 +296,84 @@ class CSV_getter():
                 headers=request_headers,
                 data=request_data,
                 files=files,
-                timeout=timeout
+                timeout=timeout,
+                verify=verify
             )
             logger.debug('response got')
 
-            # response.raise_for_status()
             return True, response
 
         except requests.exceptions.RequestException as e:
+            logger.error(f"Request error: {e}")
             return False, e
 
+        def get_bearer(self):
+            bearer_path = self.config_pars()
+            result, response = self.send_curl(base_url=bearer_path['token_url'],
+                                              endpoint=bearer_path['endpoint'],
+                                              method=bearer_path['method'])
+            try:
+                status = response.status_code
+                res_text = response.text
+                return [status, res_text]
+            except Exception as e:
+                return e
 
-    def get_bearer(self):
-        bearer_path = self.config_pars()
-        result, response = self.send_curl(base_url=bearer_path['swagger_url'],
-                       endpoint=bearer_path['endpoint'],
-                       method=bearer_path['method'])
+
+class DB_placer():
+    def __init__(self, db, user, password, host, port, sql_req=''):
+        self.db = db
+        self.user = user
+        self.password = password
+        self.host = host
+        self.port = port
+        self.sql_req = sql_req
+
+    def inserter(self):
+        logger.debug('Выполняю insert')
+
+        conn = None
         try:
-            status = response.status_code
-            res_text = response.text
-            return [status, res_text]
-        except Exception as e:
-            return e
+            # Подключаемся к БД
+            conn = psycopg2.connect(
+                dbname=self.db,
+                user=self.user,
+                password=self.password,
+                host=self.host,
+                port=self.port
+            )
+
+            logger.debug('Подключение к Postgre успешно')
+            # Создаем курсор
+            cursor = conn.cursor()
+
+            logger.debug('Запрос выполняется')
+
+            if isinstance(self.sql_req, tuple) and len(self.sql_req) == 2:
+                query, params = self.sql_req
+                cursor.execute(query, params)
+            else:
+                query = self.sql_req
+                cursor.execute(query)
+
+            if isinstance(query, str) and query.strip().upper().startswith('SELECT'):
+                result = cursor.fetchall()
+                conn.commit()
+                return result
+            else:
+                conn.commit()
+                return None
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            logger.error(f"Ошибка при работе с PostgreSQL: {error}")
+            if conn:
+                conn.rollback()
+            return None
+        finally:
+            # Закрываем соединение
+            if conn is not None:
+                conn.close()
+                logger.debug("Соединение с PostgreSQL закрыто")
 
 
 # cccsv = CSV_getter('test_cases.csv')
@@ -289,16 +385,6 @@ class CSV_getter():
 # print(cccsv.config_pars())
 #
 # cccsv.get_bearer()
-
-
-
-
-
-
-
-
-
-
 
 
 """

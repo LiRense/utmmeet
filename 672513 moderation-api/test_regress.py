@@ -1,10 +1,13 @@
 import json
+import pandas as pd
 from testitReports import testReport
 import time
 from regress import *
 import os
 import ast
 import traceback
+import shutil
+import re
 
 # Настройка отчета
 testReport.configure(
@@ -15,8 +18,8 @@ testReport.configure(
 )
 
 # Глобальные параметры и свойства
-testReport.parameter("environment", "api-moderation")
-test_env = {'bearer': None}
+testReport.parameter("environment", "api-nsi")
+test_env = {'bearer': None, 'test_auth': None}
 
 
 # Вспомогательная функция для декодирования байтовых ответов
@@ -112,6 +115,7 @@ def swagger_full_test():
                                f"  Статус код: {response[0]}\n")
                 logger.info(success_msg)
                 test_env['bearer'] = response[1]
+                test_env['test_auth'] = response[1]
                 testReport.stepResults.description(success_msg)
                 assert True, "Bearer токен успешно сгенерирован"
 
@@ -122,310 +126,507 @@ def swagger_full_test():
             testReport.stepResults.description(error_msg)
             assert False, error_msg
 
-    @testReport.stepResults.title("Выполнение тестовых сценариев")
-    def curl_test_module():
-        logger.debug("-" * 30)
-        logger.debug("ШАГ: Генерация и выполнение тестовых сценариев")
-        logger.debug("-" * 30)
+    def naming(file):
+        if file == "test_cases_good.csv":
+            fname = 'Положительные'
+        elif file == "test_cases_bad.csv":
+            fname = 'отрицательные'
 
-        try:
-            csv_getter = CSV_getter()
-            logger.debug("Чтение тестовых данных из CSV")
-            tests_df = csv_getter.get_rows()
+        @testReport.stepResults.title(f"Выполнение {fname} тестовые сценарии")
+        def curl_test_module():
+            logger.debug("-" * 30)
+            logger.debug("ШАГ: Генерация и выполнение тестовых сценариев")
+            logger.debug("-" * 30)
 
-            if tests_df.empty:
-                warning_msg = "⚠️ CSV файл не содержит тестовых данных"
-                logger.warning(warning_msg)
-                testReport.stepResults.description(warning_msg)
-                return
+            try:
+                csv_getter = CSV_getter(filename=file)
+                logger.debug("Чтение тестовых данных из CSV")
+                tests_df = csv_getter.get_rows()
 
-            grouped = tests_df.groupby('endpoint')
+                if tests_df.empty:
+                    warning_msg = "⚠️ CSV файл не содержит тестовых данных"
+                    logger.warning(warning_msg)
+                    testReport.stepResults.description(warning_msg)
+                    return
 
-            if len(grouped) == 0:
-                warning_msg = "⚠️ Нет данных для группировки по endpoint"
-                logger.warning(warning_msg)
-                testReport.stepResults.description(warning_msg)
-                return
+                grouped = tests_df.groupby(['endpoint', 'method'])
 
-            for endpoint_name, group in grouped:
-                logger.debug("-" * 20)
-                logger.debug(f"Обработка эндпоинта: {endpoint_name}")
-                logger.debug(f"Найдено {len(group)} записей для этого эндпоинта")
+                if len(grouped) == 0:
+                    warning_msg = "⚠️ Нет данных для группировки по endpoint и method"
+                    logger.warning(warning_msg)
+                    testReport.stepResults.description(warning_msg)
+                    return
 
-                tests_for_endpoint = []
+                for (endpoint_name, method_name), group in grouped:
+                    logger.debug("-" * 20)
+                    logger.debug(f"Обработка: {method_name} {endpoint_name}")
+                    logger.debug(f"Найдено {len(group)} записей для этого метода и эндпоинта")
 
-                for id, row in group.iterrows():
-                    logger.debug(f"Обработка тестового плана #{id}: {row['method']} {row['endpoint']}")
-                    logger.debug(f"Content-Type: {row['content-type']}")
-                    logger.debug(f"Ожидаемый код: {row['expCode']}, код ошибки авторизации: {row['auth_code_err']}")
+                    tests_for_endpoint = []
 
-                    tests_list = list(csv_getter.make_tests(id, row))
-                    logger.debug(f"Сгенерировано {len(tests_list)} тестовых кейсов для плана #{id}")
+                    for row_id, row in group.iterrows():
+                        logger.debug(f"Обработка тестового плана #{row_id}: {row['method']} {row['endpoint']}")
+                        logger.debug(f"Content-Type: {row['content-type']}")
+                        logger.debug(f"Ожидаемый код: {row['expCode']}, код ошибки авторизации: {row['auth_code_err']}")
 
-                    for test in tests_list:
-                        test['method'] = row['method']
-                        test['content-type'] = row['content-type']
-                        test['expCode'] = row['expCode']
-                        test['auth_code_err'] = row['auth_code_err']
+                        tests_list = list(csv_getter.make_tests(row_id, row))
+                        logger.debug(f"Сгенерировано {len(tests_list)} тестовых кейсов для плана #{row_id}")
 
-                    tests_for_endpoint.extend(tests_list)
+                        for test in tests_list:
+                            test['method'] = row['method']
+                            test['content-type'] = row['content-type']
+                            test['expCode'] = row['expCode']
+                            test['auth_code_err'] = row['auth_code_err']
+                            if row['request']:
+                                test['request'] = row['request']
 
-                logger.debug(f"Всего сгенерировано {len(tests_for_endpoint)} тестов для эндпоинта {endpoint_name}")
+                            # conf = CSV_getter().config_pars()
+                            # logger.debug(f"Для теста: {conf['basic_auth']}")
+                            # logger.debug(f"Для теста 2: {test['auth']}")
+                            # logger.debug(f"Для теста 3: {type(test['auth'])}")
 
-                @testReport.stepResults.title(f"Тесты для эндпоинта {endpoint_name}")
-                def endpoint_tests():
-                    for i, test in enumerate(tests_for_endpoint):
-                        logger.debug(
-                            f"Выполнение тестового кейса #{i + 1} из {len(tests_for_endpoint)} для {endpoint_name}")
+                            if test['auth'] == 2:
+                                conf = CSV_getter().config_pars()
+                                test_env['test_auth'] = conf['basic_auth']
+                                logger.debug(f"Будет использован basic авторизатор: {test_env['test_auth']}")
+                            else:
+                                test_env['test_auth'] = test_env['bearer']
 
-                        test_row = {
-                            'method': test.get('method'),
-                            'endpoint': endpoint_name,
-                            'content-type': test.get('content-type'),
-                            'expCode': test.get('expCode'),
-                            'auth_code_err': test.get('auth_code_err')
-                        }
+                        tests_for_endpoint.extend(tests_list)
 
-                        # Выполняем тест
-                        run_test_case(test_row, test)
+                    logger.debug(
+                        f"Всего сгенерировано {len(tests_for_endpoint)} тестов для {method_name} {endpoint_name}")
 
-                endpoint_tests()
+                    # Теперь название метода всегда точное и берется из итератора группировки
+                    @testReport.stepResults.title(f"Тесты для эндпоинта {method_name} {endpoint_name}")
+                    def endpoint_tests():
+                        for i, test in enumerate(tests_for_endpoint):
+                            logger.debug(
+                                f"Выполнение тестового кейса #{i + 1} из {len(tests_for_endpoint)} для {method_name} {endpoint_name}")
 
-        except Exception as e:
-            error_msg = f"❌ Ошибка при генерации тестов: {str(e)}"
-            logger.error(error_msg)
-            testReport.stepResults.description(error_msg)
-            assert False, error_msg
+                            test_row = {
+                                'method': method_name,
+                                'endpoint': endpoint_name,
+                                'content-type': test.get('content-type'),
+                                'expCode': test.get('expCode'),
+                                'auth_code_err': test.get('auth_code_err'),
+                                'request': test.get('request')
+                            }
 
-    def run_test_case(row, test):
-        logger.debug("." * 15)
-        logger.debug(f"Формирование описания тестового кейса")
+                            # Выполняем тест
+                            run_test_case(test_row, test)
 
-        logger.debug(f"Параметры теста:")
-        logger.debug(f"  - Описание: {test.get('description', 'Нет описания')}")
-        logger.debug(f"  - Минимальные параметры: {test.get('min_params', 'Нет')}")
-        logger.debug(f"  - Максимальные параметры: {test.get('parameters', 'Нет')}")
-        logger.debug(f"  - Минимальное body: {test.get('min_req_body', 'Нет')}")
-        logger.debug(f"  - Максимальное body: {test.get('request_body', 'Нет')}")
-        logger.debug(f"  - Требуется авторизация: {test.get('auth', False)}")
+                    endpoint_tests()
 
-        title_desc = 'Кейс:'
-        test['final_params'] = ''
-        test['final_body'] = ''
-        test['final_files'] = ''
+            except Exception as e:
+                error_msg = f"❌ Ошибка при генерации тестов: {str(e)}"
+                logger.error(error_msg)
+                testReport.stepResults.description(error_msg)
+                assert False, error_msg
 
-        found_test_type = False
+        def run_test_case(row, test):
+            logger.debug("." * 15)
+            logger.debug(f"Формирование описания тестового кейса")
 
-        if pd.notna(test.get('min_params')) and test['min_params']:
-            title_desc += ' минимально заполненные параметры'
-            test['final_params'] = test['min_params']
-            logger.debug("Тип: тест с минимальными параметрами")
-            found_test_type = True
+            logger.debug(f"Параметры теста:")
+            logger.debug(f"  - Описание: {test.get('description', 'Нет описания')}")
+            logger.debug(f"  - Минимальные параметры: {test.get('min_params', 'Нет')}")
+            logger.debug(f"  - Максимальные параметры: {test.get('parameters', 'Нет')}")
+            logger.debug(f"  - Минимальное body: {test.get('min_req_body', 'Нет')}")
+            logger.debug(f"  - Максимальное body: {test.get('request_body', 'Нет')}")
+            logger.debug(f"  - Минимальные files: {test.get('files_min', 'Нет')}")
+            logger.debug(f"  - Максимальные files: {test.get('files_max', 'Нет')}")
+            logger.debug(f"  - Требуется авторизация: {test.get('auth', False)}")
 
-        elif pd.notna(test.get('parameters')) and test['parameters']:
-            title_desc += ' максимально заполненные параметры'
-            test['final_params'] = test['parameters']
-            logger.debug("Тип: тест с максимальными параметрами")
-            found_test_type = True
+            title_desc = 'Кейс:'
+            test['final_params'] = ''
+            test['final_body'] = ''
+            test['final_files'] = ''
 
-        if pd.notna(test.get('min_req_body')) and test['min_req_body']:
-            title_desc += ' минимально заполненное body'
-            test['final_body'] = test['min_req_body']
-            logger.debug("Тип: тест с минимальным body")
-            found_test_type = True
+            found_test_type = False
+            # isUserName = False
 
-        elif pd.notna(test.get('request_body')) and test['request_body']:
-            title_desc += ' максимально заполненное body'
-            test['final_body'] = test['request_body']
-            logger.debug("Тип: тест с максимальным body")
-            found_test_type = True
+            # Проверяем description - он может перезаписать title_desc, но не отменяет найденный тип теста
+            if pd.notna(test.get('description')) and test['description']:
+                title_desc = f"Кейс: {test['description']}"
+                logger.debug(f"Тип: пользовательское описание - {test['description']}")
+                found_test_type = True
 
-        if pd.notna(test.get('files_min')) and test['files_min']:
-            title_desc += ' с минимальным набором файлов'
-            test['final_files'] = test['files_min']
-            logger.debug(f"Тип: тест с минимальными файлами - {test['files_min']}")
-            found_test_type = True
-        elif pd.notna(test.get('files_max')) and test['files_max']:
-            title_desc += ' с максимальным набором файлов'
-            test['final_files'] = test['files_max']
-            logger.debug(f"Тип: тест с максимальными файлами - {test['files_max']}")
-            found_test_type = True
+            if pd.notna(test.get('min_params')) and test['min_params']:
+                title_desc += f' минимально заполненные параметры'
+                test['final_params'] = test['min_params']
+                logger.debug("Тип: тест с минимальными параметрами")
+                found_test_type = True
 
-        # Проверяем description - он может перезаписать title_desc, но не отменяет найденный тип теста
-        if pd.notna(test.get('description')) and test['description']:
-            title_desc = f"Кейс: {test['description']}"
-            logger.debug(f"Тип: пользовательское описание - {test['description']}")
-            found_test_type = True
+            elif pd.notna(test.get('parameters')) and test['parameters']:
+                title_desc += f' максимально заполненные параметры'
+                test['final_params'] = test['parameters']
+                logger.debug("Тип: тест с максимальными параметрами")
+                found_test_type = True
 
-        # Если ни один из блоков не сработал
-        if not found_test_type:
-            title_desc = 'Кейс без параметров и тела'
-            logger.debug("Тип: тест без параметров и тела")
+            if pd.notna(test.get('min_req_body')) and test['min_req_body']:
+                title_desc += f' минимально заполненное body'
+                test['final_body'] = test['min_req_body']
+                logger.debug("Тип: тест с минимальным body")
+                found_test_type = True
 
-        @testReport.stepResults.title(f"{title_desc}")
-        def test_case():
-            logger.debug(f"Запуск тестового кейса: {title_desc}")
+            elif pd.notna(test.get('request_body')) and test['request_body']:
+                title_desc += f' максимально заполненное body'
+                test['final_body'] = test['request_body']
+                logger.debug("Тип: тест с максимальным body")
+                found_test_type = True
 
-            if test.get('auth', False):
-                logger.debug("Сценарий с авторизацией (будет проверен оба варианта: с токеном и без)")
-                run_auth_scenarios(test)
-            else:
-                logger.debug("Сценарий без авторизации (будет проверен только вариант без токена)")
-                run_auth_scenarios(test, [('without_bearer', 'without bearer')])
+            if pd.notna(test.get('files_min')) and test['files_min']:
+                title_desc += f' с минимальным набором файлов'
+                test['final_files'] = test['files_min']
+                logger.debug(f"Тип: тест с минимальными файлами - {test['files_min']}")
+                found_test_type = True
+            elif pd.notna(test.get('files_max')) and test['files_max']:
+                title_desc += f' с максимальным набором файлов'
+                test['final_files'] = test['files_max']
+                logger.debug(f"Тип: тест с максимальными файлами - {test['files_max']}")
+                found_test_type = True
 
-        test_case()
+            # Если ни один из блоков не сработал
+            if not found_test_type:
+                title_desc = 'Кейс без параметров и тела'
+                logger.debug("Тип: тест без параметров и тела")
 
-    def run_auth_scenarios(test_row, scenarios=None):
-        try:
-            if scenarios is None:
-                scenarios = [
-                    ('with_bearer', 'with bearer'),
-                    ('without_bearer', 'without bearer')
-                ]
-                logger.debug(f"Будут выполнены оба сценария авторизации")
-            else:
-                logger.debug(f"Будет выполнен сценарий: {scenarios[0][1]}")
+            @testReport.stepResults.title(f"{title_desc}")
+            def test_case():
+                logger.debug(f"Запуск тестового кейса: {title_desc}")
 
-            logger.debug(f"Параметры запроса:")
-            logger.debug(f"  - Endpoint: {test_row['endpoint']}")
-            logger.debug(f"  - Method: {test_row['method']}")
-            logger.debug(f"  - Content-Type: {test_row['content-type']}")
+                if test.get('auth', False):
+                    logger.debug("Сценарий с авторизацией (будет проверен оба варианта: с токеном и без)")
+                    run_auth_scenarios(test)
+                else:
+                    logger.debug("Сценарий без авторизации (будет проверен только вариант без токена)")
+                    run_auth_scenarios(test, [('without_bearer', 'without bearer')])
 
-            for scenario_name, title in scenarios:
-                logger.debug(f">>> Выполнение сценария: {title}")
+            test_case()
 
-                @testReport.stepResults.title(title)
-                def scenario():
-                    try:
-                        sw_path = CSV_getter().config_pars()
-                        logger.debug(f"Загружена конфигурация: base_url={sw_path['swagger_url']}")
+        def run_auth_scenarios(test_row, scenarios=None):
+            global test_env
 
-                        if scenario_name == 'with_bearer':
-                            bearer = test_env.get('bearer')
-                            if not bearer:
-                                error_msg = "❌ Bearer токен отсутствует в тестовом окружении"
+            try:
+                if scenarios is None:
+                    scenarios = [
+                        ('with_bearer', 'with bearer'),
+                        ('without_bearer', 'without bearer')
+                    ]
+                    logger.debug(f"Будут выполнены оба сценария авторизации")
+
+                else:
+                    logger.debug(f"Будет выполнен сценарий: {scenarios[0][1]}")
+
+                logger.debug(f"Параметры запроса:")
+                logger.debug(f"  - Endpoint: {test_row['endpoint']}")
+                logger.debug(f"  - Method: {test_row['method']}")
+                logger.debug(f"  - Content-Type: {test_row['content-type']}")
+
+                for scenario_name, title in scenarios:
+                    logger.debug(f">>> Выполнение сценария: {title}")
+
+                    @testReport.stepResults.title(title)
+                    def scenario():
+                        try:
+                            sw_path = CSV_getter().config_pars()
+                            logger.debug(f"Загружена конфигурация: base_url={sw_path['swagger_url']}")
+
+                            if scenario_name == 'with_bearer':
+                                bearer = test_env.get('test_auth')
+                                if not bearer:
+                                    error_msg = "❌ Bearer токен отсутствует в тестовом окружении"
+                                    logger.error(error_msg)
+                                    testReport.stepResults.description(error_msg)
+                                    assert False, error_msg
+                                logger.debug("Используется авторизация с токеном")
+                            else:
+                                bearer = None
+                                logger.debug("Запрос выполняется без авторизации")
+
+                                # logger.debug(f"test_params: {test_row['parameters']}")
+                                # logger.debug(f"final_params: {test_row['final_params']}")
+
+                            try:
+                                params = json.loads(test_row['final_params']) if test_row.get('final_params') else None
+                                data = json.loads(test_row['final_body']) if test_row.get('final_body') else None
+                                final_files = json.loads(test_row['final_files']) if test_row.get(
+                                    'final_files') else None
+                                last_files = None
+
+                                if params:
+                                    logger.debug(
+                                        f"Параметры запроса: {json.dumps(params, indent=2, ensure_ascii=False)}")
+                                if data:
+                                    logger.debug(f"Тело запроса: {json.dumps(data, indent=2, ensure_ascii=False)}")
+                                if final_files:
+                                    last_files = {}
+                                    file_format = test_row.get('file_format', 'tuple_3')
+
+                                    for name, file_type in final_files.items():
+                                        if file_type == "" or file_type is None:
+                                            last_files[name] = ('', '')
+                                            logger.debug(f"Поле {name}: пустой файл")
+                                            continue
+
+                                        if file_type == 'image/jpeg':
+                                            file_path = 'files/common.jpg'
+                                        elif file_type == 'image/png':
+                                            file_path = 'files/common.png'
+                                        elif file_type == 'application/pdf':
+                                            file_path = 'files/common.pdf'
+                                        else:
+                                            logger.warning(f"Неизвестный тип файла: {file_type}")
+                                            continue
+
+                                        with open(file_path, 'rb') as file_obj:
+                                            file_content = file_obj.read()
+
+                                        filename = os.path.basename(file_path)
+
+                                        if file_format == 'tuple_3':
+                                            last_files[name] = (filename, file_content, file_type)
+                                            logger.debug(f"{name}: tuple_3 (имя, байты, тип)")
+
+                                        elif file_format == 'tuple_2':
+                                            last_files[name] = (filename, file_content)
+                                            logger.debug(f"{name}: tuple_2 (имя, байты)")
+
+                                        elif file_format == 'bytes_only':
+                                            last_files[name] = (filename, file_content, file_type)
+                                            logger.debug(f"{name}: bytes_only -> преобразован в tuple_3")
+
+                                        elif file_format == 'file_object':
+                                            last_files[name] = open(file_path, 'rb')
+                                            logger.debug(f"{name}: file_object")
+
+                                        else:
+                                            last_files[name] = (filename, file_content, file_type)
+                                            logger.debug(f"{name}: default (tuple_3)")
+
+
+
+                            except json.JSONDecodeError as e:
+                                error_msg = f"❌ Ошибка парсинга JSON: {str(e)}"
                                 logger.error(error_msg)
+                                logger.debug(
+                                    f"Проблемные данные: params='{test_row.get('final_params')}', body='{test_row.get('final_body')}'")
                                 testReport.stepResults.description(error_msg)
                                 assert False, error_msg
-                            logger.debug("Используется авторизация с токеном")
-                        else:
-                            bearer = None
-                            logger.debug("Запрос выполняется без авторизации")
 
-                            # logger.debug(f"test_params: {test_row['parameters']}")
-                            # logger.debug(f"final_params: {test_row['final_params']}")
+                            # Выполнение
+                            logger.debug("Отправка HTTP запроса...")
+                            full_url = f"{sw_path['swagger_url']}{test_row['endpoint']}"
+                            logger.debug(f"URL: {full_url}")
+                            # logger.debug(f"test_data: {params}; {data}")
 
-                        try:
-                            params = json.loads(test_row['final_params']) if test_row.get('final_params') else None
-                            data = json.loads(test_row['final_body']) if test_row.get('final_body') else None
-                            final_files = json.loads(test_row['final_files']) if test_row.get('final_files') else None
-                            last_files = None
+                            if pd.notna(test_row['request']):
+                                for req in ast.literal_eval(test_row['request']):
+                                    if req[0][:2] == 'db':
+                                        try:
+                                            db_upd = DB_placer(sw_path[req[0]]['db_name'],
+                                                               sw_path[req[0]]['db_user'],
+                                                               sw_path[req[0]]['db_password'],
+                                                               sw_path[req[0]]['db_host'],
+                                                               sw_path[req[0]]['db_port'])
 
-                            if params:
-                                logger.debug(f"Параметры запроса: {json.dumps(params, indent=2, ensure_ascii=False)}")
-                            if data:
-                                logger.debug(f"Тело запроса: {json.dumps(data, indent=2, ensure_ascii=False)}")
-                            if final_files:
-                                last_files = {}
-                                for name, file_type in final_files.items():
+                                            db_upd.sql_req = req[1]
+                                            db_upd.inserter()
+                                            logger.debug('Обновлена БД по вложенному запросу')
+                                        except Exception as e:
+                                            logger.error(f'Ошибка обновления БД по вложенному селекту: {e}')
+                                            assert False, e
+                                    elif req[0][:2] == 'cp':
+                                        shutil.copy('files/common.png', req[1])
 
-                                    if file_type == 'image/jpeg':
-                                        pass
-                                    elif file_type == 'image/png':
-                                        file = 'files/common.png'
+                            # logger.debug('Отладочные значения')
+                            # logger.debug('+++++++++++++++++++++++++++++++++++++++++++')
+                            # logger.debug('+++++++++++++++++++++++++++++++++++++++++++')
+                            #
+                            # logger.debug(f"last_files:{last_files}")
+                            #
+                            # logger.debug('+++++++++++++++++++++++++++++++++++++++++++')
+                            # logger.debug('+++++++++++++++++++++++++++++++++++++++++++')
 
-                                    with open(file, 'rb') as file_obj:
-                                        file_content = file_obj.read()
-                                    last_files[name] = (file, file_content, file_type)
+                            if pd.isna(test_row['content-type']):
+                                test_row['content-type'] = None
 
+                            if re.search(r'\{[^}]+\}', test_row['endpoint']):
+                                logger.debug("Определили, что эндпоинт с внутренним аргументом")
+                                param_name = re.search(r'\{([^}]+)\}', test_row['endpoint']).group(1)
+                                logger.debug(f"Определили параметр: {param_name}")
+                                test_row['endpoint'] = test_row['endpoint'].replace(f'{{{param_name}}}',
+                                                                                    str(params[param_name]))
+                                logger.debug(f"Получили новый URL: {test_row['endpoint']}")
+                                logger.debug(f"Параметры кейса до внесения изменений: params")
+                                del params[param_name]
+                                if not params:
+                                    params = None
+                                logger.debug(f"Обновленные параметры кейса: {params}")
 
+                            if data == {}:
+                                data = json.dumps(data)
 
-                        except json.JSONDecodeError as e:
-                            error_msg = f"❌ Ошибка парсинга JSON: {str(e)}"
+                            result, response = CSV_getter().send_curl(
+                                base_url=sw_path['swagger_url'],
+                                endpoint=test_row['endpoint'],
+                                params=params,
+                                headers={"Content-Type": test_row['content-type']},
+                                data=data,
+                                bearer=bearer,
+                                method=test_row['method'],
+                                files=last_files
+                            )
+
+                            # --- подмена если файл ---
+
+                            try:
+                                if response is None:
+                                    raise AttributeError("Response is None")
+
+                                if not hasattr(response, 'headers'):
+                                    raise AttributeError("Response has no headers attribute")
+
+                                content_type = response.headers.get('Content-Type', '')
+                                is_file = any(t in content_type for t in
+                                              ['application/octet-stream', 'application/pdf', 'text/csv',
+                                               'spreadsheet'])
+                                is_attachment = 'attachment' in response.headers.get('Content-Disposition', '')
+
+                                if response.status_code == 200 and (is_file or is_attachment):
+                                    logger.info("Обнаружен файл в ответе. Подменяем тело для отчета.")
+
+                                    # Создаем mock-ответ, чтобы не ломать дальнейшую логику
+                                    mock_response = requests.Response()
+                                    mock_response.status_code = response.status_code
+                                    mock_response.headers = response.headers
+
+                                    data_mock = {
+                                        "status": "success",
+                                        "message": f"Файл успешно получен. Тип: {content_type}"
+                                    }
+                                    mock_response._content = json.dumps(data_mock, ensure_ascii=False).encode("utf-8")
+                                    response = mock_response
+
+                            except (AttributeError, TypeError) as attr_err:
+                                logger.warning(f"Response не имеет headers или равен None: {str(attr_err)}")
+
+                                mock_response = requests.Response()
+                                mock_response.status_code = 504 if 'timeout' in str(attr_err).lower() else 500
+                                mock_response.headers = {"Content-Type": "application/json"}
+
+                                data_mock = {
+                                    "status": "failed",
+                                    "message": "Ошибка при обработке ответа сервера (возможно таймаут)",
+                                    "original_error": str(attr_err)[:200]
+                                }
+                                mock_response._content = json.dumps(data_mock, ensure_ascii=False).encode("utf-8")
+                                response = mock_response
+                            # --- Подменили файл ---
+
+                            try:
+                                decoded_content = decode_response_content(response.content)
+                            except (requests.exceptions.ConnectTimeout, requests.exceptions.ReadTimeout) as timeout_err:
+                                # СЮДА КОД ПОПАДЕТ ПРИ СЕТЕВОМ ТАЙМАУТЕ
+                                logger.error(f"Сеть не ответила вовремя: {str(timeout_err)[:300]}")
+
+                                mock_response = requests.Response()
+                                mock_response.status_code = 504
+                                mock_response.headers = {"Content-Type": "application/json"}
+
+                                data_mock = {
+                                    "status": "failed",
+                                    "message": "Превышено время ожидания ответа от сервера (Timeout)",
+                                    "original_error": str(timeout_err)[:200]
+                                }
+                                mock_response._content = json.dumps(data_mock, ensure_ascii=False).encode("utf-8")
+                                response = mock_response
+                                decoded_content = decode_response_content(response.content)
+                            except Exception as e:
+                                logger.debug(f"Делаем заглушку, так как ответ не типичный: {str(e)[:300]}")
+                                mock_response = requests.Response()
+                                mock_response.status_code = 500
+                                mock_response.headers = {"Content-Type": "application/json"}
+
+                                error_details = getattr(response, 'text', '') if response else ''
+                                if not error_details:
+                                    error_details = f"Исключение Python: {str(e)}"
+
+                                data_mock = {
+                                    "status": "failed",
+                                    "message": "Нетипичная ошибка, заглушка (Перехвачено send_curl)",
+                                    "original_error": error_details[:200]
+                                }
+                                mock_response._content = json.dumps(data_mock, ensure_ascii=False).encode("utf-8")
+                                response = mock_response
+                                decoded_content = decode_response_content(response.content)
+
+                            logger.debug(f"Запрос выполнен. Статус код: {response.status_code}")
+                            logger.debug(f"Ответ сервера (первые 300 символов): {decoded_content[:300]}")
+
+                            if len(scenarios) > 1:
+                                expected_code = test_row['expCode'] if bearer is not None else test_row['auth_code_err']
+                            else:
+                                expected_code = test_row['expCode']
+
+                            logger.debug(f"Проверка результата:")
+                            logger.debug(f"  - Фактический код: {response.status_code}")
+                            logger.debug(f"  - Ожидаемый код: {expected_code}")
+
+                            if response.status_code == expected_code:
+                                success_desc = (f"✅ Тест успешно пройден\n"
+                                                f"  Статус код: {response.status_code} (совпадает с ожидаемым {expected_code})\n"
+                                                f"  Сценарий: {title}\n"
+                                                f"  Ответ сервера:\n{decoded_content[:300]}")
+
+                                logger.info(f"✓ Тест пройден: статус {response.status_code}")
+                                testReport.stepResults.description(success_desc)
+                                assert True, f"Статус код {response.status_code} соответствует ожидаемому {expected_code}"
+
+                            else:
+                                error_detail = (f"❌ Тест не пройден\n"
+                                                f"  Статус код: {response.status_code} (ожидался {expected_code})\n"
+                                                f"  Сценарий: {title}\n"
+                                                f"  Ответ сервера:\n{decoded_content[:300]}")
+
+                                logger.error(
+                                    f"✗ Тест не пройден: получен {response.status_code}, ожидался {expected_code}")
+                                logger.debug(f"Детали ошибки: {decoded_content[:300]}")
+
+                                testReport.stepResults.description(error_detail)
+
+                                testReport.stepResults.error_skip(
+                                    f"Код ответа не совпадает с ожидаемым: "
+                                    f"получен {response.status_code}, ожидался {expected_code}"
+                                )
+
+                        except Exception as e:
+                            error_msg = (f"❌ Критическая ошибка при выполнении сценария '{title}': {str(e)}\n"
+                                         f"Endpoint: {test_row['endpoint']}\n"
+                                         f"Метод: {test_row['method']}")
+
                             logger.error(error_msg)
-                            logger.debug(
-                                f"Проблемные данные: params='{test_row.get('final_params')}', body='{test_row.get('final_body')}'")
+                            logger.debug(f"Traceback: {traceback.format_exc()}")
+
                             testReport.stepResults.description(error_msg)
                             assert False, error_msg
 
-                        # Выполнение
-                        logger.debug("Отправка HTTP запроса...")
-                        full_url = f"{sw_path['swagger_url']}{test_row['endpoint']}"
-                        logger.debug(f"URL: {full_url}")
-                        # logger.debug(f"test_data: {params}; {data}")
+                    scenario()
 
-                        result, response = CSV_getter().send_curl(
-                            base_url=sw_path['swagger_url'],
-                            endpoint=test_row['endpoint'],
-                            params=params,
-                            headers={"Content-Type": test_row['content-type']},
-                            data=data,
-                            bearer=bearer,
-                            method=test_row['method'],
-                            files=last_files
-                        )
+            except Exception as e:
+                error_msg = f"❌ Ошибка в обработке сценариев авторизации: {str(e)}"
+                logger.error(error_msg)
+                logger.debug(f"Traceback: {traceback.format_exc()}")
+                testReport.stepResults.description(error_msg)
+                assert False, error_msg
 
-                        # Декодирование ответа для читаемого вида
-                        decoded_content = decode_response_content(response.content)
-
-                        logger.debug(f"Запрос выполнен. Статус код: {response.status_code}")
-                        logger.debug(f"Ответ сервера (первые 300 символов): {decoded_content[:300]}")
-
-                        expected_code = test_row['auth_code_err'] if bearer is None else test_row['expCode']
-
-                        logger.debug(f"Проверка результата:")
-                        logger.debug(f"  - Фактический код: {response.status_code}")
-                        logger.debug(f"  - Ожидаемый код: {expected_code}")
-
-                        if response.status_code == expected_code:
-                            success_desc = (f"✅ Тест успешно пройден\n"
-                                            f"  Статус код: {response.status_code} (совпадает с ожидаемым {expected_code})\n"
-                                            f"  Сценарий: {title}\n"
-                                            f"  Ответ сервера:\n{decoded_content}")
-
-                            logger.info(f"✓ Тест пройден: статус {response.status_code}")
-                            testReport.stepResults.description(success_desc)
-                            assert True, f"Статус код {response.status_code} соответствует ожидаемому {expected_code}"
-
-                        else:
-                            error_detail = (f"❌ Тест не пройден\n"
-                                            f"  Статус код: {response.status_code} (ожидался {expected_code})\n"
-                                            f"  Сценарий: {title}\n"
-                                            f"  Ответ сервера:\n{decoded_content}")
-
-                            logger.error(f"✗ Тест не пройден: получен {response.status_code}, ожидался {expected_code}")
-                            logger.debug(f"Детали ошибки: {decoded_content}")
-
-                            testReport.stepResults.description(error_detail)
-
-                            testReport.stepResults.error_skip(
-                                f"Код ответа не совпадает с ожидаемым: "
-                                f"получен {response.status_code}, ожидался {expected_code}"
-                            )
-
-                    except Exception as e:
-                        error_msg = (f"❌ Критическая ошибка при выполнении сценария '{title}': {str(e)}\n"
-                                     f"Endpoint: {test_row['endpoint']}\n"
-                                     f"Метод: {test_row['method']}")
-
-                        logger.error(error_msg)
-                        logger.debug(f"Traceback: {traceback.format_exc()}")
-
-                        testReport.stepResults.description(error_msg)
-                        assert False, error_msg
-
-                scenario()
-
-        except Exception as e:
-            error_msg = f"❌ Ошибка в обработке сценариев авторизации: {str(e)}"
-            logger.error(error_msg)
-            logger.debug(f"Traceback: {traceback.format_exc()}")
-            testReport.stepResults.description(error_msg)
-            assert False, error_msg
+        curl_test_module()
 
     # Запуск основных шагов
     get_bearer()
-    curl_test_module()
+    naming("test_cases_good.csv")
+    naming("test_cases_bad.csv")
 
 
 if __name__ == "__main__":
